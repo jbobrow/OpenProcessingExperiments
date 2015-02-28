@@ -1,0 +1,31 @@
+
+size(300,300);
+background(255,105,180);
+fill(50,0,255);
+rect(140,135,20,40);
+fill(255,255,255);
+ellipse(150,120,30,30);
+point(145,120);
+point(155,120);
+line(140,135,120,160);
+line(160,135,180,160);
+line(145,175,145,200);
+line(155,175,155,200);
+stroke(67,39,39);
+strokeWeight(10);
+line(250,180,250,200);
+noStroke();
+fill(60,90,2);
+quad(0,200,300,200,300,300,0,300);
+triangle(220,180,250,100,280,180);
+fill(250,255,0);
+stroke(255,81,0);
+strokeWeight(10);
+arc(0,0,150,150,0,PI/2);
+stroke(0,0,0);
+strokeWeight(5);
+colorMode(RGB,100);
+noFill();
+arc(150, 55, 100, 30, TWO_PI-PI/2, TWO_PI);
+arc(250, 55, 100, 30, PI, TWO_PI-PI/2);
+

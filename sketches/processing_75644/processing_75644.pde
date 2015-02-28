@@ -1,0 +1,64 @@
+
+//Autor: Adrian Díaz López
+//Heisenberg de Breaking Bad
+
+size(400,500);
+background(255);
+
+  //sombrero
+  fill (0);
+  rect (70,140,250,5);
+  rect(120,80,150,80);
+  //cara
+  fill(#F7CFB6);
+  rect (120,145,150,170);
+  fill(0);
+  rect (115,170,70,40);
+  rect (175,170,40,5);
+  rect (205,170,70,40);
+  //orejas
+  fill(#F7CFB6);
+  bezier (120,180,110,160,70,190,120,230);
+  bezier(274,180,270,160,330,190,270,230);
+  //nariz
+  fill(0);
+  line(185,170,183,230);
+  line(205,170,207,230);
+  ellipse(182,232,5,5);
+  ellipse(209,232,5,5);
+  //bigote
+  fill(#F7CFB6);
+  beginShape();
+  vertex(155,270);
+  vertex(160,240);
+  vertex(165,260);
+  vertex(170,240);
+  vertex(175,260);
+  vertex(180,240);
+  vertex(185,260);
+  vertex(190,240);
+  vertex(195,260);
+  vertex(200,240);
+  vertex(205,260);
+  vertex(210,240);
+  vertex(215,260);
+  vertex(220,240);
+  vertex(225,260);
+  vertex(230,240);
+  vertex(235,270);
+  endShape();
+  
+  //boca
+  fill(0);
+  rect(170,270,50,5);
+  
+  //texto
+  PFont font;
+  font = loadFont("KristenITC-Regular-48.vlw");
+  textFont(font);
+  textAlign(CENTER);
+  String r="HEISENBERG";
+  text (r,210,440);
+
+
+

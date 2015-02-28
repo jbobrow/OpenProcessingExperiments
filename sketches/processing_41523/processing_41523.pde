@@ -1,0 +1,25 @@
+
+int counter;
+
+void setup() {  //setup function called initially, only once
+  size(600, 600);
+  background(255);  //set background white
+  colorMode(HSB);   //set colors to Hue, Saturation, Brightness mode
+  counter = 1;
+}
+
+void draw() {  //draw function loops 
+  counter++;
+  noStroke();
+  fill(random(255),100,255,50);
+  
+  if(mousePressed == true) { //add some interaction
+    ellipse(mouseX, mouseY, 50, 50);
+  }
+  else {
+    ellipse(width/2, height/2, 80*sin(counter), 80*sin(counter));
+  }
+}
+
+                
+                

@@ -1,0 +1,20 @@
+
+println("stand up");
+println("walk to the front door");
+println("walk down the stairs");
+println("open the downstairs door");
+println("walk down the other set of stairs");
+println("walk to the corner");
+println("enter the deli");
+println("open freezer doors");
+println("pull out haagen daaz vanilla flavor icecream");
+println("walk to the counter");
+println("take $2.50 from out of your wallet");
+println("give it to clerk");
+println("walk the same path you did going to the corner");
+println("open downstairs doors");
+println("walk upstair");
+println("open upstairs doors");
+println("hand icecream to kadeem");
+println("dont expect pay back");
+println("enjoy your day");

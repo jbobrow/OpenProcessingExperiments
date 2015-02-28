@@ -1,0 +1,87 @@
+
+//int frames = 0;
+//int totalFrames = 120;
+
+ArrayList dots;
+float dots_row = 10;
+float incr;
+float start;
+float angle = 0;
+int i=0;
+boolean one_off = false;
+
+void setup() {
+  smooth();
+  size(400, 400);
+  background(255);
+  noStroke();
+  incr = width/dots_row;
+
+  dots = new ArrayList();
+
+  for (int y = int(- incr/2); y < height *1.3; y+= .9*incr) {
+    if (one_off) {
+      start = -incr/2;
+      one_off = false;
+    } 
+    else {
+      start = 0;
+      one_off = true;
+    }
+    for (int x = int(start); x < width ; x += incr) {
+      dots.add(new Pulse(x, y));
+      i++;
+    }
+  }
+}
+
+void draw() {
+  background(255);
+  i=0;
+  for (int x = int(- incr/2); x < width; x += incr) {
+    for (int y = 0; y < height *1.3; y+= incr) {  
+      Pulse dot = (Pulse) dots.get(i);
+      dot.display();
+      i++;
+    }
+  }
+  //saveFrame("line-######.gif");
+  //angle += 0.04;
+  //if (angle > TWO_PI) {
+  //  noLoop();
+  //}
+}
+class Pulse {
+  float x, y, theta1;
+  float sz, sz2;
+  float theta=0;
+  float offset;
+
+  Pulse(float _x, float _y) {
+    x = _x;
+    y = _y;
+    offset = .5*incr;
+    theta = noise(x+y/100)*PI;
+    noStroke();
+  }
+
+  void display() {
+
+    fill(#211F1F);
+    translate(x+offset, y);
+    sz = map(sin(theta), -1, 1, 0, incr);
+    ellipse(0, 0, sz, sz);
+    resetMatrix();
+
+    fill(255, 0, 0);
+    translate(x+ offset, y + offset*1.1);
+    sz2 = incr - abs(sz);
+    ellipse(0, 0, sz2, sz2);
+    resetMatrix(); 
+
+    theta += noise((x+y)/10)*.04;
+  }
+}
+
+
+

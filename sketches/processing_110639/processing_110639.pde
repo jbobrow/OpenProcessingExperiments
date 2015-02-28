@@ -1,0 +1,111 @@
+
+size(320, 135);
+background(0, 235, 100, 100);
+strokeWeight(1);
+fill(0); 
+beginShape();
+  curveVertex(0, 40);
+  curveVertex(0, 40);
+  curveVertex(40, 30);
+  curveVertex(50, 25);
+  curveVertex(65, 25);
+  curveVertex(70, 45);
+  curveVertex(50, 50);
+  curveVertex(20, 45);
+  curveVertex(0, 45);
+  curveVertex(0, 45);
+endShape();
+
+beginShape();
+  curveVertex(100, 0);
+  curveVertex(100, 0);
+  curveVertex(110, 20);
+  curveVertex(120, 0);
+  curveVertex(120, 0);
+endShape();
+
+beginShape();
+  curveVertex(170, 0);
+  curveVertex(170, 0);
+  curveVertex(180, 20);
+  curveVertex(190, 0);
+  curveVertex(190, 0);
+endShape();
+
+beginShape();
+  curveVertex(280, 0);
+  curveVertex(280, 0);
+  curveVertex(300, 30);
+  curveVertex(300, 50);
+  curveVertex(320, 30);
+  curveVertex(320, 0);
+  curveVertex(320, 0); 
+endShape();
+
+ellipse(320, 120, 80, 40);
+
+beginShape();
+  curveVertex(230, 40);
+  curveVertex(230, 40);
+  curveVertex(240, 60);
+  curveVertex(250, 80);
+  curveVertex(265, 80);
+  curveVertex(270, 60);
+  curveVertex(255, 40);
+  curveVertex(230, 40);
+  curveVertex(230, 40); 
+endShape();
+
+beginShape();
+  curveVertex(80, 135);
+  curveVertex(80, 135);
+  curveVertex(80, 125);
+  curveVertex(90, 120);
+  curveVertex(100, 120);
+  curveVertex(120, 125);
+  curveVertex(140, 135);
+  curveVertex(80, 135);
+  curveVertex(80, 135);
+endShape();
+
+beginShape();
+  curveVertex(140, 135);
+  curveVertex(140, 135);
+  curveVertex(155, 115);
+  curveVertex(175, 125);
+  curveVertex(180, 135);
+  curveVertex(140, 135);
+  curveVertex(140, 135);
+endShape();
+
+beginShape();
+  curveVertex(170, 65);
+  curveVertex(170, 65);
+  curveVertex(150, 65);
+  curveVertex(110, 45);
+  curveVertex(90, 50);
+  curveVertex(80, 70);
+  curveVertex(90, 80);
+  curveVertex(110, 85);
+  curveVertex(130, 75);
+  curveVertex(150, 70);
+  curveVertex(170, 70);
+  curveVertex(180, 70);
+  curveVertex(200, 80);
+  curveVertex(190, 65);
+  curveVertex(170, 65);
+  curveVertex(170, 65);
+endShape();
+
+beginShape();
+  curveVertex(200, 80);
+  curveVertex(200, 80);
+  curveVertex(220, 90);
+  curveVertex(240, 110);
+  curveVertex(260, 125);
+  curveVertex(265, 120);
+  curveVertex(260, 105);
+  curveVertex(240, 85);
+  curveVertex(200, 75);
+  curveVertex(200, 75);
+endShape();

@@ -1,0 +1,167 @@
+
+void setup(){
+  size(500,600);
+  background(19,105,147);
+  smooth();
+  strokeWeight(2);
+}
+
+void draw(){
+  fill(255,166,0);
+   triangle(600,0,250,200,300,0);
+   fill(255,0,0);
+   triangle(600,0,120,170,200,0);
+  fill(1,41,95);
+   ellipse(360,20,250,250);
+  fill(0);
+  ellipse(530,20,350,350);
+  fill(255);
+  stroke(0);
+  line(600,0,350,250);
+  line(500,0,350,200);
+
+  noStroke();
+  fill(0);
+  ellipse(150,350,150,150);
+ fill(19,105,147);
+ ellipse(150,350,120,120);
+  fill(0,255,142);
+  ellipse(550,450,300,300);
+  fill(160,2,12);
+  triangle(600,450,350,300,600,550);
+  fill(252,86,3);
+    triangle(600,300,350,300,600,450);
+  //montañas
+  stroke(0);
+fill(68,118,4);
+  ellipse(200,600,450,380);
+  fill(214,13,2);
+  ellipse(300,600,450,270);
+   fill(2,93,11);
+  ellipse(600,600,450,180);
+  noStroke();
+  fill(255,145,0);
+    ellipse(450,600,90,90);
+      fill(0);
+    ellipse(450,600,70,70);
+    fill(214,13,2);
+    ellipse(450,600,50,50);
+    ellipse(250,600,20,20);
+    fill(0);
+    ellipse(450,600,20,20);
+    //adornos
+    strokeWeight(9);
+    stroke(0);
+    line(50,500,50,350);
+    noStroke();
+    fill(255,13,0);
+    ellipse(50,400,120,120);
+    fill(255,158,0);
+    ellipse(50,400,97,97);
+    fill(0);
+    ellipse(50,400,79,79);
+    fill(255,13,0);
+    ellipse(50,400,50,50);
+    fill(0,255,253);
+    ellipse(50,400,40,40);
+    fill(255,218,5);
+    triangle(300,150,300,250,350,200);
+    triangle(450,150,400,200,450,250);
+    
+    
+  //ave
+  stroke(0);
+  strokeWeight(15);
+   noFill();
+  bezier(250,300,380,8,155,20,30,250);
+  strokeWeight(2);
+   bezier(160,100,80,8,50,20,50,180);
+ //pestañas 
+line(450,300,400,225);
+line(510,210,360,460);
+fill(255,0,0);
+line(360,210,250,100);
+ellipse(460,310,50,50);
+ellipse(400,230,10,10);
+ellipse(400,50,30,30);
+noStroke();
+fill(120,190,224);
+triangle(600,100,400,150,600,150);
+fill(46,90,11);
+triangle(500,100,450,250,550,250);
+fill(0);
+ellipse(50,100,80,80);
+fill(255,0,0);
+ellipse(50,100,50,50);
+fill(19,105,147);
+ellipse(100,95,60,60);
+ellipse(15,105,60,60);
+fill(5,255,36);
+ellipse(200,30,70,70);
+fill(255,5,5);
+ellipse(40,250,50,50);
+
+fill(19,105,147);
+ellipse(40,280,50,50);
+stroke(0);
+noFill();
+line(220,280,220,200);
+line(190,270,250,210); 
+line(250,270,190,210);
+line(180,240,260,240);
+//patitas
+stroke(0);
+ line(180,600,220,400);
+ line(300,600,220,400);
+ fill(0);
+ ellipse(180,600,100,100);
+ ellipse(300,600,100,100);
+ 
+ 
+ //cabeza
+   strokeWeight(12);
+  fill(0);
+  line(200,210,280,150);
+  strokeWeight(5);
+  stroke(0);
+ellipse(210,210,100,100); 
+fill(255);
+ellipse(210,210,70,70);
+fill(71,193,45);
+ellipse(210,220,50,50);
+noStroke();
+fill(252,25,25);
+ellipse(210,220,30,30);
+fill(0);
+
+ //cuerpo
+ ellipse(240,380,170,170);
+ fill(242,7,7);
+ ellipse(175,380,30,85);
+ fill(7,32,242);
+ stroke(0);
+ ellipse(250,410,120,100);
+ fill(242,180,7);
+ ellipse(260,360,100,118);
+ fill(0);
+ ellipse(240,350,90,58);
+ 
+ 
+   //adornos
+   noFill();
+   stroke(0);
+   smooth();
+ bezier(400,50,265,200,260,300,440,420);
+ fill(0);
+ noStroke();
+ ellipse(410,410,100,100);
+  fill(73,242,7);
+ ellipse(410,410,90,90);
+  fill(183,6,9);
+ ellipse(410,410,70,70);
+  fill(255,197,5);
+  noStroke();
+ ellipse(410,410,50,50);
+
+}
+

@@ -1,0 +1,70 @@
+
+void setup() {
+  size(200,200);
+  smooth();
+}
+void draw() {
+//background  
+  fill(0,102,255);
+  stroke(0,102,255);
+  rect(100,70,200,140);
+  fill(0,255,0);
+  stroke(0,255,0);
+  rect(100,170,200,60);
+  fill(255,255,0);
+  stroke(255,255,0);  
+  ellipse(180,20,50,50);
+  stroke(0);
+//body
+  rectMode(CENTER);
+  fill(0);
+  stroke(0);
+  rect(mouseX,mouseY+30,2,40);
+//head
+  fill(255,153,102);
+  ellipse(mouseX,mouseY,30,30);
+//upper leg parts
+  line(mouseX,mouseY+50,mouseX-10,mouseY+60);
+  line(mouseX,mouseY+50,mouseX-11,mouseY+60);
+  line(mouseX,mouseY+50,mouseX+10,mouseY+60);
+  line(mouseX,mouseY+50,mouseX+11,mouseY+60);
+  //lower leg parts
+  line(mouseX+11,mouseY+60,mouseX+11,mouseY+80);
+  line(mouseX+10,mouseY+60,mouseX+10,mouseY+80);
+  line(mouseX-11,mouseY+60,mouseX-11,mouseY+80);
+  line(mouseX-10,mouseY+60,mouseX-10,mouseY+80);
+//arms
+  fill(0,0,0);
+  rect(mouseX,mouseY+20,50,2);
+//eyes
+  point(mouseX-5,mouseY-5);
+  point(mouseX+5,mouseY-5);
+//mouth
+  line(mouseX-5,mouseY+5,mouseX+5,mouseY+5);
+//sword
+  stroke(153,153,153);
+  triangle(mouseX+23,mouseY-17,mouseX+24,mouseY-12,mouseX+22,mouseY-12);
+  rect(mouseX+23,mouseY+4,2,38);
+  line(mouseX+20,mouseY+17,mouseX+26,mouseY+17);
+//shield
+  fill(100,100,100);
+  rect(mouseX-20,mouseY+30,20,40);
+//hair
+  stroke(255,204,0);
+  line(mouseX-10,mouseY-8,mouseX-10,mouseY-11);
+  line(mouseX-8,mouseY-9,mouseX-8,mouseY-12);
+  line(mouseX-6,mouseY-10,mouseX-6,mouseY-13);
+  line(mouseX-4,mouseY-11,mouseX-4,mouseY-14);
+  line(mouseX-2,mouseY-12,mouseX-2,mouseY-15);
+  line(mouseX,mouseY-13,mouseX,mouseY-16);
+  line(mouseX+2,mouseY-12,mouseX+2,mouseY-15);
+  line(mouseX+4,mouseY-11,mouseX+4,mouseY-14);
+  line(mouseX+6,mouseY-10,mouseX+6,mouseY-13);
+  line(mouseX+8,mouseY-9,mouseX+8,mouseY-12);
+  line(mouseX+10,mouseY-8,mouseX+10,mouseY-11);
+//shoes
+  fill(102,51,0);
+  rect(mouseX-15,mouseY+78,10,5);
+  rect(mouseX+15,mouseY+78,10,5);
+}
+    

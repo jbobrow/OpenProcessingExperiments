@@ -1,0 +1,41 @@
+
+size (250, 250);
+background (240);
+smooth();
+noStroke();
+fill(#AAC63C,50);
+ellipse(140,130,170,170);
+ellipse(140,130,130,130);
+ellipse(60,70,80,80);
+fill(#E051C2,100);
+ellipse(140,130,100,100);
+fill(#6F4CC1, 100);
+rectMode(CORNERS);
+rect(0,0,50,110);
+rect(40,40,70,160);
+rect(60,60,90,130);
+rect (0,80,140,100);
+fill(#6F4CC1, 170);
+rect (140, 80, 180, 140);
+rect(90,100,140,140);
+//rect- top left
+fill(240, 40);
+ellipseMode(CORNERS);
+ellipse (140, 100, 180, 140);
+ellipse(90,100,130,140);
+stroke(#AAC63C);
+strokeWeight(0.5);
+line(90,100,90,140);
+line(95,100,95,140);
+line(100,100,100,140);
+line(105,100,105,140);
+line(110,100,110,140);
+line(115,100,115,140);
+line(120,100,120,140);
+line(125,100,125,140);
+noStroke();
+fill(#6F4CC1, 100);
+rect(140,140,200,150);
+rect(140,140,210,180);
+rect(140,140,150,250);
+

@@ -1,0 +1,60 @@
+
+///////////////////////////////////////////////////////////
+// Variable definitions ///////////////////////////////////
+///////////////////////////////////////////////////////////
+PVector diskPoint;
+float pointSize = 2;
+
+
+///////////////////////////////////////////////////////////
+// Init ///////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+void setup() {
+    size(600, 600, P2D);
+    background(#d7d7d7);
+    fill(#cccccc);
+    noStroke();
+    ellipse(width/2, height/2, width/1.5 + pointSize, width/1.5 + pointSize);
+    stroke(#555555);
+    strokeWeight(pointSize);
+    diskPoint = new PVector();
+}
+
+
+///////////////////////////////////////////////////////////
+// Render /////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+void draw() {
+    pickRandomDiskPoint(diskPoint, width/3f);
+    point(width/2f + diskPoint.x, height/2f + diskPoint.y);
+}
+
+
+///////////////////////////////////////////////////////////
+// Return random point on disk ////////////////////////////
+///////////////////////////////////////////////////////////
+void pickRandomDiskPoint(PVector result, float maxRadius) {
+    float t = 2f * PI * random(1);
+    float u = random(1) + random(1);
+    float r = (u > 1f ? 2f - u : u) * maxRadius;
+    result.set(sin(t) * r, cos(t) * r, result.z);
+}
+/*
+PVector pickRandomDiskPoint(float maxRadius) {
+    float t = 2f * PI * random(1);
+    float u = random(1) + random(1);
+    float r = (u > 1f ? 2f - u : u) * maxRadius;
+    return new PVector(sin(t) * r, cos(t) * r, 0);
+}
+*/
+
+
+///////////////////////////////////////////////////////////
+// Restart ////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+void mouseClicked() {
+    background(#d7d7d7);
+    noStroke();
+    ellipse(width/2, height/2, width/1.5 + 2, width/1.5 + 2);
+    stroke(#555555);
+}

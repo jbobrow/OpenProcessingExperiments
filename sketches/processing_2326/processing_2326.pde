@@ -1,0 +1,60 @@
+
+void setup(){
+  size(900,600);
+  smooth();
+  frameRate(1000);
+}
+void draw(){
+  background(255);
+  noStroke();
+  fill(mouseY,mouseX,0,100);
+ellipse(500,425,mouseX,mouseY);
+fill(mouseY,0,mouseX,100);
+ellipse(100,125,mouseX-20,mouseY-20);
+fill(0,mouseY,0,100);
+ellipse(775,175,mouseX-40,mouseY-40);
+fill(0,mouseY,mouseX,100);
+ellipse(430,80,mouseX-60,mouseY-60);
+fill(mouseX,mouseY,0,90);
+ellipse(80,500,mouseX-80,mouseY-80);
+fill(mouseX,0,mouseY,90);
+ellipse(800,500,mouseX-100,mouseY-100);
+fill(0,mouseX,0,90);
+ellipse(225,350,mouseX-120,mouseY-120);
+fill(0,mouseX,mouseY,90);
+ellipse(250,550,mouseX-140,mouseY-140);
+fill(mouseY,mouseX,0,80);
+ellipse(600,30,mouseX-160,mouseY-160);
+fill(mouseX,mouseY,0,80);
+ellipse(580,180,mouseX-180,mouseY-180);
+fill(mouseX,0,0,80);
+ellipse(690,570,mouseX-200,mouseY-200);
+fill(mouseY,0,0,80);
+ellipse(870,390,mouseX-220,mouseY-220);
+fill(255,mouseX,255,70);
+ellipse(800,360,mouseX-240,mouseY-240);
+fill(0,mouseY,0,70);
+ellipse(300,250,mouseX-260,mouseY-260);
+fill(255,255,mouseX,70);
+ellipse(20,350,mouseX-280,mouseY-280);
+fill(255,255,mouseY,70);
+ellipse(90,370,mouseX-300,mouseY-300);
+fill(mouseX,255,mouseY,60);
+ellipse(280,30,mouseX-320,mouseY-320);
+fill(mouseX,255,255,60);
+ellipse(880,30,mouseX-340,mouseY-340);
+fill(mouseY,255,mouseX,60);
+ellipse(340,590,mouseX-360,mouseY-360);
+fill(mouseX,255,mouseY,60);
+ellipse(730,400,mouseX-380,mouseY-380);
+fill(255,mouseX,mouseY,50);
+ellipse(300,180,mouseX-400,mouseY-400);
+fill(mouseY,mouseX,255,50);
+ellipse(880,330,mouseX-420,mouseY-420);
+fill(255,mouseY,mouseX,50);
+ellipse(380,230,mouseX-440,mouseY-440);
+fill(mouseX,mouseY,255,50);
+ellipse(590,110,mouseX-460,mouseY-460);
+}
+
+

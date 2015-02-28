@@ -1,0 +1,21 @@
+
+size(400, 400);
+int a= min(89, 0, 9, 12, 56, 31, 28);
+int b= max(20, 4, 39, 137, 18, width);
+println(a);
+println(b);
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);
+a+=50;
+line(0, a, b, a);

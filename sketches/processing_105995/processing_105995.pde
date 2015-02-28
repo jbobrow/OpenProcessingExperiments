@@ -1,0 +1,222 @@
+
+Pineapple[] piney = new Pineapple[1];
+
+Clouds[] cloud=new Clouds[3];//class of clouds
+
+Flowers[] bob = new Flowers[9];
+
+void setup(){
+  size(800,400);
+ 
+   for (int k = 0; k<bob.length; k++){
+    bob[k]=new Flowers();
+  }
+  
+  bob[0].prime(700,350);
+  bob[1].prime(750,335);
+  bob[2].prime(65,380);
+  bob[3].prime(50,345);
+  bob[4].prime(90,360);
+  bob[5].prime(width/2,330);
+  bob[6].prime(600,340);
+  bob[7].prime(250,345);
+  bob[8].prime(740,368);
+  
+  for (int i=0;i<cloud.length;i++){
+    cloud[i]=new Clouds();
+  }
+  
+  cloud[0].prime(100, height/3);
+  cloud[1].prime(500, 200);
+  cloud[2].prime(200, 75);
+
+  
+  for(int j=0; j<piney.length;j++){
+    piney[j]=new Pineapple();
+  }
+    piney[0].prime(100,240);
+  
+
+  
+  
+}
+
+void draw(){
+  noStroke();
+  fill(31,87,3);//grass
+  rect(0,300,800,100);
+  fill(28,216,237);//sky
+  rect(0,0,800,300);
+  fill(100,106,107);//mountain
+  triangle(300,300,400,200,550,300);
+  triangle(450,300, 550, 250, 700, 300);
+  fill(181,197,199);//middle mountain
+  triangle(450,300,490,210,550,300);
+  
+  textSize(16);
+  fill(255);
+  text("Use arrows to move, Spacebar to stop.", 270, 375);
+  
+  
+  for(int i=0; i<cloud.length;i++){
+    cloud[i].animate();
+  }
+   for (int k =0;k<bob.length;k++){
+    bob[k].animate();
+  }
+  
+  for (int j=0; j<piney.length;j++){
+    piney[j].animate();
+    piney[j].move();
+  }
+  
+ 
+  
+}
+
+class Clouds{
+  
+  float x;
+  float y;
+  float xSpeed;
+  
+  void prime(float a, float b){
+    
+    x= a;
+    y= b;
+    xSpeed = random(-.75,.75);
+  }
+  
+  void animate(){
+    noStroke();
+    fill(255);
+    ellipse(x,y,50,50);//cloud
+    ellipse(x+20,y-10,65,100);
+    ellipse(x+50,y,90,60);
+    
+    x+= xSpeed;//cloud movement along x axis
+    
+    if (x<0 || x+110>width){//if hit wall, turn around
+     xSpeed*=-1;
+    }
+
+    
+  }
+  
+  
+  
+  
+}
+
+class Flowers{
+  float x;
+  float y;
+  float r= random(0,255);
+  float g= random(0,255);
+  float b= random(0,255);
+  float counter;
+  
+  void prime(float a, float b){
+    x= a;
+    y= b;
+    counter=0.0;
+    
+  }
+  
+  void animate(){
+    
+    stroke(255);
+    fill(r,g,b);//flower petals
+    ellipse(x,y-10,10,25);
+    ellipse(x,y+10,10,25);
+    ellipse(x+10,y,25,10);
+    ellipse(x-10,y,25,10);
+    
+    
+    fill(191,67,33);//flower center
+    ellipse(x,y,15,15);
+    
+  }
+  
+  void rotate(){
+    //i want the flowers to rotate around their center
+  }
+  
+  
+}
+class Pineapple {
+
+  float x;
+  float y;
+
+  float xSpeed;
+  float ySpeed;
+
+  void prime(float a, float b) {//setup function
+    x=a;
+    y=b;
+
+
+    xSpeed=1;
+    ySpeed=1;
+  } 
+
+  void animate() {
+
+    noStroke();
+    fill(252, 198, 48);
+    rect(x, y, 60, 100);//body
+
+    fill(255);
+    ellipse(x+20, y+20, 15, 15);//eyes
+    ellipse(x+40, y+20, 15, 15);//eyes
+
+    fill(0);
+    ellipse(x+20, y+25, 5, 5);
+    ellipse(x+40, y+25, 5, 5);//pupil
+
+
+
+    fill(111, 247, 143);
+    triangle(x+15, y, x+27.5, y-75, x+30, y);
+    triangle(x+30, y, x+32.5, y-75, x+45, y);
+
+    fill(10, 204, 55);//pineapple hair
+    triangle(x, y, x+10, y-50, x+20, y);
+    triangle(x+20, y, x+30, y-50, x+40, y);
+    triangle(x+40, y, x+50, y-50, x+60, y);
+
+    fill(102, 60, 5);//body grids
+    stroke(255);
+    line(x, y+34, x+59, y+100);
+    line(x+30, y+34, x+59, y+66);
+    line(x, y+50, x+20, y+35);
+    line(x, y+90, x+59, y+35);
+    line(x+30, y+99, x+59, y+66);
+
+    noStroke();
+    fill(0);
+    ellipse(x+30, y+70, 20, 30); //mouth 
+
+    fill(247, 89, 168);
+    ellipse(x+30, y+77, 10, 15);//tongue
+  }
+
+  void move() {
+    if (key==CODED) {
+      if (keyCode==RIGHT) {
+        x+=xSpeed;
+      } 
+      else if (keyCode==LEFT) {
+        x+=xSpeed*-1;
+      } 
+      else if (keyCode==UP) {
+        y+=ySpeed*-1;
+      } 
+      else if (keyCode==DOWN) {
+        y+=ySpeed;
+      }
+    }
+  }
+}
+

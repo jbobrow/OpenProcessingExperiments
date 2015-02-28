@@ -1,0 +1,36 @@
+
+size(500,400);
+background(193,54,94);
+strokeWeight(2);
+for(int i=150; i<=250; i=i+20){
+  line(100,i,400,i);
+}
+line(140,230,140,180);
+ellipse(130,230,20,15);
+ellipse(160,200,20,15);
+line(170,200,170,150);
+strokeWeight(3);
+strokeCap(SQUARE);
+line(140,180,170,150);
+strokeWeight(2);
+ellipse(220,170,20,15);
+line(210,170,210,220);
+//sharp
+line(187,156,187,184);
+line(192,154,192,182);
+strokeWeight(4);
+line(182,164,198,160);
+line(182,178,198,174);
+strokeWeight(2);
+line(380,150,380,250);
+strokeWeight(5);
+line(390,150,390,250);
+strokeWeight(2);
+ellipse(270,230,20,15);
+ellipse(310,230,20,15);
+ellipse(350,230,20,15);
+line(280,230,280,180);
+line(320,230,320,180);
+line(360,230,360,180);
+strokeWeight(4);
+line(280,180,360,180);

@@ -1,0 +1,106 @@
+
+SpriteObject skull;
+SpriteObject stoneSkull;
+SpriteObject image0;
+SpriteObject image1;
+SpriteObject image2;
+SpriteObject image3;
+SpriteObject image4;
+SpriteObject image5;
+SpriteObject image6;
+SpriteObject image7;
+SpriteObject image8;
+SpriteObject image9;
+SpriteObject[] myimages = new SpriteObject[10];
+int maxImages = 10;
+int imageIndex = 0;
+
+SpriteObject [] images = new SpriteObject[maxImages];
+
+ 
+void setup()
+{
+  size(500, 500);
+  
+  
+  for (int i = 0; i < images.length; i ++ )
+  {
+    images[i] = new SpriteObject( "animal" + i + ".jpg");
+    images[i].x = width/2;
+    images[i].y = height / 2;
+    //frameRate(5);
+  }
+  
+}
+  
+  
+
+ 
+void draw()
+{
+
+  if (imageIndex >= 10)
+  {
+  
+    imageIndex = 0;
+  
+  }
+  
+  images[imageIndex].render();
+
+
+}
+
+void keyReleased()
+{
+    imageIndex += 1;
+}
+
+
+ 
+class SpriteObject
+{
+  float x = 0.0;
+  float y = 0.0;
+  float w = -1.0;
+  float h = -1.0;
+  float rotation = 0.0;
+  float s = 1.0;
+  PImage img;
+  boolean loaded = false;
+   
+  SpriteObject(String filename)
+  {
+    this.img = requestImage(filename);
+  }
+   
+  void render()
+  {
+    if (this.img.width > 0 && loaded == false)
+    {
+      loaded = true;
+      if (this.w == -1.0)
+      {
+        this.w = this.img.width;
+      }
+      if (this.h == -1.0)
+      {
+        this.h = this.img.height;
+      }
+    }
+     
+    if (loaded)
+    {
+      imageMode(CENTER);
+      pushMatrix();
+      translate(this.x, this.y);
+      rotate(radians(this.rotation));
+      scale(this.s);
+      image(this.img, 0, 0, this.w, this.h);
+      popMatrix();
+    }
+  }
+}
+
+
+

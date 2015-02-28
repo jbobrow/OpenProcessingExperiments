@@ -1,0 +1,512 @@
+
+float s=1;
+float scaleSpeed=.01;
+float counter=0;
+float hue=0.0;
+float offset=10;
+float angle=0;
+void setup()
+{
+size(340,460);
+frameRate(20);
+}
+void draw()
+{
+  background(0);
+  rectMode(CENTER);
+  counter+=1/10.0;
+  println(counter);
+  angle+=0.1;
+  s+=scaleSpeed;
+  if(s>8||s<0)
+  {
+    scaleSpeed=-scaleSpeed;
+  }
+  float degrees=radians(45);
+  pushMatrix();
+  colorMode(HSB,360,100,100);
+  fill(random(0,360),100,50);
+  translate(width/2,height/2);
+  rotate(angle);
+  scale(s);
+  rect(0,0,50,50);
+  popMatrix();
+  colorMode(RGB,255,255,255);
+  if (counter>0&&counter<5)
+  {
+  drawMO1();
+  }
+  if (counter>5&&counter<10)
+  {
+  drawMO2();
+  }
+  if (counter>10&&counter<15)
+  {
+    drawMO3();
+  }
+ if (counter>15&&counter<20)
+ {
+   drawMO4();
+ }
+ if (counter>20&&counter<25)
+ {
+ drawMO5();
+ }
+   if (counter>25&&counter<30)
+   {
+     drawMO6();
+   }
+   if (counter>30&&counter<35)
+   {
+ drawMO7();
+   }
+   if (counter>35&&counter<45)
+   {
+   drawMO1();
+   drawMO2();
+   drawMO3();
+}
+   if (counter>45&&counter<55)
+   {
+   drawMO4();
+   drawMO5();
+   drawMO6();
+}
+   if (counter>55&&counter<65)
+   {
+   drawMO1();
+   drawMO7();
+   drawMO3();
+}
+   if (counter>65&&counter<75)
+   {
+   drawMO2();
+   drawMO4();
+   drawMO6();
+}
+   if (counter>75&&counter<85)
+   {
+   drawMO1();
+   drawMO7();
+   drawMO5();
+}
+   if (counter>87)
+   {
+   drawMO1();
+   drawMO2();
+   drawMO3();
+   drawMO4();
+   drawMO5();
+   drawMO6();
+   drawMO7();
+}
+}
+
+void drawMO1()
+{
+  fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,90,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,90,20,20);
+fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,110,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,110,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,130,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,130,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,150,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,110,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,130,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,150,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,170,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,190,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,170,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,190,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,210,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,210,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,150,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,210,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,170,20,20);
+ fill(random(0,255),0,0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,190,20,20);
+}
+void drawMO2()
+{
+  fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(100,400,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(120,400,20,20);
+fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,400,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,400,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,400,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(200,400,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(220,400,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(100,420,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(120,420,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,420,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,420,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,420,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(220,420,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(220,440,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(200,440,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,440,20,20);
+ fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(200,420,20,20); fill(0,random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,440,20,20);
+}
+void drawMO3()
+{
+  fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,440,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,420,20,20);
+fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,400,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,380,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,360,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,340,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(320,320,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,420,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,400,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,380,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,360,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,340,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,320,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(300,440,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,320,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,340,20,20);
+ fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,360,20,20); fill(0,0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(280,380,20,20);
+}
+void drawMO4()
+{
+  fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,220,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,220,20,20);
+fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(120,220,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(100,220,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(80,220,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(60,220,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,220,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(60,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(80,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(100,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(120,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,240,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(100,260,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(80,260,20,20);
+ fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(60,260,20,20); fill(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,260,20,20);
+}
+void drawMO5()
+{
+  fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,0,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,20,20,20);
+fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,40,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,60,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,80,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,100,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(180,120,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,0,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,20,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,40,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,60,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,80,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,100,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(160,120,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,60,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,80,20,20);
+ fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,100,20,20); fill(random(0,255),0,random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(140,120,20,20);
+}
+void drawMO6()
+{
+  fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,320,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,340,20,20);
+fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,320,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,360,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,380,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,400,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,420,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,440,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,340,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,360,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,380,20,20);
+ fill(0,random(80,255),random(2,185));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,400,20,20);
+ fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,420,20,20);
+ fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,440,20,20);
+ fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,440,20,20);
+ fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,420,20,20);
+ fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,400,20,20); fill(0,random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,380,20,20);
+}
+void drawMO7()
+{
+  fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,0,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,20,20,20);
+fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,40,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,60,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,80,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,100,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(20,120,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,120,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,100,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,60,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,80,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,40,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,20,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(0,0,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,0,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,20,20,20);
+ fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,40,20,20); fill(random(0,255),random(0,255),0);
+stroke(random(0,255),random(0,255),random(0,255));
+rect(40,60,20,20);
+}
+
+

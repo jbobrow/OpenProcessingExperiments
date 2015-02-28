@@ -1,0 +1,277 @@
+
+
+import ddf.minim.*;
+Minim minim = new Minim(this);
+AudioPlayer level1;
+AudioPlayer level2;
+AudioPlayer level3;
+AudioPlayer level4;
+AudioPlayer level5;
+
+PFont font;
+PFont font2;
+// VARIABLES
+int pos1;           // x-coordinate of the first object
+int pos2;           // x-coordinate of the second object
+int pos3;           // y-coordinate of the first object
+int pos4;           // y-coordinate of the second object
+int time;           // counts seconds
+int counter;        // counts frames
+int lvl;            // switch variable
+int s;              // get side-length
+int g;              // number of runs through level
+int speed;          // speed
+float f;            // feedback variable
+String again;       // end text
+boolean clicked1;   // is the first object clicked?
+boolean clicked2;   // is the second object clicked?
+boolean won;        // did the player win?
+
+// STATIC VARIABLES
+int start = 75;    // font size for start and end screens
+int num = 400;      // font size for the countdown
+int k = 40;         // side-length of objects
+int level = 0;      // level counter
+int frame = 60;     // framerate
+color fade1 = color (255, 255, 255, 40);
+color fade2 = color (0, 0, 0, 200);
+color fade3 = color (255, 255, 255, 20);
+color fade4 = color (255, 0, 0, 220);
+color fade5 = color (255, 255, 255);
+int width = 600;    // screen width
+int height = 600;   // screen height
+
+// SETUP
+void setup() {
+
+  size(600, 600);
+  noStroke();
+  smooth();
+  rectMode(CORNER);
+  ellipseMode(CORNER);
+  textAlign(CENTER, CENTER);
+  font = loadFont ("Loudnoise-100.vlw");
+  font2 = loadFont ("Chalkduster-48.vlw");
+  clicked1 = false;
+  clicked2 = false;
+  speed = 1;
+  s = k;
+  f = 0;          // opacity of feedback indicator
+  lvl = 0;
+  counter = 5*frame; //start at 5 seconds and count down
+
+  level1 = minim.loadFile("level1.mp3");
+  level2 = minim.loadFile("level2.mp3");
+  level3 = minim.loadFile("level3.mp3");
+  level4 = minim.loadFile("level4.mp3");
+  level5 = minim.loadFile("level5.mp3");
+  level1.loop();
+  level1.pause();
+}
+
+
+void draw() {
+  frameRate(frame);
+  background (fade2);
+  // frameCount = frames per second. 
+  // to count seconds we need to divide 
+  // the number of frames that have passed by the framecount:
+  time = counter/frame; 
+  g = 6+level;
+
+  // putting textSize outside of the switch case makes this the default size,
+  // all others are special, conditional sizes
+  textFont (font, start);
+  textSize(start);
+
+  // putting screenwrap outside of the switch case
+  // runs the screen wrapping function in every case
+  screenwrap(); 
+  println (level);
+
+
+  // SWITCH CASE
+  // lvl is not equivalent to level.
+  // using extra cases allows for reset to happen without looping
+  switch(lvl) {
+
+  case 0 :
+    // START SCREEN
+    // clearly demarcate a clickable box to begin game play
+    // the clicking area is dictated in the mouseClick function
+    fill(fade5);
+    rect(100, 100, width-200, height-200);
+    fill(fade2);
+
+    // using a string and a text box allows you 
+    // to center text easily on the screen
+    String click = " Click to Play";
+    text(click, 100, 100, width-200, height-200);
+    break;
+
+  case 1 :
+    // PHASE 1
+    gameScreen(); 
+    // instantiate objects at randomized coordinates
+    fill(fade4);
+    rect(pos1, pos3, s, s);
+    rect(pos2, pos4, s, s);
+    // if objects aren't clicked, advance them horizontally
+    if (clicked1 == false) {
+      pos1+=speed;
+    }
+    if (clicked2 == false) {
+      pos2+=speed;
+    }   
+    break;
+
+  case 2 :
+    // RESET FOR PHASE 2
+    // because this case calls the reset and then increments lvl
+    // this case runs once and does not loop
+    reset();
+    lvl++;
+    break;
+
+  case 3 :
+    // PHASE 2
+    // exactly the same as phase 1, only circles move vertically
+    gameScreen();
+    fill(fade4);
+    ellipse (pos1, pos3, s, s);
+    ellipse (pos2, pos4, s, s);
+    if (clicked1 == false) {
+      pos3+=speed;
+    }
+    if (clicked2 == false) {
+      pos4+=speed;
+    }
+    break;
+
+  case 4 :
+    // RESET FOR PHASE 3
+    reset();
+    lvl++;
+    break;
+
+  case 5 :
+    // PHASE 3
+    // one circle moves vertically, one square moves horizontally
+    gameScreen();
+    fill(fade4);
+    ellipse (pos1, pos3, s, s);
+    rect (pos2, pos4, s, s);
+    if (clicked1 == false) {
+      pos3+=speed;
+    }
+    if (clicked2 == false) {
+      pos2+=speed;
+    }
+    break;
+
+  case 6 :
+    // END SCREEN
+    if(level1.isLooping()){
+      level1.play();
+    }
+    else if (level2.isLooping()){
+      level2.play();
+    }
+    else if (level3.isLooping()){
+      level3.play();
+    }
+    else if (level4.isLooping()){
+      level4.play();
+    }
+    else if (level5.isLooping()){
+      level5.play();
+    }
+    fill (fade5);
+    if (won == false) {
+      again = " Try Again?";
+    }
+    else if (won == true) {
+      again = " Play Again?";
+    }
+    text(again, 100, 100, width-200, height-200);
+    break;
+
+  case 7 :
+    reset();
+    f = 0;
+    s = k;
+    speed += 1;
+    level += 1;
+    switch (level) {
+    case 1 :
+      level1.loop();
+      break;
+    case 2 :
+      level1.pause();
+      level2.loop();
+      break;
+    case 3 :
+      level2.pause();
+      level3.loop();
+      break;
+    case 4 :
+      level3.pause();
+      level4.loop();
+      break;
+    case 5 :
+      level4.pause();
+      level5.loop();
+      lvl++;
+      break;
+    }
+    lvl++;
+
+  case 8 :
+    // Level Up Screen
+    String lines = "Level Up! ";
+    text (lines + time, 100, 100, width-200, height-200);
+    counter--;
+    if (counter<=0) {
+      reset();
+      lvl = 1;
+    } 
+    break;
+  }
+  if (mousePressed) { 
+    if (lvl == 0 || lvl == 6) {
+      if (mouseX >= 100 && mouseX <= width-100 && mouseY >= 100 && mouseY <= height-100) {
+        reset();
+        lvl = 1;
+        level = 1;
+        level1.loop();
+        level2.pause();
+        level3.pause();
+        level4.pause();
+        level5.pause();
+        s = 40;
+        f = 0;
+        speed = 1;
+      }
+    }
+    // for all other cases, clicking the object registers it as clicked
+    else {
+      if (mouseX >= pos1 && mouseX <= pos1+s && mouseY >= pos3 && mouseY <= pos3+s) {
+        clicked1 = true;
+      }
+      if (mouseX >= pos2 && mouseX <= pos2+s && mouseY >= pos4 && mouseY <= pos4+s) {
+        clicked2 = true;
+      }
+    }
+  }
+  if (f > width) {
+    if (level == 5) {
+      lvl = 6;
+      won = true;
+    }
+    else {
+      lvl = 7;
+    }
+  }
+}
+
+

@@ -1,0 +1,150 @@
+
+void setup()
+{
+  size(800,800);
+  background(random(255),random(255),random(255));
+  smooth();
+  frameRate(60);
+}
+
+void draw()
+{
+  fill(random(255),random(255),random(255));
+  rect(0,0,width, height);
+  
+  for (int i=1; i < 1000; i++)
+  {
+    stroke(255,255,255);
+    strokeWeight(6);
+    point(random(width), random(height) );
+  }
+  
+  
+  strokeWeight(3);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,610,610);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,600,600);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,590,590);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,580,580);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,570,570);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,560,560);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,550,550);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,540,540);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,530,530);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,520,520);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,510,510);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,500,500);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,490,490);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,480,480);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,470,470);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,460,460); 
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,450,450);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,440,440);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,430,430);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,420,420);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,410,410);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,400,400);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,390,390);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,380,380);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,370,370);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,360,360);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,350,350);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,340,340);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,330,330);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,320,320);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,310,310);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,300,300);
+  fill(random(255),random(255),random(255)); 
+  ellipse(mouseX,mouseY,290,290);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,280,280);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,270,270);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,260,260);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,250,250);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,240,240);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,230,230);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,220,220);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,210,210);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,200,200);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,190,190);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,180,180);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,170,170);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,160,160);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,150,150);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,140,140);
+  fill(random(255),random(255),random(255));   
+  ellipse(mouseX,mouseY,130,130);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,120,120);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,110,110);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,100,100);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,90,90);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,80,80);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,70,70);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,60,60);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,50,50);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,40,40);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,30,30);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,20,20);
+  fill(random(255),random(255),random(255));
+  ellipse(mouseX,mouseY,10,10);
+  
+  
+ noCursor();
+  
+}

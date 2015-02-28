@@ -1,0 +1,111 @@
+
+PImage me, fire;
+boolean first=true, consumed=false;
+float fireTint=0;
+
+void setup()
+{
+  size(515,600);
+  stroke(0);
+  me=requestImage("mikhail2.jpg");
+  fire=requestImage("fire2.jpg");
+}
+
+void draw()
+{
+  if(first&&me.width>0)
+  {
+    me.filter(BLUR,1);
+    first=false;
+  }
+  if(consumed)
+  {
+    fireTint+=5;
+  }
+  else
+  {
+    fireTint-=5;
+  }
+  if(fireTint<-255)
+  {
+    consumed=true;
+  }
+  if(fireTint>255)
+  {
+    consumed=false;
+  }
+  tint(255);
+  image(me,0,0);
+  tint(255,fireTint);
+  image(fire,0,0);
+  if(fireTint<-20)
+  {
+    fill(3,3,10);
+    beginShape();
+    vertex(208,473);
+    vertex(104,595);
+    vertex(495,595);
+    vertex(505,532);
+    vertex(381,433);
+    vertex(243,551);
+    vertex(204,569);
+    vertex(200,534);
+    vertex(230,494);
+    vertex(208,473);
+    endShape();
+  }
+  if(fireTint<-80)
+  {
+    fill(254,189,157);
+    beginShape();
+    vertex(141,232);
+    vertex(141,329);
+    vertex(159,404);
+    vertex(221,467);
+    vertex(296,445);
+    vertex(331,391);
+    vertex(345,357);
+    vertex(373,347);
+    vertex(379,303);
+    vertex(285,201);
+    vertex(223,195);
+    vertex(141,232);
+    endShape();
+  }
+  if(fireTint<-160)
+  {
+    fill(176,126,21);
+    beginShape();
+    vertex(379,303);
+    vertex(285,201);
+    vertex(223,195);
+    vertex(140,232);
+    vertex(139,174);
+    vertex(173,130);
+    vertex(235,116);
+    vertex(313,135);
+    vertex(367,211);
+    vertex(379,303);
+    endShape();
+  }
+  if(fireTint<-200)
+  {
+    fill(255);
+    beginShape();
+    vertex(188,379);
+    vertex(246,420);
+    vertex(276,383);
+    vertex(188,379);
+    endShape();
+    line(234,328,209,346);
+    line(209,346,228,347);
+  }
+  if(fireTint<-220)
+  {
+    noFill();
+    bezier(161,299,150,249,222,250,202,299);
+    bezier(259,300,239,250,313,255,303,298);
+  }
+}
+
+

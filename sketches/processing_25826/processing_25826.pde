@@ -1,0 +1,62 @@
+
+size(250,250);
+background(0);
+PFont font;
+font = loadFont("Helvetica-Bold-15.vlw");
+
+textFont(font);
+ 
+fill(#086C6B);
+text("L3S3E1", 31, 85); 
+fill(#3B2EB7);
+text("L3S3E1", 95, 115);
+fill(#FF0095);
+text("L3S3E1", 55, 204); 
+fill(#960E9D);
+text("L3S3E1", 180, 40); 
+
+fill(#414146);
+text("MFJGI577OFGJEJG5EFD", 2, 40); 
+fill(#414146);
+text("AGSCJDIOFSDKCFDEJFOESDFJ4", 2, 11); 
+fill(#414146);
+text("ETEJFIDFJFEOIWF4R5439FIRJ43H", 2, 25);
+fill(#414146);
+text("FEFEFFDSFOFGJEJG5EFD4534FE", 2, 55);
+fill(#414146);
+text("DFNSJDFKSLDFJER349RRFEDSK", 2, 70);
+fill(#414146);
+text("FDHV43F803E30JFKE3I", 83, 85);
+fill(#414146);
+text("HTJRO540GJ0GR098GO3ONJGOY", 2, 100);
+fill(#414146);
+text("DJFJH489DKJF20FJKJ03DKFO78F", 2, 132);
+fill(#414146);
+text("FJ39FIJ0W0U8FGUF89FWJ0FY27D", 2, 147);
+fill(#414146);
+text("FHEWRI39EFI349RT73FEFJFIEF8H", 2, 162);
+fill(#414146);
+text("MFJGI577OFGJEJG5EFD4534FEFJ", 2, 176);
+fill(#414146);
+text("VNIO39FDF97RFJG30G7U2FJBDO", 2, 190);
+fill(#414146);
+text("CIEOWR832FU9E0F8RFD47UFO8DFJ", 2, 218);
+fill(#414146);
+text("COWIU4392EFUE29EUFE209DFDIP", 2, 232);
+fill(#414146);
+text("VIEOR83EFUFY27EUFJOS8EFUSD", 2, 247);
+fill(#414146);
+text("JFEIOW83ED97USP", 108, 204);
+fill(#414146);
+text("G5EFD", 2, 204);
+fill(#414146);
+text("MFJGI577OF", 2, 115);
+fill(#414146);
+text("JOE8R92EFKI", 149, 115);
+fill(#414146);
+text("0JFI", 2, 85);
+fill(#414146);
+text("FP", 232, 40);
+
+
+

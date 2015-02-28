@@ -1,0 +1,15 @@
+
+void setup() {
+  size(200, 200); 
+}
+
+void draw() {
+  background(255);
+  stroke(0);
+  rectMode(CENTER);
+  fill(175);
+  rect(100, 100, 175, 175);
+  fill(255);
+  ellipse(100, 100, 75, 75);
+}
+

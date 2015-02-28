@@ -1,0 +1,134 @@
+
+//Colors
+color a = color(0,236,255);
+color b = color(0,172,185);
+color c = color(121,173,240);
+color d = color(3,114,255);
+color e = color(0,70,160);
+color f = color(71,113,167);
+color g = color(23,114,229);
+color h = color(33,98,180);
+color i = color(57,144,255);
+color j = color(10,255,220);
+color k = color(22,214,186);
+color l = color(0,173,148);
+color m = color(56,206,185);
+color n = color(9,169,211);
+color o = color(12,131,193);
+color p = color(38,107,196);
+color q = color(47,64,211);
+color r = color(198,50,0);
+color s = color(62,17,2);
+color t = color(242,146,0);
+color u = color(252,121,20);
+color v = color(196,94,16);
+color w = color(165,75,7);
+color A = color(77,37,6);
+color B = color(118,58,12);
+color C = color(173,78,5);
+color D = color(255,175,13);
+color E = color(255,196,77);
+color F = color(255,141,0);
+color G = color(255,111,0);
+color H = color(250,141,58);
+color I = color(255,186,75);
+color J = color(255,135,75);
+color K = color(255,75,75);
+//Background
+size(800, 800);
+fill(K);
+rect(0, 0, 800, 800);
+//Head
+fill(I);
+ellipse(400, 330, 400, 600);
+//Glasses
+fill(J);
+rect(160, 200, 210, 130);
+rect(430, 200, 210, 130);
+noFill();
+rect(170, 210, 190, 110);
+rect(440, 210, 190, 110);
+//Glass Frames
+fill(a);
+triangle(170, 210, 170, 285, 310, 240);
+fill(b);
+triangle(170, 210, 320, 210, 310, 240);
+fill(c);
+triangle(310, 240, 320, 210, 360, 210);
+fill(d);
+triangle(310, 240, 360, 210, 360, 275);
+fill(e);
+triangle(340, 260, 360, 275, 360, 320);
+fill(f);
+triangle(340, 260, 360, 320, 270, 320);
+fill(g);
+triangle(270, 320, 250, 260, 170, 320);
+fill(h);
+triangle(170, 320, 170, 285, 250, 260);
+fill(i);
+triangle(270, 320, 300, 295, 262, 295);
+//Glass Frames 2
+fill(j);
+triangle(440, 210, 440, 267, 523, 210);
+fill(k);
+triangle(523, 210, 450, 260, 540, 260);
+fill(l);
+triangle(540, 260, 630, 210, 523, 210);
+fill(m);
+triangle(540, 260, 630, 210, 630, 320);
+fill(n);
+triangle(540, 260, 630, 320, 520, 320);
+fill(o);
+triangle(520, 320, 450, 260, 440, 320);
+fill(p);
+triangle(450, 260, 440, 320, 440, 267);
+fill(q);
+triangle(520, 320, 526, 300, 498, 300);
+//Eyes
+fill(r);
+ellipse(290, 270, 60, 40);
+fill(s);
+triangle(310, 240, 250, 260, 340, 260);
+fill(r);
+ellipse(500, 270, 60, 40);
+fill(s);
+triangle(480, 240, 540, 260, 450, 260);
+// Nose
+fill(t);
+rect(390, 290, 20, 120);
+fill(u);
+triangle(390, 290, 360, 430, 390, 410);
+triangle(410, 290, 410, 410, 440, 430);
+color(v);
+triangle(390, 410, 390, 440, 360, 430);
+triangle(410, 410, 440, 430, 410, 440);
+fill(w);
+rect(390, 410, 20, 30);
+ellipse(380, 425, 10, 10);
+ellipse(420, 425, 10, 10);
+//Mouth
+fill(D);
+rect(360, 480, 80, 20);
+fill(I);
+rect(360, 500, 80, 20);
+fill(E);
+triangle(360,500,360,520,300, 500);
+fill(F);
+triangle(360,500,360,480,300,500);
+fill(G);
+triangle(440,480,440,500,495,500);
+fill(H);
+triangle(440,500,495,500,440,520);
+//Mustache
+fill(A);
+triangle(400,465,530,450,530,470);
+fill(B);
+triangle(530,450,550,450,560,370);
+fill(C);
+triangle(560,370,500,420,500,400);
+triangle(400,465,270,450,270,470);
+fill(B);
+triangle(270,450,250,450,240,380);
+fill(A);
+triangle(240,380,300,420,320,400);
+

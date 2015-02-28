@@ -1,0 +1,56 @@
+
+void setup()
+{
+  size(500,500);
+  background(250,100,0);
+  strokeWeight(25);
+  stroke(120,30,0);
+  line(12,0,12,500);
+  stroke(140,30,0);
+  line(35,0,35,500);
+  strokeWeight(23);
+  stroke(160,40,0);
+  line(58,0,58,500);
+  strokeWeight(20);
+  stroke(180,55,0);
+  line(78,0,78,500);
+  strokeWeight(15);
+  stroke(200,70,0);
+  line(95,0,95,500);
+  strokeWeight(10);
+  stroke(230,80,0);
+  line(105,0,105,500);
+  strokeWeight(8);
+  stroke(250,90,0);
+  line(113,0,113,500);
+  noStroke();
+  fill(50,0,120);
+  ellipse(500,0,300,500);
+  fill(255,0,255);
+  ellipse(500,500,175,525);
+  fill(255,255,0);
+  ellipse(500,500,155,505);
+  ellipse(500,0,200,400);
+  fill(50,0,120);
+  ellipse(500,0,180,380);
+  fill(255,255,0);
+  ellipse(500,0,90,280);
+  fill(50,0,120);
+  ellipse(500,0,70,250);
+  fill(255,0,255);
+  ellipse(500,500,135,485);
+  fill(255,255,0);
+  ellipse(500,500,90,380);
+  fill(255,0,255);
+  ellipse(500,500,70,350);
+  fill(245,240,0);
+  rect(200,0,250,500);
+  fill(0,255,255);
+  triangle(200,250,450,75,450,400);
+  fill(200,0,50);
+  quad(200,250,450,75,100,0,400,0);
+  fill(0,255,25);
+  quad(200,250,450,400,385,500,50,500);
+}
+
+

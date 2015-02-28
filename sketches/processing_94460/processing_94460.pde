@@ -1,0 +1,64 @@
+
+size(198,198);
+background(100,100,0);
+int ladoy = (height - 7*2)/8;
+int ladox = (width - 7*2)/8;
+fill(255);
+rect(0,0,ladox,ladoy);
+for (int i = 0; i < 198; i=i+ladox+2) {
+  for (int j = 0; j < 198; j = j+ladoy+2) {
+    rect(i, j,ladox,ladoy);
+  }
+}
+fill(0);
+rect(0,7*ladox+7*2,ladox,ladoy);
+fill(40);
+rect(0,6*ladox+6*2,ladox,ladoy);
+rect(ladox+2,7*ladoy+7*2,ladox,ladoy);
+fill(50);
+rect(ladox+2,6*ladox+6*2,ladox,ladoy);
+rect(0,5*ladoy+5*2,ladox,ladoy);
+rect(2*ladox+2*2,7*ladoy+7*2,ladox,ladoy);
+fill(60);
+rect(ladox+2,5*ladoy+5*2,ladox,ladoy);
+rect(2*ladox+2*2,6*ladoy+6*2,ladox,ladoy);
+fill(70);
+rect(2*ladox+2*2,5*ladoy+5*2,ladox,ladoy);
+fill(90);
+rect(2*ladox+2*2,4*ladoy+4*2,ladox,ladoy);
+rect(3*ladox+3*2,5*ladoy+5*2,ladox,ladoy);
+fill(100);
+rect(3*ladox+3*2,4*ladoy+4*2,ladox,ladoy);
+rect(2*ladox+2*2,3*ladoy+3*2,ladox,ladoy);
+rect(4*ladox+4*2,5*ladoy+5*2,ladox,ladoy);
+fill(120);
+rect(2*ladox+2*2,2*ladoy+2*2,ladox,ladoy);
+rect(5*ladox+5*2,5*ladoy+5*2,ladox,ladoy);
+fill(140);
+rect(3*ladox+3*2,2*ladoy+2*2,ladox,ladoy);
+rect(5*ladox+5*2,4*ladoy+4*2,ladox,ladoy);
+fill(160);
+rect(4*ladox+4*2,2*ladoy+2*2,ladox,ladoy);
+rect(5*ladox+5*2,3*ladoy+3*2,ladox,ladoy);
+fill(170);
+rect(5*ladox+5*2,2*ladoy+2*2,ladox,ladoy);
+fill(180);
+rect(6*ladox+6*2,ladoy+2,ladox,ladoy);
+fill(200);
+rect(6*ladox+6*2,0,ladox,ladoy);
+rect(7*ladox+7*2,ladoy+2,ladox,ladoy);
+fill(220);
+rect(7*ladox+7*2,0,ladox,ladoy);
+fill(150,190,250);
+rect(ladox+2,3*ladoy+3*2,ladox,ladoy);
+rect(ladox+2,4*ladoy+4*2,ladox,ladoy);
+rect(3*ladox+3*2,3*ladoy+3*2,ladox,ladoy);
+rect(4*ladox+4*2,3*ladoy+3*2,ladox,ladoy);
+rect(4*ladox+4*2,4*ladoy+4*2,ladox,ladoy);
+rect(3*ladox+3*2,6*ladoy+6*2,ladox,ladoy);
+rect(4*ladox+4*2,6*ladoy+6*2,ladox,ladoy);
+fill(110,100,250);
+rect(5*ladox+5*2,0,ladox,ladoy);
+rect(5*ladox+5*2,ladoy+2,ladox,ladoy);
+rect(6*ladox+6*2,2*ladoy+2*2,ladox,ladoy);
+rect(7*ladox+7*2,2*ladoy+2*2,ladox,ladoy);

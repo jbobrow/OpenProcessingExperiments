@@ -1,0 +1,29 @@
+
+size(300, 200);
+point(150, 80);
+point(150, 81);
+point(150, 82);
+point(150, 83);
+point(150, 84);
+point(150, 85);
+point(150, 86);
+point(150, 87);
+point(150, 88);
+point(150, 89);
+point(150, 90);
+point(150, 91);
+point(150, 92);
+point(150, 93);
+point(150, 94);
+point(150, 95);
+point(150, 96);
+point(150, 97);
+point(150, 98);
+point(150, 99);
+point(150, 100);
+point(150, 101);
+point(150, 102);
+point(150, 103);
+point(150, 104);
+point(150, 105);
+

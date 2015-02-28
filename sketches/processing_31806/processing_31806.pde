@@ -1,0 +1,37 @@
+
+println("                 HOWL");
+println(" ");
+println("                 for");
+println("             Carl Solomon");
+println(" ");
+println("                  I");
+println(" ");
+println("I saw the best minds of my generation destroyed by");
+println("  madness, starving hysterical naked,");
+println("dragging themselves through the negro streets at dawn");
+println("  looking for an angry fix,");
+println("angelheaded hipsters burning for the ancient heavenly");
+println("  connection to the starry dynamo in the machin-");
+println("  ery of night,");
+println("who poverty and tatters and hollow-eyed and high sat");
+println("  up smoking in the supernatural darkness of");
+println("cold-water flats floating across the tops of cities");
+println("  contemplating jazz,");
+println("who bared their brains to Heaven under the El and");
+println("  saw Mohammedan angels staggering on tene-");
+println("  ment roofs illuminated,");
+println("who passed through universities with radiant cool eyes");
+println("  hallucinating Arkansas and Blake-light tragedy");
+println("  among the scholars of war,");
+println("who were expelled from the academies for crazy &");
+println("  publishing obscene odes on the windows of the");
+println("  skull,");
+println("who cowered in unshaven rooms in underwear, burn-");
+println("  ing their money in wastebaskets and listening");
+println("  to the Terror through the wall,");
+println("who got busted in their pubic beards returning through");
+println("  Laredo with a belt of marijuana for New York,");
+println("who ate fire in paint hotels or drank turpentine in");
+println("  Paradise Alley, death, or purgatoried their");
+println("  torsos night after night");
+

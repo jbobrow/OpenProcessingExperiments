@@ -1,0 +1,56 @@
+
+size(260, 260);
+smooth();
+fill(124, 255, 144);
+//background(137, 66, 11);
+strokeWeight(1);
+fill(255, 3, 188);
+triangle(0, 0, 130, 130, 0, 260);
+fill(3, 255, 188);
+triangle(0, 0, 130, 130, 260, 0);
+fill(188, 3 , 255);
+triangle(0, 260, 130, 130, 260, 260);
+fill(255, 188, 3);
+triangle(260, 260, 130, 130, 260, 0);
+strokeWeight(7.5);
+fill(155, 155, 155);
+triangle(20, 60, 240, 60, 130, 250);
+fill(255, 255, 255);
+triangle(20, 200, 240, 200, 130, 10);
+strokeWeight(2);
+fill(255, 202, 8);
+triangle(85, 130, 175, 130, 130, 180);
+fill(255);
+beginShape();
+vertex(100, 95);
+bezierVertex(130, 75, 130, 75, 162, 95);
+endShape();
+beginShape();
+vertex(100, 105);
+bezierVertex(130, 85, 130, 85, 162, 105);
+endShape();
+beginShape();
+vertex(100, 115);
+bezierVertex(130, 95, 130, 95, 162, 115);
+endShape();
+strokeWeight(1.5);
+beginShape();
+vertex(95, 130);
+bezierVertex(130, 105, 130, 105, 165, 130);
+endShape();
+beginShape();
+vertex(95, 130);
+bezierVertex(130, 155, 130, 155, 165, 130);
+endShape();
+fill(68, 161, 244);
+ellipse(130, 130, 24, 24);
+fill(100);
+beginShape();
+vertex(130, 118);
+bezierVertex(120, 130, 120, 130, 130, 142);
+endShape();
+fill(5);
+ellipse(130, 130, 5 , 5);
+
+
+

@@ -1,0 +1,24 @@
+
+size (400,400);
+background (162,205,90);
+int x = 10;
+strokeWeight (5);
+stroke (255);
+rect (x+40,x+40,x*15,x*18);
+stroke (0);
+fill (0);
+rect (x+50,x+50,x*13,x*13);
+text ("1994",110,210);
+strokeWeight (11);
+stroke (255,193,37);
+line (330,210,180,330);
+stroke (205,200,177);
+line (330,210,290,242);
+stroke (250,128,114);
+line (330,210,315,222);
+noStroke ();
+fill (238,197,145);
+triangle (180,323,188,332,162,345);
+stroke (0);
+strokeWeight (2);
+point (164,343);

@@ -1,0 +1,92 @@
+
+void setup(){
+  size(400,400);
+  background(0);
+  smooth();
+}
+
+void draw(){
+  smooth();
+  delay(115);
+  stroke(random(255));
+  line(30,200,370,20);
+  stroke(random(255));
+  line(30,200,370,40);
+  stroke(random(255));
+  line(30,200,370,60);
+  stroke(random(255));
+  line(30,200,370,80);
+  stroke(random(255));
+  line(30,200,370,100);
+  stroke(random(255));
+  line(30,200,370,120);
+  stroke(random(255));
+  line(30,200,370,140);
+  stroke(random(255));
+  line(30,200,370,160);
+  stroke(random(255));
+  line(30,200,370,180);
+  stroke(random(255));
+  line(30,200,370,200);
+  stroke(random(255));
+  line(30,200,370,220);
+  stroke(random(255));
+  line(30,200,370,240);
+  stroke(random(255));
+  line(30,200,370,260);
+  stroke(random(255));
+  line(30,200,370,280);
+  stroke(random(255));
+  line(30,200,370,300);
+  stroke(random(255));
+  line(30,200,370,320);
+  stroke(random(255));
+  line(30,200,370,340);
+  stroke(random(255));
+  line(30,200,370,360);
+  stroke(random(255));
+  line(30,200,370,380);
+  
+  
+  stroke(random(255),random(255),random(255));
+  line(30,20,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,40,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,60,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,80,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,100,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,120,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,140,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,160,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,180,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,200,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,220,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,240,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,260,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,280,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,300,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,320,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,340,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,360,370,200);
+  stroke(random(255),random(255),random(255));
+  line(30,380,370,200);
+  
+}
+  
+}

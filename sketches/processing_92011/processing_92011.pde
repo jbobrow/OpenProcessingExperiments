@@ -1,0 +1,21 @@
+
+size (200,200);
+background (0);
+rect (30,100,170,100);
+fill (204, 102, 0);
+rect (50,130,40,70);
+fill(0);
+line (70,130,70,200);
+strokeWeight (30);
+stroke(255);
+point (30,20);
+strokeWeight (5);
+stroke (0);
+point (60,165);
+point (80,165);
+strokeWeight (0);
+fill(0);
+ellipse (120,150,20,20);
+ellipse (160,150,20,20);
+fill (209);
+rect (10,80,190,30);

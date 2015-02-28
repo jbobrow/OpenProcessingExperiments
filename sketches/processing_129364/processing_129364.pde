@@ -1,0 +1,253 @@
+
+void setup(){
+  size(500,500);
+  noStroke();
+ 
+}
+void draw(){
+  background(255);
+ int x= 0;
+   int y =0;
+   int a=100;
+   int b=0;
+   int c=50;
+   int d=50; 
+ //top across
+ while (x<500){
+   fill(255);
+   triangle(x,y,a,b,c,d); 
+   x=x+100;
+   a=a+100;
+  c=c+100;
+   
+}
+ x=0;
+y=100;
+a=50;
+b=50;
+c=100;
+d=100;
+//upside facing 
+while(x<500){
+  fill(0);
+  triangle(x,y,a,b,c,d);
+  x=x+100;
+  a=a+100;
+  c=c+100;
+}
+x=0;
+y=0;
+a=0;
+b=100;
+c=50;
+d=50;
+while(x<500){
+  fill(145);
+  triangle(x,y,a,b,c,d);
+  x=x+100;
+  a=a+100;
+  c=c+100;
+}
+x=100;
+a=100;
+c=50;
+while(x<600){
+  fill(225);
+  triangle(x,y,a,b,c,d);
+  x=x+100;
+  a=a+100;
+  c=c+100;
+}
+x=0;
+y=100;
+a=50;
+b=150;
+c=100;
+d=100;
+while(x<600){
+  fill(255);
+  triangle(x,y,a,b,c,d);
+  x=x+100;
+  a=a+100;
+  c=c+100;
+}
+x=0;
+a=50;
+c=0;
+d=200;
+while(x<600){
+  fill(145);
+  triangle(x,y,a,b,c,d);
+  x=x+100;
+  a=a+100;
+  c=c+100;
+}
+x=50;
+y=150;
+a=100;
+b=100;
+c=100;
+while(x<600){
+  fill(225);
+  triangle(x,y,a,b,c,d);
+  a=a+100;
+  x=x+100;
+  c=c+100;
+}
+x=50;
+a=0;
+b=200;
+c=100;
+while(x<600){
+  fill(0);
+  triangle(x,y,a,b,c,d);
+  a=a+100;
+  c=c+100;
+  x=x+100;
+}
+//reverse
+x=0;
+y=200;
+a=100;
+b=200;
+c=50;
+d=250;
+while(x<600){
+  fill(255);
+  triangle(x,y,a,b,c,d);
+  x=x+100;
+  a=a+100;
+  c=c+100;
+}
+  x=0;
+  y=300;
+  a=100;
+  b=300;
+  c=50;
+  while(x<600){
+    fill(0);
+    triangle(x,y,a,b,c,d);
+    x=x+100;
+    a=a+100;
+    c=c+100;
+  }
+  x=100;
+  y=200;
+  a=100;
+  c=50;
+  while(x<600){
+    fill(225);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+  }
+  x=0;
+  a=0;
+  b=300;
+  c=50;
+  while(x<600){
+    fill(145);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+  }
+  //end reverse
+  x=0;
+  y=300;
+  a=100;
+  c=50;
+  d=350;
+  while(x<600){
+    fill(255);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+  }
+  x=0;
+  y=400;
+  a=100;
+  b=400;
+  c=50;
+  while(x<600){
+    fill(0);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+  }
+  x=0;
+  a=0;
+  b=300;
+  c=50;
+  while(x<600){
+    fill(145);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+  }
+  x=100;
+  y=400;
+  a=100;
+  c=50;
+  while(x<600){
+    fill(225);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+  }
+  x=100;
+  a=0;
+  b=400;
+  c=50;
+  d=450;
+    while(x<600){
+    fill(255);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+    }
+    x=0;
+    y=500;
+    a=100;
+    b=500;
+    c=50;
+    while(x<600){
+    fill(0);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+    }
+    x=0;
+    a=0;
+    b=400;
+    c=50;
+    while(x<600){
+    fill(145);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+    }
+    x=100;
+    y=400;
+    a=100;
+    b=500;
+    c=50;
+    while(x<600){
+    fill(225);
+    triangle(x,y,a,b,c,d);
+    a=a+100;
+    x=x+100;
+    c=c+100;
+    }
+}
+
+
+

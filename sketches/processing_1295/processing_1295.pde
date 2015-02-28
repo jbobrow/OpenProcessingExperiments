@@ -1,0 +1,10 @@
+
+/*
+class emitter{
+ kVec pos.
+ 
+ 
+  
+}
+*/
+

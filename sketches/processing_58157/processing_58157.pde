@@ -1,0 +1,82 @@
+
+
+Circle [] b = new Circle[25];
+
+boolean animate = true;
+
+int btnX = 260;
+int btnY = 50;
+int btnW = 80; 
+int btnH = 80;
+
+void setup() {
+size(400, 500);
+smooth();
+
+for (int i=0; i < 25; i++){
+b[i] = new Circle(2*i,.03*i,width/25*i);
+}
+}
+
+
+void draw () {
+background(200);
+for (int i=0; i <25; i++) {
+b[i].move();
+b[i].display(); }
+if (animate == true) {
+fill(200,40,20);
+}
+else { fill(50,20,200);
+}
+rect(260, 50, 80, 80);
+}
+
+
+void mousePressed() {
+if ( mouseX > 260 && mouseX < (260+80) && mouseY > 50 && mouseY < (50+80)) {
+// toggle the value of on
+// in other words, if on == true, then on becomes not true (false) and
+// vice versa
+animate = !animate; // on = (not)on
+}
+}
+
+class Circle {
+
+float speed;
+float gravity;
+float xpos;
+float ypos ;
+float dimensions;
+
+Circle (float dimensionsB, float speedB, float xposB) {
+
+speed = 1;
+gravity = speedB;
+xpos = xposB;
+ypos = -100;
+dimensions = dimensionsB;
+
+}
+
+void display () {
+ellipse (xpos, ypos, dimensions,dimensions);
+
+}
+void move() {
+if (animate == true) {
+ypos = ypos + speed;
+speed = speed + gravity;
+if (ypos > height-120) {
+// reduce the speed on every bounce to make it more
+// realistic.. try -1 and see what happens
+speed *= -0.7;
+
+ypos = height-120;
+
+}
+}
+}
+}
+

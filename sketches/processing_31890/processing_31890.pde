@@ -1,0 +1,57 @@
+
+// Elizabeth Tolson, N00209060, Annabel Lee by Edgar Allan Poe
+
+println("   Annabel Lee");
+println();
+println("      It was many and many a year ago,");
+println("      In a kingdom by the sea,");
+println("      That a maiden there lived whom you may know");
+println("      By the name of ANNABEL LEE;");
+println("      And this maiden she lived with no other thought");
+println("      Than to love and be loved by me.");
+println();
+println();
+println("          I was a child and she was a child,");
+println("          In this kingdom by the sea;");
+println("          But we loved with a love that was more than love-");
+println("          I and my Annabel Lee");
+println("          With a love that the winged serphs of heaven");
+println("          Coveted her and me.");
+println();
+println();
+println("              And this was the reason that, long ago,");
+println("              In this kingdom by the sea,");
+println("              A wind blew out of a cloud, chilling");
+println("              My beautiful Annabel Lee;");
+println("              So that her highborn kinsman came");
+println("              And bore her away from me,");
+println("              To shut her up in a sepulchre");
+println("              In this kingdom by the sea.");
+println();
+println();
+println("                   The angels, not half so happy in heaven,");
+println("                   Went envying her and me-");
+println("                   Yes!- that was the reason (as all men know,");
+println("                   In this kingdom by the sea)");
+println("                   That the wind came out of the cloud by night,");
+println("                   Chilling and killing my Annabel Lee.");
+println(); 
+println();
+println("                          But our love it was stronger by far than the love");
+println("                          Of those who were older than we-");
+println("                          Of many far wiser than we-");
+println("                         And neither the angels in heaven above,");
+println("                         Nor the demons down under the sea,");
+println("                         Can ever dissever my soul from the soul");
+println("                         Of the beautiful Annabel Lee.");
+println(); 
+println(); 
+println("                                  For the moon never beams without bringing me dreams");
+println("                                  Of the beautiful Annabel Lee;");
+println("                                  And the stars never rise but I feel the bright eyes");
+println("                                  Of the beautiful Annabel Lee;");
+println("                                  And so, all the night-tide, I lie down by the side");
+println("                                  Of my darling- my darling- my life and my bride,");
+println("                                  In the sepulchre there by the sea,");
+println("                                  In her tomb by the sounding sea. ");
+

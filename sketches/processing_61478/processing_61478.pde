@@ -1,0 +1,181 @@
+
+void setup() {
+  size(400, 400);
+  background(0);
+}
+void draw() {  
+   
+  background(0);
+  
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(100);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(100);
+  
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(255);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(100);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200,random(0, 400), random(0,400));
+  stroke(255);
+  ellipse(200, 200,random(0, 400), random(0,400));
+  stroke(100);
+  
+   ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(100);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(100);
+  
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(255);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(100);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200,random(0, 400), random(0,mouseY));
+  stroke(255);
+  ellipse(200, 200,random(0, 400), random(0,mouseY));
+  stroke(100);
+  
+   ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(100);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,400), random(0, 400));
+  stroke(100);
+  
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(255);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(100);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,400));
+  stroke(50);
+  ellipse(200, 200,random(0, 400), random(0,400));
+  stroke(255);
+  ellipse(200, 200,random(0, 400), random(0,400));
+  stroke(100);
+  
+   ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(100);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(50);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(255);
+  ellipse(200, 200, random(0,mouseX), random(0, 400));
+  stroke(100);
+  
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(255);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(100);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(0, 200, 255);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(0, 255, 200);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200, random(0, 400), random(0,mouseY));
+  stroke(50);
+  ellipse(200, 200,random(0, 400), random(0,mouseY));
+  stroke(255);
+  ellipse(200, 200,random(0, 400), random(0,mouseY));
+  stroke(100);
+  fill(0,0,0,1);
+  
+}
+
+

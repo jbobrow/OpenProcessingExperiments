@@ -1,0 +1,74 @@
+
+Particle[] particle = new Particle[10];
+
+boolean button = false;
+
+
+void setup () {
+  size(1000,500);
+  frameRate(30);
+  smooth();
+  background(255);
+  noStroke();
+
+  for (int i = 0; i < particle.length; i++) {
+    particle[i] = new Particle(random(1,299),random(height));
+  }
+}
+
+void draw() {
+  float d = dist(500,250,mouseX,mouseY);
+  background(d);
+
+  for (int i = 0; i < particle.length; i++) {
+    particle[i].display();
+    particle[i].move();
+    if (particle[i].x >= width) {
+      Particle p = new Particle(random(width),random(height));
+      if (particle.length < 100) {
+        particle = (Particle[]) append(particle,p);
+      } 
+      else {
+        for (int a= 0; a < particle.length-1; a++) {
+          particle[a] = particle[a+1]; 
+          particle[a] = particle[a+1];
+        }
+        particle[particle.length-1] = p;
+      }
+    }
+    
+    if (particle[i].checkLeft()) {
+      particle = (Particle[]) reverse(particle);
+      particle = (Particle[]) shorten(particle);
+    }
+  }
+}
+
+void keyPressed() {
+  noLoop();
+  for (int i = 0; i < particle.length; i++) {
+    if (particle[i].x <= 0) {
+      particle = (Particle[]) reverse(particle);
+      particle = (Particle[]) shorten(particle);
+    }
+  }
+}
+void keyReleased() {
+  loop();
+}
+
+void mousePressed () {
+  Particle p = new Particle(mouseX,mouseY);
+  if (particle.length < 100) {
+    particle = (Particle[]) append(particle,p);
+  } 
+  else {
+    for (int i = 0; i < particle.length-1; i++) {
+      particle[i] = particle[i+1]; 
+      particle[i] = particle[i+1];
+    }
+    particle[particle.length-1] = p;
+  }
+}
+
+

@@ -1,0 +1,25 @@
+
+size(200,200);
+background(0);
+stroke(255);
+strokeWeight(2);
+float a=4;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);
+a= a* 1.5;
+line(0, a, width, a);

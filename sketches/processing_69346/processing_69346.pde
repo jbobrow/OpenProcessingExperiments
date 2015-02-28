@@ -1,0 +1,24 @@
+
+size(300, 200);
+color c1 = #FFCC00;
+fill(c1);
+rect(0, 0, 300, 300);
+color c2 = #266A2E;
+fill(c2);
+quad(0, 0, 0, 150, 30, 150, 80, 80);
+rect(170, 0, 300, 150, 7);
+rect(0, 0, 120, 80, 7);
+rect(0, 180, 40, 200, 7);
+rect(260, 175, 300, 300, 4);
+color c3 = #000000;
+fill(c3);
+rect(85, 45, 30, 30);
+rect(0, 0, 300, 30);
+color c4 = #BFFF00;
+fill (c4);
+rect(140, 150, 15, 15);
+color c5 = #FF00FF;
+fill (c5);
+ellipse(170, 18, 15, 15);
+ellipse(190, 18, 15, 15);
+ellipse(210, 18, 15, 15);

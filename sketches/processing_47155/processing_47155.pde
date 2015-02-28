@@ -1,0 +1,17 @@
+
+class ColorData {
+    String colorName;
+    color colorValue;
+    //String emotionName;
+    //float emotionValue;
+    
+    ColorData(String name, color value) {
+      colorName = name;
+      colorValue = value;
+    }
+    
+    String toString(){
+      return colorName+" "+hex(colorValue, 6);
+    }
+}
+

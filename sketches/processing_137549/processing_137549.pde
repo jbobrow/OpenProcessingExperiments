@@ -1,0 +1,66 @@
+
+for (int x = 0; x < 100; x++) {
+ float n = norm(x, 0.0, 100.0); 
+ float a1 = n * 255.0;
+ stroke(a1);
+ line(x, 0, x, 5); 
+ float a2 = 5 + n * 255.0;
+ stroke(a2);
+ line(x, 5, x, 10); 
+  float b1 = 10 + n * 255.0;
+ stroke(b1);
+ line(x, 10, x, 15); 
+ float b2 = 15 + n * 255.0; 
+ stroke(b2);
+ line(x, 15, x, 20); 
+  float c1 = 20 + n * 255.0;
+ stroke(c1);
+ line(x, 20, x, 25); 
+ float c2 = 25 + n * 255.0;
+ stroke(c2);
+ line(x, 25, x, 30); 
+  float d1 = 30 + n * 255.0;
+ stroke(d1);
+ line(x, 30, x, 35); 
+ float d2 = 35 + n * 255.0; 
+ stroke(d2);
+ line(x, 35, x, 40); 
+ float e1 = 40 + n * 255.0;
+ stroke(e1);
+ line(x, 40, x, 45); 
+ float e2 = 45 + n * 255.0;
+ stroke(e2);
+ line(x, 45, x, 50); 
+ float f1 = 50 + n * 255.0;
+ stroke(f1);
+ line(x, 50, x, 55); 
+ float f2 = 55 + n * 255.0;
+ stroke(f2);
+ line(x, 55, x, 60); 
+ float g1 = 60 + n * 255.0;
+ stroke(g1);
+ line(x, 60, x, 65); 
+ float g2 = 65 + n * 255.0;
+ stroke(g2);
+ line(x, 65, x, 70);
+ float h1 = 70 + n * 255.0;
+ stroke(h1);
+ line(x, 70, x, 75); 
+ float h2 = 75 + n * 255.0;
+ stroke(h2);
+ line(x, 75, x, 80);  
+ float i1 = 80 + n * 255.0;
+ stroke(i1);
+ line(x, 80, x, 85); 
+ float i2 = 85 + n * 255.0;
+ stroke(i2);
+ line(x, 85, x, 90);
+ float j1 = 90 + n * 255.0;
+ stroke(j1);
+ line(x, 90, x, 95); 
+ float j2 = 95 + n * 255.0;
+ stroke(j2);
+ line(x, 95, x, 100); 
+}
+
+

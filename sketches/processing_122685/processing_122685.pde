@@ -1,0 +1,215 @@
+
+void setup()
+{
+  size(500,500);
+}
+ 
+void draw()
+{
+  background(150,150,255);
+  
+   
+  translate(width/2,height/2);
+  float sekunden = map (second (),0,60,0,360);
+  float minuten = map (minute(),0,60,0,360);
+  float stunden = map(hour(),0,12,0,360);
+  
+  
+  pushMatrix();
+  fill(255);
+  noStroke();
+  ellipse(100,210, 60, 40);
+  ellipse(120, 190, 50, 20);
+  ellipse(150, 200, 90, 70);
+  popMatrix(); 
+  pushMatrix();
+  fill(170,140,0);
+  noStroke();
+  ellipse(0,0,400,400);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(70,10,10);
+  rotate(radians(-45));
+  rect(-10, -230, 15, 30);
+  fill(0,200,0);
+  ellipse(-2,-230,35,30);
+  ellipse(-5,-235,30,30);
+  popMatrix();
+  pushMatrix();
+  fill(0,150,0);
+  noStroke();
+  ellipse(0,0,380,380);
+  popMatrix();
+  pushMatrix();
+  fill(170,140,0);
+  noStroke();
+  ellipse(0,0,290,290);
+  popMatrix();
+  pushMatrix();
+  fill(0, 150,0);
+  noStroke();
+  ellipse(0,0,270,270);
+  popMatrix();
+  pushMatrix();
+  fill(170,140,0);
+  noStroke();
+  ellipse(0,0,150,150);
+  popMatrix();
+  pushMatrix();
+  fill(0, 150, 0);
+  noStroke();
+  ellipse(0,0,130,130);
+  popMatrix();
+  pushMatrix();
+noStroke();
+fill(100,10,10);
+rect(15, -30, 30, 40);
+popMatrix();
+pushMatrix();
+noStroke();
+fill(0);
+rect(30, -5, 10, 15);
+rect(20, -35, 3,5);
+popMatrix();
+pushMatrix();
+noStroke();
+fill(230,230,0);
+rect(20, -20, 5, 7);
+rect(35, -20, 5, 7);
+popMatrix();
+pushMatrix();
+noStroke();
+fill(0,0,255);
+ellipse(-20, 10, 40, 30);
+ellipse(-30, 24, 20,15);
+popMatrix();
+  
+  
+  pushMatrix();
+  noStroke();
+  fill(200, 100,100);
+  rotate(radians(sekunden));
+  ellipse(5,-195,16,16);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(220, 200,0);
+  rotate(radians(sekunden));
+  ellipse(5,-195,10,10);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(200, 200,0);
+  rotate(radians(sekunden));
+  ellipse(10,-195,4,2);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(150, 100,0);
+  rotate(radians(sekunden));
+  ellipse(7,-202,6,2);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(150, 100,0);
+  rotate(radians(sekunden));
+  ellipse(7,-188,6,2);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(220, 200,0);
+  rotate(radians(sekunden));
+  ellipse(0,-195,10,3);
+  popMatrix();
+  
+  
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(minuten));
+  rect(0,-145,2,10);
+  popMatrix();
+   pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(minuten));
+  rect(-2,-145,2,2);
+  popMatrix();
+   pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(minuten));
+  rect(4,-145,2,2);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(minuten));
+  rect(3,-145,2,10);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(100,0,0);
+  rotate(radians(minuten));
+  rect(0,-135,6,10);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(100,0,0);
+  rotate(radians(minuten));
+  rect(5,-132,2,6);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(100,0,0);
+  rotate(radians(minuten));
+  rect(-2,-133,2,7);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(200,200,0);
+  rotate(radians(minuten));
+  ellipse(2,-122,5,6);
+  popMatrix();
+ 
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(stunden));
+  rect(0,-75,2,6);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(stunden));
+  rect(2,-75,2,1);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(stunden));
+  ellipse(1,-65,5,10);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(stunden));
+  rect(1,-63,8,2);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(stunden));
+  rect(8,-75,1,12);
+  popMatrix();
+  pushMatrix();
+  noStroke();
+  fill(0,0,0);
+  rotate(radians(stunden));
+  ellipse(3,-59,5,6);
+  popMatrix();
+    
+  
+}
+

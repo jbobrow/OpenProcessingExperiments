@@ -1,0 +1,60 @@
+
+size (600,400);
+
+  background(255);
+ smooth ();
+stroke (0);
+beginShape();
+vertex(162, 121); 
+bezierVertex(162, 102, 181, 84, 211, 84);
+bezierVertex(211, 84, 232, 84, 232, 84);
+bezierVertex(242,84,254,70,300,70);
+bezierVertex(348,70,357,84,368,84);
+bezierVertex(389,84,389,84,389,84);
+bezierVertex(419,84,438,102,438,121);
+bezierVertex(438,147,413,167,413,184);
+bezierVertex(413,238,386,240,386,262);
+bezierVertex(386,278,386,278,386,278);
+bezierVertex(386,286,383,286,376,286);
+bezierVertex(327,286,327,286,327,286);
+bezierVertex(321,286,319,286,319,281);
+bezierVertex(319,281,319,281,319,270);
+bezierVertex(319,270,319,270,319,270);
+bezierVertex(319,265,322,262,327,262);
+bezierVertex(346,262,346,262,346,262);
+bezierVertex(348,262,349,262,349,260);
+bezierVertex(344,193,344,193,344,193);
+bezierVertex(343,181,370,182,370,165);
+bezierVertex(338,165,338,165,338,165);
+bezierVertex(334,165,332,167,332,167);
+bezierVertex(335,238,335,238,335,238);
+bezierVertex(335,241,335,243,330,243);
+bezierVertex(270,243,270,243,270,243);
+bezierVertex(268,167,268,167,268,167);
+bezierVertex(268,167,266,165,262,165);
+bezierVertex(230,165,230,165,230,165);
+bezierVertex(230,182,257,181,256,193);
+bezierVertex(251,260,251,260,251,260);
+bezierVertex(251,262,252,262,254,262);
+bezierVertex(273,262,273,262,273,262);
+bezierVertex(279,262,281,265,281,270);
+bezierVertex(281,281,281,281,281,281);
+bezierVertex(281,286,279,286,273,286);
+bezierVertex(224,286,224,286,224,286);
+bezierVertex(217,286,214,286,214,278);
+bezierVertex(214,262,214,262,214,262);
+bezierVertex(214,240,187,238,187,184);
+bezierVertex(187,167,162,147,162,121);
+endShape();
+
+beginShape();
+vertex(267,305);
+bezierVertex(333,305,333,305,333,305);
+bezierVertex(338,305,346,308,346,317);
+bezierVertex(346,325,338,329,333,329);
+bezierVertex(339,329,339,329,267,329);
+bezierVertex(262,329,254,325,254,317);
+bezierVertex(254,308,262,305,267,305);
+endShape();
+
+

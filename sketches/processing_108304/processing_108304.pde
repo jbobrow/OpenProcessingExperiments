@@ -1,0 +1,20 @@
+
+println("walk forward four steps");
+println("raise right arm 90 degrees");
+println("extend arm and pick up ice cube tray");
+println("rotate 90 degrees to the left");
+println("walk forward three steps");
+println("rotate 90 degrees to the right");
+println("raist left arm 60 degrees");
+println("extend arm -- stop at handle of faucet");
+println("turn on faucet using hand");
+println("extend right arm until tray is under running water");
+println("fill tray");
+println("turn off faucet using left hand");
+println("lower left arm");
+println("rotate 180 degrees");
+println("walk forward three steps");
+println("raise left arm 90 degrees");
+println("grasp handle of freezer drawer and pull open");
+println("lower right arm and place tray down");
+println("push freezer drawer closed");

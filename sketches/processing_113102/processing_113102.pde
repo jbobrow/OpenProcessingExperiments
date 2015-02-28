@@ -1,0 +1,461 @@
+
+//Assignment 1
+//juichi lin
+
+void setup(){
+size(700,350);
+background(220,200,177);
+smooth();
+
+}
+
+void draw(){
+
+  //line star
+  stroke(0);
+//star 1
+strokeWeight(1.3);
+line(140,36,144,2);
+line(127,16,162,14);
+line(134,1,151,24);
+line(127,30,156,4);
+//star2
+strokeWeight(1.3);
+line(96,125,108,32);
+line(32,90,172,98);
+line(64,38,139,172);
+line(58,130,165,56);
+//star3
+strokeWeight(1.3);
+line(174,310,177,265);
+line(156,287,199,282);
+line(160,267,187,302);
+line(155,303,193,271);
+//star4
+strokeWeight(1.3);
+line(135,396,130,432);
+line(116,411,153,414);
+line(123,402,143,425);
+line(113,428,150,401);
+//star5
+strokeWeight(1.2);
+line(268,21,264,61);
+line(255,38,282,42);
+line(260,30,277,57);
+line(256,49,282,28);
+//star6
+strokeWeight(1.2);
+line(452,58,457,29);
+line(441.5,42,468,40);
+line(441,27,462,50);
+line(467,27,444,53);
+//star7
+strokeWeight(1.2);
+line(500,67,511,11);
+line(477,38,543,33);
+line(494,11,518,67);
+line(484,54,534,13);
+//star8
+strokeWeight(1.2);
+line(589,0,583,44);
+line(558,19,621,15);
+line(574,0,607,36);
+line(566,40,605,0);
+//star9
+strokeWeight(1.2);
+line(564,57,556,89);
+line(533,69,577,74);
+line(543,52,568,86);
+line(539,83,578,60);
+//star10
+strokeWeight(1.2);
+line(708,49,713,3);
+line(694,26,730,23);
+line(695,4,719,45);
+line(694,42,729,3);
+//star11
+strokeWeight(1.2);
+line(913,0,908,40);
+line(889,19,938,14);
+line(897,0,923,32);
+line(895,32,929,0);
+//star12
+strokeWeight(1.2);
+line(244,255,238,300);
+line(225,275,260,271);
+line(228,257,256,296);
+line(227,290,254,261);
+//star13
+strokeWeight(1.2);
+line(280,175,287,144);
+line(270,156,300,156);
+line(270,145,291,169);
+line(269,170,299,142);
+//star14
+strokeWeight(1.2);
+line(489,301,485,334);
+line(471,316,506,318);
+line(476,304,496,329);
+line(474,326,500,308);
+
+//line z
+//z1
+line(328,330,360,313);
+//z2
+line(500,346,521,324);
+line(521,324,533,347);
+line(533,347,555,328);
+line(555,328,567,344);
+line(567,344,601,309);
+//z3
+line(757,35,782,13);
+line(782,13,792,49);
+line(792,49,822,33);
+line(822,33,832,59);
+line(832,59,864,42);
+
+//line
+strokeWeight(1.2);
+line(401,129,388,164);
+line(368,162,407,166);
+line(865,277,703,500);
+//linegs1
+strokeWeight(1.3);
+line(98.8,131.1,78.8,179.5);
+line(32.2,304,18.5,350);
+//curvegs1
+beginShape();
+noFill();
+stroke(1.3);
+vertex(98.8,131.1);
+bezierVertex(60.9,157.6,6.2,223.6,0,247);
+endShape();
+
+//ellipse;
+fill(0);
+ellipseMode(CENTER);
+ellipse(870,42,17,19);//e1
+ellipse(757,35,25,24);//e2
+ellipse(853,104,21,20);//e3
+ellipse(604,309,16,17);//e4
+ellipse(503,346,15,19);//e5
+ellipse(364,315,19,21);//e6
+ellipse(313,25,34,28);//e7
+ellipse(79,19,32,32);//e8
+ellipse(101,464,42,43);//e9
+ellipse(218,105,19,21);//e10
+ellipse(395,257,17,16);//e25
+ellipse(324,335,25,29);//e28
+//e25 curve
+beginShape();
+noFill();
+stroke(1.2);
+vertex(395.5,255.8);
+bezierVertex(399.1,240.6,410.5,240.6,415.2,247);
+bezierVertex(420,253.4,417,271.3,393.6,274);
+bezierVertex(370.2,276.6,367.3,251.1,380,246.1);
+endShape();
+
+//eye background
+beginShape();
+fill(0);
+noStroke();
+vertex(292.8,138.7);
+bezierVertex(316.6,74,377,71.3,411,80);
+bezierVertex(444.3,88.4,474.9,95.6,495.2,120.6);
+bezierVertex(515.5,145.7,516.4,150.3,528.7,158.5);
+bezierVertex(541.1,166.8,456.4,155.4,433.9,148.6);
+bezierVertex(411.4,141.7,415.5,139.5,399.1,138.2);
+bezierVertex(379.5,136.6,377.3,135.8,366.6,131.5);
+bezierVertex(355.4,127,309,121.6,292.8,138.7);
+endShape();
+
+//eye background blue
+beginShape();
+fill(72,70,131);
+noStroke();
+vertex(372.4,76.8);
+bezierVertex(389.2,72.9,406.6,76.6,409.6,81.7);
+bezierVertex(404.2,96.5,403.9,133.5,399.1,138.2);
+bezierVertex(389.2,137,370,135.6,366.6,131.5);
+bezierVertex(363.1,127.4,355.6,80.7,372.4,76.8);
+bezierVertex(389.2,72.9,406.6,76.6,409.2,81.7);
+endShape();
+
+//eyes
+fill(205,50,42);
+noStroke();
+ellipse(362,103,65,56);//e29(eye1)
+ellipse(450,122,60,59);//e31(eye2)
+fill(0);
+ellipse(360,99,19,19);//e30(eye1)
+ellipse(446,116,18,17);//e32(eye2)
+//face
+noFill();
+  stroke(1.2);
+  beginShape();
+  curveVertex(446.9,8.4);
+  curveVertex(446.9,8.4); 
+  curveVertex(381,34); 
+  curveVertex(354.2,43.2);
+  curveVertex(292.8,75.4);
+  curveVertex(271.3,97);
+  curveVertex(256.9,125); 
+  curveVertex(244.9,153.6); 
+  curveVertex(235.9,195.1);
+  curveVertex(235.9,215.3);
+  curveVertex(247.9,231.7); 
+  curveVertex(296.3,255.8); 
+  curveVertex(339.6,272.3); 
+  curveVertex(376.6,279.7);
+  curveVertex(429.5,287.7); 
+  curveVertex(487.6,287.7); 
+  curveVertex(528.7,285.5);
+  curveVertex(559.6,277.8);
+  curveVertex(579.8,267.4);
+  curveVertex(589.6,250.9); 
+  curveVertex(592.7,229); 
+  curveVertex(592.7,205.6);
+  curveVertex(579.4,178.7);
+  curveVertex(562.2,156.2); 
+  curveVertex(543.4,133.3); 
+  curveVertex(517.7,111.9); 
+  curveVertex(481.7,90.5); 
+  curveVertex(444.5,66.4); 
+  curveVertex(417.6,46.3);
+  curveVertex(403.8,31.3);
+  curveVertex(387.2,5.4);
+  curveVertex(387.2,5.4);
+  endShape();
+//fblack1
+beginShape();
+fill(0);
+stroke(1.2);
+vertex(586.1,102.4);
+bezierVertex(603.7,102.4,603.3,104.2,610.3,105.1);
+bezierVertex(617.4,106,696.8,122.3,700,119.6);
+vertex(700,119.6,700,87.5);
+bezierVertex(678.2,75.7,632.8,83.5,624.4,107.7);
+endShape();
+//fblue1
+beginShape();
+fill(72,70,131);
+noStroke();
+vertex(624.4,107.7);
+bezierVertex(582.1,149,626.6,223.3,700.3,190.6);
+bezierVertex(724.1,180.9,718.5,128.3,700,119.6);
+vertex(700,190.6,700,107.7);
+endShape();
+//fblack2
+beginShape();
+fill(5);
+noStroke();
+vertex(683.5,21.9);
+bezierVertex(626.2,57.5,607.4,75.4,586.2,102.4);
+vertex(586.2,102.4,610.3,107.7);
+vertex(610.3,107.7);
+bezierVertex(639.7,66.9,650,62.2,683.5,21.9);
+endShape();
+//fblbe2
+beginShape();
+fill(72,70,131);
+noStroke();
+vertex(586.2,102.4);
+bezierVertex(573.6,115.1,563.9,136.5,561.5,153.9);
+bezierVertex(559.2,171.2,564.1,198.9,593,226.8);
+bezierVertex(621.8,254.7,676.7,300.3,688.5,302.1);
+bezierVertex(700.3,303.8,557.4,208.3,610.3,107.7);
+vertex(610.3,107.7,586.2,102.4);
+endShape();
+//fblack3
+beginShape();
+fill(5);
+noStroke();
+vertex(561.5,153.9);
+bezierVertex(559.2,171.2,564.1,198.9,593,226.8);
+bezierVertex(594.9,182.7,575.6,176.5,561.5,153.9);
+endShape();
+//fblack4
+beginShape();
+fill(5);
+noStroke();
+vertex(586.2,102.4);
+bezierVertex(552.7,96.6,530.6,103.3,516.8,112.7);
+bezierVertex(535.1,124.9,549.4,144.6,561.5,153.9);
+endShape();
+
+//husei
+beginShape();
+fill(10);
+noStroke();
+vertex(355.6,151.5);
+bezierVertex(360.5,151.9,283.1,168,281.6,196.5);
+bezierVertex(280.2,225,331,217.1,353.7,220.9);
+bezierVertex(376.3,224.7,393.3,220,429.2,234.7);
+bezierVertex(465.1,249.4,485.1,249.7,492.1,245);
+bezierVertex(499.2,240.3,512.7,225.3,509.2,195.6);
+bezierVertex(505.7,165.9,476,171.2,467.4,168.3);
+bezierVertex(458.9,165.4,491.5,184.8,492.1,206.5);
+bezierVertex(492.7,228.3,479.5,239.4,463.6,232.1);
+bezierVertex(447.7,224.7,440.7,197.7,425,204.8);
+bezierVertex(409.2,211.8,395.7,219.9,386.9,208.2);
+bezierVertex(378.1,196.5,367.8,192.7,343.1,201.5);
+bezierVertex(318.4,210.3,289.9,209.7,295.2,195.9);
+bezierVertex(300.5,182.1,344.5,161.7,355.6,151.5);
+endShape();
+
+
+//curve
+
+noFill();
+stroke(0);
+//curve1
+stroke(0);
+//A1
+arc(891,264,61,53,-PI/2,PI/4*5);
+//curve2
+arc(952,269,57,58,0,PI/2*3);
+beginShape();
+vertex(980,268);
+bezierVertex(980,240,925,186,869,169);
+bezierVertex(824,162,786,187,780,205);
+bezierVertex(725,248,721,325,682,343.5);
+bezierVertex(642,362,548,400,528,500);
+endShape();
+//curve3
+beginShape();
+vertex(785,309);
+bezierVertex(840,322,860,392,795,364);
+bezierVertex(839,386,771,415,766,364);
+endShape();
+//curve4
+beginShape();
+fill(233,236,239);
+noStroke();
+vertex(1000,343);
+bezierVertex(892,407,812,431,740,463);
+bezierVertex(850,452,960,415,1000,402);
+endShape();
+
+//black1
+beginShape();
+fill(0);
+noStroke();
+vertex(889,398.3);
+bezierVertex(847.8,386.4,852.8,341.2,891.2,325.3);
+bezierVertex(929.6,309.4,962.1,324.1,953.5,366);
+bezierVertex(949.6,418.8,929,410,889,398.3);
+endShape();
+//black2
+beginShape();
+fill(0);
+noStroke();
+vertex(945.7,403.8);
+bezierVertex(961.9,400.3,1000,415,1000,442.6);
+bezierVertex(1000,470.2,979.8,490.2,954,478.2);
+bezierVertex(928.1,466.1,932.7,406.6,945.7,403.8);
+endShape();
+
+//black3
+beginShape();
+fill(0);
+noStroke();
+vertex(750.2,464);
+bezierVertex(804.9,464.6,938.4,434.6,952.5,425.8);
+bezierVertex(966.6,417,931.9,395.8,911.9,393.5);
+bezierVertex(891.9,391.1,812.9,433.6,775.5,449.3);
+bezierVertex(734.3,464.6,693.8,464,750.2,464);
+endShape();
+//blue1
+fill(72,70,131);
+  noStroke();
+  beginShape();
+  curveVertex(944.6,404.3); 
+  curveVertex(944.6,404.3); 
+  curveVertex(951.2,385.1);
+  curveVertex(954,364.2);
+  curveVertex(891,396.6);
+  curveVertex(908.2,402.5); 
+  curveVertex(938.2,406.5); 
+  curveVertex(941.7,410.7);
+  curveVertex(935.5,431.2);
+  curveVertex(979.8,417.7); 
+  curveVertex(961.3,408.3); 
+  curveVertex(944.6,404.3); 
+  curveVertex(944.6,404.3);
+  endShape();
+
+//curve f
+beginShape();
+noFill();
+stroke(1.2);
+vertex(247.9,0);
+bezierVertex(258.4,21.3,174.6,47.4,162.3,98.3);
+bezierVertex(149.9,149.2,210.2,162.3,244.9,153.6);
+bezierVertex(279.6,144.8,283.4,120.6,271.3,97);
+bezierVertex(259.3,73.3,245.1,64.5,228,71.1);
+bezierVertex(210.8,77.8,206.2,88.3,215.1,101.1);
+endShape();
+//face-black
+beginShape();
+fill(0);
+noStroke();
+vertex(271.3,97);
+bezierVertex(283.4,120.6,279.6,144.8,244.9,153.6);
+bezierVertex(256.1,131.5,249.6,125.4,271.3,97);
+endShape();
+//curvegblue
+beginShape();
+fill(72,70,131);
+noStroke();
+vertex(29.5,350);
+bezierVertex(45,271.3,127.9,287.1,128.3,350);
+vertex(29.5,350,128.3,350);
+endShape();
+//ellipse green
+beginShape();
+fill(100,102,67);
+noStroke();
+vertex(78.8,179.5);
+bezierVertex(41.9,230.3,18.5,197.4,32.2,304);
+bezierVertex(45.9,310.6,37.5,308.8,47.6,311.5);
+bezierVertex(57.8,314.1,85.5,318.5,110.7,307.9);
+bezierVertex(135.8,297.4,145.8,268.8,151.1,247);
+bezierVertex(156.4,225.2,148.2,207.1,132.3,193.6);
+bezierVertex(116.4,180.1,105.2,175.4,78.8,179.5);
+endShape();
+//curvegs1
+beginShape();
+fill(5);
+noStroke();
+vertex(78.8,179.5);
+bezierVertex(18.5,189.3,-21.2,257.9,32.2,304);
+vertex(32.2,304,78.8,179.5);
+endShape();
+//curvegs&gsb=black
+beginShape();
+fill(5);
+noStroke();
+vertex(47.6,311.5);
+bezierVertex(57.8,314.1,85.5,318.5,110.7,307.9);
+bezierVertex(93.8,292.8,66.5,291.8,47.6,311.5);
+endShape();
+
+//fbb
+beginShape();
+fill(5);
+noStroke();
+vertex(560.6,247);
+vertex(560.6,247,537.7,225.6);
+vertex(537.7,225.6,575.3,228);
+vertex(575.3,228,575.3,228);
+vertex(575.3,228,60,284.4);
+vertex(60,284.4,513.3,304.4);
+vertex(513.3,304.4,560.6,247);
+endShape();
+
+
+
+}
+
+

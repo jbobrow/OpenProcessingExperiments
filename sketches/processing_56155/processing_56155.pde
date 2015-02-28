@@ -1,0 +1,45 @@
+
+size(720, 480); 
+smooth(); 
+strokeWeight(2); 
+background(255, 204, 0); //set background yellow
+ellipseMode(RADIUS);
+
+// Neck 
+stroke(102); // Set stroke to gray
+line(266, 257, 266, 162); // Left
+line(276, 257, 276, 162); // Middle
+line(286, 257, 286, 162); // Right
+
+// Antennae 
+line(276, 155, 246, 112); // Small
+line(276, 155, 306, 56); // Tall
+line(276, 155, 342, 170); // Medium
+
+// Body 
+noStroke(); // Disable stroke
+fill(102, 154, 301); // Set fill to blue
+ellipse(264, 377, 33, 33); // Antigravity orb
+fill(0); // Set fill to black
+rect(219, 257, 90, 120); // Main body
+fill(253, 0, 298); // Set fill to pink
+rect(219, 274, 90, 6); // Gray stripe 1
+fill(102, 154, 301); // Set fill to blue
+rect(219, 266, 90, 6); // Gray stripe 2
+rect(219, 290, 90, 10); // Gray stripe 3
+triangle(180, 150, 219, 257, 165, 300); // Wing
+
+// Head 
+fill(0); // Set fill to black
+ellipse(276, 155, 45, 45); // Head
+fill(255); // Set fill to white
+ellipse(288, 150, 14, 14); // Large eye
+fill(0); // Set fill to black
+ellipse(288, 150, 3, 3); // Pupil
+fill(253, 0, 298); // Set fill to pink
+ellipse(263, 148, 5, 5); // Small eye 1
+ellipse(296, 130, 4, 4); // Small eye 2
+ellipse(305, 162, 3, 3); // Small eye 3
+fill(102, 154, 301); // Set fill to blue
+ellipse(250, 85, 38, 15); //halo
+

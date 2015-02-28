@@ -1,0 +1,52 @@
+
+background(255, 255, 255);
+
+strokeWeight(4);
+line(0, 12, 100, 12);
+strokeWeight(4);
+line(0, 60, 100, 60);
+strokeWeight(3);
+line(8, 0, 8, 60);
+strokeWeight(4);
+line(9, 36, 100, 36);
+strokeWeight(4);
+line(30, 0, 30, 100);
+strokeWeight(3);
+line(43, 0, 43, 60);
+strokeWeight(3);
+line(65, 0, 65, 100);
+strokeWeight(3);
+line(69, 0, 69, 100);
+strokeWeight(4);
+line(83, 0, 83, 100);
+strokeWeight(4);
+line(30, 94, 100, 94);
+strokeWeight(3);
+line(74, 0, 74, 92);
+strokeWeight(3);
+line(97, 0, 97, 60);
+strokeWeight(3);
+line(65, 75, 100, 75);
+
+fill(203, 29, 29);
+noStroke();
+rect(0, 0, 7, 10);
+fill(203, 29, 29);
+noStroke();
+rect(0, 14, 7, 10);
+fill(203, 29, 29);
+noStroke();
+rect(0, 52, 7, 6);
+fill(247, 211, 80);
+noStroke();
+rect(32, 38, 10, 20);
+fill(34, 39, 162);
+noStroke();
+rect(32, 0, 10, 10);
+fill(34, 39, 162);
+noStroke();
+rect(85, 96, 15, 100);
+fill(203, 29, 29);
+noStroke();
+rect(85, 45, 11, 8);
+

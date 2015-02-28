@@ -1,0 +1,49 @@
+
+
+void loadImages() { 
+grass1 = loadImage("grass1.JPG");
+grass2 = loadImage("grass2.JPG");
+  grass3 = loadImage("grass3.JPG");
+  grass4 = loadImage("grass4.JPG");
+  grass5 = loadImage("grass5.JPG");
+  shade1 = loadImage("shade1.JPG");
+  shade2 = loadImage("shade2.JPG");
+  shade3 = loadImage("shade3.JPG");
+  leaf1 = loadImage("leaf1.JPG");
+  leaf2 = loadImage("leaf2.JPG");
+  leaf3 = loadImage("leaf3.JPG");
+  leaf4 = loadImage("leaf4.JPG");
+  farm3 = loadImage("farm3.JPG");
+  farm5 = loadImage("farm5.JPG");
+  farm6 = loadImage("farm6.JPG");
+  farm7 = loadImage("farm7.JPG");
+  stick1 = loadImage("stick1.JPG");
+  stick2 = loadImage("stick2.JPG");
+  stick3 = loadImage("stick3.JPG");
+  stick4 = loadImage("stick4.JPG");
+  sand1 = loadImage("sand1.JPG");
+  sand2 = loadImage("sand2.JPG");
+  sand3 = loadImage("sand3.JPG");
+  sand4 = loadImage("sand4.JPG");
+  road1 = loadImage("road1.JPG");
+  road2 = loadImage("road2.JPG");
+  road3 = loadImage("road3.JPG");
+  road4 = loadImage("road4.JPG");
+  road5 = loadImage("road5.JPG");
+  road6 = loadImage("road6.JPG");
+  road7 = loadImage("road7.JPG");
+  road8 = loadImage("road8.JPG");
+  road9 = loadImage("road9.JPG");
+  road10 = loadImage("road10.JPG");
+  road11 = loadImage("road11.JPG");
+  road12 = loadImage("road12.JPG");
+  road13 = loadImage("road13.JPG");
+  cliff1 = loadImage("cliff1.JPG");
+  cliff2 = loadImage("cliff2.JPG");
+  cliff3 = loadImage("cliff3.JPG");
+  cliff4 = loadImage("cliff4.JPG");
+  cliff5 = loadImage("cliff5.JPG");
+  cliff6 = loadImage("cliff6.JPG");  
+  cliff7 = loadImage("cliff7.JPG");
+}
+

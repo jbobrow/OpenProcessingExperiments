@@ -1,0 +1,24 @@
+
+size(200, 300);
+background(255);
+fill(0);
+ellipse(100, 100, 180, 170);
+fill(255, 200, 0);
+ellipse(100, 150, 150, 180);
+fill(255);
+ellipse(70, 100, 30, 10);
+ellipse(130, 100, 30, 10);
+fill(0);
+ellipse(70, 100, 5, 5);
+ellipse(130, 100, 5, 5);
+noFill();
+ellipse(70, 100, 50, 50);
+ellipse(130, 100, 50, 50);
+ellipse(100, 100, 10, 1);
+fill(0);
+ellipse(100, 200, 20, 40);
+ellipse(90, 170, 30, 7);
+ellipse(110, 170, 30, 7);
+ellipse(95, 150, 5, 3);
+ellipse(105, 150, 5, 3);
+fill(255, 0, 0);

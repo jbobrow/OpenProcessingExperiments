@@ -1,0 +1,93 @@
+
+//Gabriela Nisenbaum
+//Jan. 31 2013
+//How to do laundry
+
+//detergent is on top of the washing machine
+//laundry card is on top of the washing machine
+//pile of clothes are next to the person
+println("tilt body to level of washing machine");
+println("stretch left arm out to door");
+println("ungrasp left hand");
+println("grasp left hand on door handle");
+println("pull door open");
+println("turn body to clothes");
+println("open arms");
+println("close arms around clothes");
+println("turn to washing machine");
+println("release clothes inside washing machine");
+println("stretch body up");
+println("stretch right arm to door handle");
+println("ungrasp right hand");
+println("grasp right hand on door handle");
+println("move arm to the left to close door");
+println("stretch left arm upward");
+println("ungrasp left hand");
+println("grasp left hand on detergent drawer");
+println("pull drawer out");
+println("ungrasp drawer");
+println("move left arm up");
+println("ungrasp left hand");
+println("grasp left hand on detergent bottle handle");
+println("ungrasp right hand");
+println("grasp right hand on lid of detergent bottle");
+println("twist lid clockwise");
+println("remove lid");
+println("hold lid upside down");
+println("pour detergent into lid");
+println("pour detergent from lid to drawer");
+println("place lid back on bottle");
+println("twist lid counterclockwise");
+println("place bottle on top of machine");
+println("push drawer in with left hand");
+println("move right arm up");
+println("ungrasp right hand");
+println("grasp right hand on card");
+println("move right arm down");
+println("insert card in slot");
+println("ungrasp right hand");
+println("turn right arm to buttons");
+println("press button");
+println("turn right arm to card slot");
+println("ungrasp right hand");
+println("grasp right hand on card");
+println("pull card out");
+println("wait indicated time");
+println("stretch left arm out to door");
+println("ungrasp left hand");
+println("grasp left hand on door handle");
+println("pull door open");
+println("stretch both arms out into machine");
+println("close arms around clothes");
+println("move arms up");
+println("move arms forward");
+println("release clothes on top of machine");
+println("rotate body to dryer");
+println("stretch left arm out to door");
+println("ungrasp left hand");
+println("grasp left hand on door handle");
+println("pull door open");
+println("ungrasp laft hand from door handle");
+println("rotate body back to previous position");
+println("stretch arms to clothes pile");
+println("close arms around clothes");
+println("rotate body to dryer");
+println("tilt body down");
+println("stretch arms out into dryer");
+println("release clothes");
+println("stretch body up");
+println("stretch right arm to door handle");
+println("ungrasp right hand");
+println("grasp right hand on door handle");
+println("move arm to the left to close door");
+println("ungrasp right hand from door handle");
+println("wait indicated time");
+println("stretch left arm out to door");
+println("ungrasp left hand");
+println("grasp left hand on door handle");
+println("pull door open");
+println("stretch both arms out into machine");
+println("close arms around clothes");
+println("move arms up");
+println("move arms forward");
+println("release clothes on top of machine");

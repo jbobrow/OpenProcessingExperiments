@@ -1,0 +1,125 @@
+
+void setup(){
+  size(500,500);
+}
+void draw(){
+ strokeWeight(2);
+ stroke(255);
+  background(0);
+int x=0; 
+while(x<600){
+  line(0,x,500,x);
+  x=x+25;
+}
+x=0;
+while(x<600){
+  line(x,0,x,500);
+  x=x+25;
+}
+float a=12.5;
+float b=37.5;
+while(a<width){
+  fill(255);
+rect(a,12.5,12.5,12.5);
+a=a+25;
+}
+a=0;
+while(a<width){
+  rect(a,37.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,62.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,87.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,112.5,12.5,12.5);
+  a=a+25;
+}
+a=0;
+while(a<width){
+  rect(a,137.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,162.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,187.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,212.5,12.5,12.5);
+  a=a+25;
+}
+a=0;
+while(a<width){
+  rect(a,237.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,262.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,287.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,312.5,12.5,12.5);
+  a=a+25;
+}
+//strange
+a=0;
+while(a<width){
+  rect(a,337,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,362.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,387.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,412.5,12.5,12.5);
+  a=a+25;
+}
+
+a=0;
+while(a<width){
+  rect(a,437.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,462.5,12.5,12.5);
+  a=a+25;
+}
+a=12.5;
+while(a<width){
+  rect(a,487.5,12.5,12.5);
+  a=a+25;
+}
+}
+
+

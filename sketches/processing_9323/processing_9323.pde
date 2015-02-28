@@ -1,0 +1,82 @@
+
+// an exercise of making a class of objects that bounces
+// schien@mail.ncku.edu.tw
+
+Ball a_ball, another_ball, onemore_ball;
+
+void setup() {
+  size(200,200);
+  smooth();
+  background(255);
+  a_ball = new Ball(100, 100, 1, 3.3);
+  another_ball = new Ball(random(width), random(height), random(5), random(5));
+  onemore_ball = new Ball(random(width), random(height), random(7), random(5));
+}
+
+void draw() {
+  noStroke();
+  fill(255,10);
+  rect(0,0,width,height);
+
+  // Add the current speed to the location.
+  a_ball.update();
+  another_ball.update();
+  onemore_ball.update();
+
+  // display
+  a_ball.display();
+  another_ball.display();
+  onemore_ball.display();
+
+}
+
+class Ball {
+  PVector loc;  // location
+  PVector vol;  // velocity
+
+  // constructor
+  Ball(PVector l, PVector v) {
+    loc = l;
+    vol = v;
+  }
+
+  // constructor
+  Ball(float x, float y, float xsp, float ysp) {
+    loc = new PVector(x, y);
+    vol = new PVector(xsp, ysp);
+  }
+
+  void update() {
+    // Check for bouncing
+    if ((xlocation() > width) || (xlocation() < 0)) {
+      changeSpeed(new PVector(-1,1));
+    }
+    if ((ylocation() > height) || (ylocation() < 0)) {
+      changeSpeed(new PVector(1,-1));
+    }
+    loc.add(vol);
+  }
+
+  void display() {
+    stroke(0);
+    fill(175);
+    ellipse(loc.x,loc.y,16,16);
+  }
+
+  float xlocation() {
+    return loc.x;
+  }
+
+  float ylocation() {
+    return loc.y;
+  }
+
+  PVector changeSpeed(PVector a) {
+    vol.mult(a);
+    return vol;
+  }
+}
+
+
+
+

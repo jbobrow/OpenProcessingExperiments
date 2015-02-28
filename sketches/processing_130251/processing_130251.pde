@@ -1,0 +1,21 @@
+
+size(400,400);
+background(247,190,238);
+rotate(PI/9);
+int x;
+int y;
+x=200;
+y=100;
+strokeWeight(x-190);
+line(x,y,200,375);
+strokeWeight(x-195);
+fill(255,255,255);
+ellipse(x,y,x-20,x-20);
+fill(240,108,152);
+ellipse(x,y,x-50,x-50);
+fill(255,255,255);
+ellipse(x,y,x-80,x-80);
+fill(240,108,152);
+ellipse(x,y,x-110,x-110);
+fill(255,255,255);
+ellipse(x,y,x-140,x-140);

@@ -1,0 +1,65 @@
+
+  //ejemplo de modulo con funciones
+//chris kairalla
+ 
+//contador aumenta en 1 cada loop
+int counter = 400;
+//determina cuatos niveles mas abajo deberan contarse antes de dibujar el otro rect
+int repeat = 50;
+//posicion x de rect
+int x = 83;
+//posicion y de rect
+int y = 83;
+//ancho de rect
+int ellipseWidth = 80;
+//alto de rect
+int ellipseHeight = 10;
+ 
+ 
+void setup(){
+ size(400, 400);
+background(0, 255, 255);
+frameRate(10);
+}
+ 
+void draw(){
+  //usa modulo para crear un loop repetitivo de numeros
+  //cambia repetir para hacer mas filas de rects
+  int multNumber = modulo(counter, repeat);
+  moveEllipse(multNumber);
+  //dibuja rect
+  ellipse(x, y, ellipseWidth, ellipseHeight);
+  //resetea si la linea se queda en el ancho de la pantalla
+    if (x > width){
+    resetValues();
+  }
+  increaseCounter();
+}
+ 
+//funcion que devuelve el modulo de dos numeros
+int modulo(int ctr, int _repeat){
+ int m = ctr % _repeat;
+ return m;
+}
+ 
+//mueve el rect a la prox posicion
+void moveEllipse(int multNumber){
+   //coloca el siguiente rect justo abajo del ultimo
+  y = ellipseHeight * multNumber;
+    //mueve el siguiente rect a la derecha del ultimo rect
+  x += ellipseWidth;
+}
+ 
+void increaseCounter(){
+   //aumenta contador. Este puede aumentar lo que quiera, y
+  //modulo siempre sera un ciclo arriba para repetir el valor
+  counter ++;
+}
+ 
+void resetValues(){
+   background(0);
+   x = mouseX;
+   y = mouseX;
+}
+
+

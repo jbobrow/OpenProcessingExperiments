@@ -1,0 +1,24 @@
+
+size (400, 400);
+background (0);
+fill (200, 150, 120, 160);
+ellipse (189, 200, 123, 138);
+stroke (125, 200, 15);
+strokeWeight (15);
+point (248, 180);
+strokeWeight (15);
+stroke (255, 134, 185);
+point (134, 170);
+strokeWeight (15);
+stroke (225, 232, 67);
+point (220, 145);
+strokeWeight (15);
+stroke (149, 135, 180);
+point (170, 140);
+strokeWeight (30);
+stroke (255, 35, 69);
+line (124,210,255,210);
+line (137,267,120,208);
+line (241, 266, 256,208);
+line (137,266, 241,266);
+line (130, 239, 247, 239);

@@ -1,0 +1,33 @@
+
+size(720, 480);
+smooth();
+strokeWeight(2);
+background(302);
+noStroke();
+fill(220);
+rect(300,160,60,200);
+ellipse(330,160,150,170);
+fill(50);
+rect(300,120,15,15);
+rect(350,120,15,15);
+rect(310,180,40,20);
+fill(10);
+rect(315,185,30,10);
+stroke(3);
+fill(165, 57, 57);
+ellipse(320, 380,200, 80);
+fill(165, 57, 57);
+//fill(144, 39, 39);
+ellipse(100, 100, 80, 80);
+fill(255, 0, 0, 160);        
+ellipse(132, 82, 200, 200);  
+fill(0, 255, 0, 160);        
+ellipse(228, -16, 200, 200); 
+fill(0, 0, 255, 160);        
+ellipse(268, 118, 200, 200); 
+stroke(40);
+line(320,700,300,287);
+ellipse(75, 60, 90, 90);
+strokeWeight(8);
+ellipse(175, 60, 90, 90);
+

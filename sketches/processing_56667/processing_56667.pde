@@ -1,0 +1,52 @@
+
+int h;
+int h1;
+int w;
+int x;
+int y;
+int sw;
+void setup (){
+  size(500,500);
+  h=70;
+  h1=50;
+  w=45;
+  x=160;
+  y=160;
+  }
+
+void draw (){
+  background(0);
+  stroke (255);
+  strokeWeight (sw);
+  line (x,y+w,x+w,y+h);
+  line (x+w,y+h,x,y+h*2);
+  line (x+w,y+h*2,x+w*2,y+h1*2);
+  line (x+w,y+h1*2,x+w*4,y+h*2);
+  line (x+w*4,y+h*2,x+w*2,y+h);
+  line (x+w*3,y+h,x+w*3,y);
+  line (x+w*4,y,x+w*2,y+h);
+  line (x+w*2,y+h1,x+w,y);
+
+  
+ line (x+w,y+h,x+w*2,y+h1);
+ line (x+w*2,y+h1,x+w*3,y+h);
+ line (x+w*3,y+h,x+w*2,y+h1*2);
+ line (x+w,y+h,x+w*2,y+h1*2);
+ 
+ line (x,y,x+w*4,y);
+ line (x,y,x,y+h*2);
+ line (x,y+h*2,x+w*4,y+h*2);
+ line (x+w*4,y+h*2,x+w*4,y);
+ 
+ line (x+w*1,y-h*3,x+w*2,y+h*6);
+
+
+ line (x,y,x-w*4,y-h1*2);
+ line (x+w*4,y,x+w*8,y-h1*2);
+ line (x,y+h*2,x-w*4,y+h1*4);
+ line (x+w*4,y+h*2,x+w*8,y+h1*4); 
+
+  if (sw<5){
+  sw=sw+1;}
+
+}

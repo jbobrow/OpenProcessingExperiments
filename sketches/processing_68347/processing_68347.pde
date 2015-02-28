@@ -1,0 +1,37 @@
+
+size(600, 600);
+fill(255, 0, 0);
+beginShape();
+vertex(100, 100);
+vertex(150, 100);
+vertex(170, 150);
+vertex(190, 300);
+vertex(180, 310);
+vertex(150, 200);
+vertex(155, 300);
+vertex(130, 500);
+vertex(125, 500);
+vertex(110, 500);
+vertex(85, 500);
+vertex(100, 200);
+vertex(70, 310);
+vertex(60,300);
+vertex(80, 150);
+endShape(CLOSE);
+fill(255);
+ellipse(125, 150, 50, 50);
+fill(0);
+ellipse(125, 150, 30, 30);
+
+fill(0, 255, 0);
+beginShape();
+vertex(300, 100);
+vertex(500, 100);
+vertex(550, 300);
+vertex(400, 500);
+vertex(250, 300);
+endShape(CLOSE);
+fill(255);
+ellipse(400, 300, 100, 100);
+fill(0);
+ellipse(400, 300, 50, 50);

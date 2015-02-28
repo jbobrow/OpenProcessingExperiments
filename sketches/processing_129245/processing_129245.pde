@@ -1,0 +1,97 @@
+
+size(1500,500);
+rectMode(CORNER);
+noStroke();
+rect(0,0,500,500);
+stroke(1);
+background(#87CEEB);
+rectMode(CORNER);
+fill(#C0C0C0);
+rect(48, 48, 404, 260, 7);
+fill(0);
+rectMode(CORNER);
+rect(50,50, 400, 250,7);
+fill(#696969);
+rect(70, 70, 360, 210);
+fill(#C0C0C0);
+rect(10,290, 480, 25,7);
+fill(0);
+rect(430, 300, 20, 2, 7);
+noStroke();
+fill(255);
+ellipse(250,180, 40, 40);
+fill(#696969);
+ellipse(270, 175, 25, 20);
+ellipse(250, 200, 15, 10);
+ellipse(250, 158, 10, 10);
+rectMode(CORNER);
+fill(#808080);
+rect(225, 291, 50, 5); 
+//2nd pic//
+noStroke();
+rectMode(CORNER);
+fill(#8B4513);
+rect(500,0,500, 500);
+stroke(1);
+rectMode(CORNER);
+fill(#C0C0C0);
+rect(548, 48, 404, 260, 7);
+fill(0);
+rectMode(CORNER);
+rect(550,50, 400, 250,7);
+fill(#696969);
+rect(570, 70, 360, 210);
+fill(#C0C0C0);
+rect(510,290, 480, 25,7);
+fill(0);
+rect(930, 300, 20, 2, 7);
+noStroke();
+fill(255);
+ellipse(750,180, 40, 40);
+fill(#696969);
+ellipse(770, 175, 25, 20);
+ellipse(750, 200, 15, 10);
+ellipse(750, 158, 10, 10);
+rectMode(CORNER);
+fill(#808080);
+rect(725, 291, 50, 5); 
+//3rd picture//
+noStroke();
+rectMode(CORNER);
+fill(#2F4F4F);
+rect(1000,0,500, 500);
+stroke(1);
+rectMode(CORNER);
+fill(#C0C0C0);
+rect(1048, 48, 404, 260, 7);
+fill(0);
+rectMode(CORNER);
+rect(1050,50, 400, 250,7);
+fill(#696969);
+rect(1070, 70, 360, 210);
+fill(#C0C0C0);
+rect(1010,290, 480, 25,7);
+fill(0);
+rect(1430, 300, 20, 2, 7);
+noStroke();
+fill(255);
+ellipse(1250,180, 40, 40);
+fill(#696969);
+ellipse(1270, 175, 25, 20);
+ellipse(1250, 200, 15, 10);
+ellipse(1250, 158, 10, 10);
+rectMode(CORNER);
+fill(#808080);
+rect(1225, 291, 50, 5); 
+//apple top 1st pic//
+rotate(radians(30));
+fill(255);
+ellipse(295, 7, 5, 10);
+//apple top 2nd pic//
+fill(255);
+ellipse(728, -243, 5, 10);
+//apple top 3rd pic//
+fill(255);
+ellipse(1161, -493, 5, 10);
+
+

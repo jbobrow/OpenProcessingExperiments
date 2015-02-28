@@ -1,0 +1,49 @@
+
+float g,r;
+void setup(){
+
+  size (800,600);
+  noLoop();
+  r = random (0,255);
+
+}
+
+
+void draw(){
+
+  background(255);
+  randomSeed(0);
+  g = random(0,225);
+
+  for (int i=35; i<width; i+=25){
+    int gray = int(random(0,10));
+    float scalar = random (0.1,1.0);
+   dresser(i, 80, scalar); }
+
+}
+
+void dresser(float x, float y, float s) {
+
+  pushMatrix();
+  translate (x, y);
+    //dresser
+    strokeWeight(s);
+  fill(g,g,g);
+  beginShape();
+  rect(0, 0, 190, 100);
+  fill(255);
+  rect(10,10, 50,10);
+  ellipse(35,15,3,3);
+  rect(10,30, 50,20);
+  rect(10,60, 50,20);
+  rect(70,10, 50,10);
+  ellipse(95,15,3,3);
+  rect(70,30, 50,20);
+  rect(70,60, 50,20);
+  rect(130,10, 50,10);
+  ellipse(155,15,3,3);
+  rect(130,30, 50,20);
+  rect(130,60, 50,20);
+}
+
+

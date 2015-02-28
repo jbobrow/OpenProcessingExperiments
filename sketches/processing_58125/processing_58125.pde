@@ -1,0 +1,31 @@
+
+size(400, 400);
+noStroke();
+fill(255, 0, 0);
+rect(0, 0, 200, 400);
+fill(255);
+rect(200, 0, 200, 400);
+fill(0);
+rect(150, 175, 300, 300);
+fill(255);
+triangle(180, 175, 400, 175, 300, 375);
+fill(219);
+triangle(150, 150, 350, 150, 250, 350);
+fill(156);
+triangle(125, 125, 325, 125, 225, 325);
+fill(100);
+triangle(100, 100, 300, 100, 200, 300);
+fill(65);
+triangle(75, 75, 275, 75, 175, 275);
+fill(0);
+smooth();
+ellipse(150, 325, 300, 300);
+fill(0);
+triangle(50, 50, 250, 50, 150, 250);
+strokeWeight(4);
+stroke(255, 0, 0);
+line(150, 325, 350, 25);
+strokeWeight(4);
+stroke(255);
+line(200, 375, 75, 25);
+

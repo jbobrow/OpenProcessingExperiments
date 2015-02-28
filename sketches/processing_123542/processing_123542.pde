@@ -1,0 +1,28 @@
+
+size(500,500);
+background(500,500);
+fill(90);
+strokeWeight(3);
+stroke(204);
+rect(125,125,250,250);
+  point(250,250);
+  point(200,200);
+  point(300,300);
+  point(300,200);
+  point(200,300);
+fill(234,31,187);
+strokeWeight(1);
+beginShape();
+  vertex(0,0);
+  vertex(500,0);
+  vertex(250,123);
+  endShape();
+fill(234,31,187);
+beginShape();
+  vertex(0,500);
+  vertex(500,500);
+  vertex(250,377);
+  endShape();
+line(0,0,500,500);
+line(500,0,0,500);
+ellipse(250,250,10,10);

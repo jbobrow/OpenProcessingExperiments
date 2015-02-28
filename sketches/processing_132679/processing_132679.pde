@@ -1,0 +1,34 @@
+
+size(500,500);
+int manzana = 80;
+int pera = 40;
+int uva = 150;
+background(90,10,56);
+noStroke();
+stroke(30,0,15);
+strokeWeight(3);
+rect(width/2,pera,manzana,height/2);
+stroke(255,0,100);
+rect(pera,pera,pera,pera,pera);
+noFill();
+rect(manzana,manzana,manzana,manzana);
+fill(0);
+rect(uva,uva,uva,uva);
+noFill();
+rect(pera,width/2,height/2,manzana);
+fill(0);
+rect(manzana,height/2,pera,width/2);
+fill(0);
+rect(height/2,pera,manzana,height/2);
+noFill();
+rect(manzana,uva,pera,width/2);
+noFill();
+rect(pera,width/2,uva,manzana);
+fill(0);
+stroke(0);
+line(500,0,0,500);
+ellipse(pera,pera,pera,pera);
+stroke(255);
+ellipse(uva,uva,uva/2,uva/2);
+
+ellipse(manzana,manzana/2,manzana/2,manzana/2);

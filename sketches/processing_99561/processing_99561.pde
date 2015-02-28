@@ -1,0 +1,456 @@
+
+import oscP5.*;
+import netP5.*;
+
+MouTe mt = new MouTe();//Objecte mouTe
+
+int x;
+int x1;
+int x2;
+int x3;
+int x4;
+color colorX;
+
+//CONFIGURACIÓ DE LA PÀGINA
+void setup()
+{
+  size(600,600);//mides generals
+  //OCULTAR EL CURSOR
+noCursor();
+}
+
+//CONFIGURACIÓ DIBUIX
+void draw(){
+  
+  //COLOR DE FONS
+  colorX=color(5,200-mt.getCenterXRelative(),103);
+  background(colorX);
+  
+  fill(255,255,mt.getCenterXRelative()/2);//Triangle blanc
+  stroke(255,26,5);//color vermell
+  strokeWeight(15);
+  triangle(mt.getCenterXRelative(),mt.getCenterYRelative()-100,mt.getCenterXRelative()-100,mt.getCenterYRelative()+100,mt.getCenterXRelative()+100,mt.getCenterYRelative()+100);//Triangle que segueixi el mouse
+  
+  //signe exclamatiu del triangle
+  fill(0);
+  stroke(0);
+  strokeWeight(10);
+  rect(mt.getCenterXRelative()-2.5,mt.getCenterYRelative()-30,5,70); //pal exclamació
+  ellipse(mt.getCenterXRelative(),mt.getCenterYRelative()-35,5,5);//pal exclamació
+  ellipse(mt.getCenterXRelative(),mt.getCenterYRelative()+45,5,5);//pal exclamació
+  ellipse(mt.getCenterXRelative(),mt.getCenterYRelative()+70,10,10);//circumferència exclamació
+  
+
+//CONFIGURACIÓ TEXTOS
+//velocitats textos  
+x=x+1;
+x1=x1+2; 
+x2=x2+3;
+x3=x3+4;
+x4=x4+5;
+
+fill(255,255,255); 
+
+ text("DANGEROUS",x,400,200,500);
+ text("DANGEREUX",x1-70,100,200,500);
+ text("PERILLÓS",x2-10,200,200,500);
+ text("PERICOLOSO",x3-10,500,200,500);
+ text("GEFÄHRLICH",x4-10,300,200,500);
+
+
+//CONFIGURACIÓ DEL MOVIMENT TEXTOS
+if(x>width){
+  x=0;
+}
+
+if(x1>width){
+  x1=0;  
+}
+
+if(x2>width){
+  x2=0;  
+
+}
+
+if(x3>width){
+  x3=0;  
+}
+
+if(x4>width){
+  x4=0;  
+}
+
+}
+
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Inici de la documentació.
+// Amb el que hi ha descrit en aquesta secció n'hi ha prou per operar amb
+// la classe MouTe
+// moute.joan.cat
+////////////////////////////////////////////////////////////////////////////////
+
+/*
+ MÈTODES DISPONIBLES:
+ 
+ **** DADES DIRECTES DE MouTe: ****
+ 
+ getBox();         // retorna un array de 4 ints, x-y superior esquerre; x-y inferior dreta
+ getActives();     //retorna un array de 192 ints, amb valors de 0 o 1, corresponents a cada cel·la de la matriu de 16x12
+ getTotalActives();//retorna un int amb el total de cel·les actives   
+ getSilhouette();  //retorna un array de 240 valors, corresponents cada parella a una de les línies (de les 120 que analitza 
+ el MouTe. Els valors són de la X esquerra i X dreta per cada línia, i són -1 ambdós si no es detecta 
+ presència en aquesta línia. Per exemple, silh[20] és el valor esquerre de la x en la línia 11. silh[21]
+ la x dreta de la mateixa línia
+ 
+ **** DADES CALCULADES: ****
+ 
+ getCenterXAbsolute();  //retorna un float amb la X del centre de gravetat sobre 160
+ getCenterYAbsolute();  //retorna un float amb la Y del centre de gravetat sobre 120
+ 
+ getCenterXRelative();  //retorna un float amb la X del centre de gravetat sobre width
+ getCenterYRelative();  //retorna un float amb la Y del centre de gravetat sobre height
+ 
+ getLeftXBox();   //Límit esquerre (en X) de la caixa contenidora sobre 160
+ getRightXBox();   //Límit dret (en X) de la caixa contenidora sobre 160
+ getUpperYBox();   //Límit superior (en Y) de la caixa contenidora sobre 120
+ getLowerYBox();   //Límit inferior (en Y) de la caixa contenidora sobre 120
+ 
+ getLeftXBoxRelative();   //Límit esquerre (en X) de la caixa contenidora sobre width
+ getRightXBoxRelative();   //Límit dret (en X) de la caixa contenidora sobre width
+ getUpperYBoxRelative();   //Límit superior (en Y) de la caixa contenidora sobre height
+ getLowerYBoxRelative();   //Límit inferior (en Y) de la caixa contenidora sobre height
+ 
+getMatrixCoord(x,y);  //Retorna un booleà segons si la cel·la corresponent als dos paràmetres (x i y) és activa (true) o no (false)
+
+**** DIBUIX: ****
+ 
+ dibuixaCaixa(); //Dibuix de la caixa contenidora a 160 x 120
+ dibuixaCentre();  //Dibuix del centre de gravetat a 160 x 120
+ dibuixaCelles();  //Dibuix de la matriu de les cel·les a 160 x 120
+ dibuixaSilueta();   //Dibuix de la silueta a 160 x 120
+ 
+ dibuixaCaixaRelatiu(); //Dibuix de la caixa contenidora proporcional a width i height
+ dibuixaCentreRelatiu();  //Dibuix del centre de gravetat proporcional a width i height
+ dibuixaCellesRelatiu();  //Dibuix de la matriu de les cel·les proporcional a width i height
+ dibuixaSiluetaRelatiu();   //Dibuix de la silueta proporcional a width i height
+ 
+ */
+
+////////////////////////////////////////////////////////////////////////////////
+// Fi de la documentació
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+//CLASSE MOUTE
+
+class MouTe {
+
+  int[] cC = new int[4];  //creamos array per la caixa contenidora
+  int[] cells = new int[192];  //i un array per totes les cel·les
+  int[] silh = new int[240];  //array per la silueta
+  int totalActives;  //una variable pel total de cel·les actives
+
+    //Objectes OSC:
+  OscP5 oscP5Box,oscP5Cells, oscP5TotalCells, oscP5Silh;
+
+  //Constructor amb els ports com a paràmetres:
+  MouTe(int _box, int _sil, int _cells, int _total) {
+    oscP5Box = new OscP5(this,_box);
+    oscP5Silh = new OscP5(this,_sil);
+    oscP5Cells = new OscP5(this,_cells);
+    oscP5TotalCells = new OscP5(this,_total);
+  }
+
+  //Contructor simple:
+    MouTe() {
+    oscP5Box = new OscP5(this,7001);
+    oscP5Silh = new OscP5(this,7002);
+    oscP5Cells = new OscP5(this,7003);
+    oscP5TotalCells = new OscP5(this,7004);
+  }
+
+  ////////////////////////////////////////////////
+  //////// OSC
+  /////////////////////////////////////////////
+
+  //Aquí rebem els missatges OSC i els associem a les arrays i variables creades 
+
+  //  void gotOSC(OscMessage theOscMessage) {
+  void oscEvent(OscMessage theOscMessage) {
+
+    /* print the address pattern and the typetag of the received OscMessage */
+    //print(" addrpattern: "+theOscMessage.addrPattern());
+    //println(" typetag: "+theOscMessage.typetag());
+    if(theOscMessage.checkAddrPattern("/box")) {
+      //guardamos los valores de la caja contenedora en el array
+      for (int i = 0; i < 4; i++) {
+        cC[i] = theOscMessage.get(i).intValue();
+        // if(i<2)println(theOscMessage.get(i).intValue());
+      }
+    } 
+    else if (theOscMessage.checkAddrPattern("/act")) {
+      totalActives = theOscMessage.get(0).intValue();
+    } 
+    else if (theOscMessage.checkAddrPattern("/st")) {
+
+      for (int i = 0; i < 192; i++) {
+        cells[i] = theOscMessage.get(i).intValue();
+      }
+    }
+    else if (theOscMessage.checkAddrPattern("/silh")) {
+      for (int i = 0; i < 240; i++) {
+        //     print(theOscMessage.get(i).intValue());
+
+        silh[i] = theOscMessage.get(i).intValue();
+        //        println(silh[i]);
+      }
+      //       println("______");
+    }
+  }
+  //fi d'OSC
+
+
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+  /////  FUNCIONS DE DIBUIX:
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+
+  ///////////////////////////////////////////////////////////
+  /* Dibuix absolut (160x120): */
+  ///////////////////////////////////////////////////////////
+
+  //Dibuix de la caixa contenidora:
+  void dibuixaCaixa() {
+    rectMode(CORNERS);
+    stroke(0,255,0);
+    noFill();
+    rect(cC[0],cC[1],cC[2],cC[3]);
+  }
+
+  //Dibuix del centre de gravetat:
+  void dibuixaCentre() {
+    noStroke();
+    fill(255,0,0);
+    ellipse((cC[0]+(cC[2]-cC[0])/2),(cC[1]+(cC[3]-cC[1])/2),3,3);
+  }
+
+  //Dibuix de la matriu de les cel·les:
+  void dibuixaCelles() {
+    rectMode(CORNERS); //indiquem que el metode de dibuix del rectangle es donant-li els vertex de dalt a l esquerra i a baix a la dreta
+    fill(255);
+    stroke(255);
+    for(int i=0; i<16; i++) {
+      for(int j=0; j<12; j++) {
+        //dibuixem així perquè estem utilitzant rectMode(CORNERS):
+        if(cells[i+j*16]==1) {
+          rect(i*10,j*10,(i+1)*10-1,(j+1)*10+1);
+        }
+      }
+    }
+  }
+
+  //Dibuix de les siluetes:
+  void dibuixaSilueta() {
+    stroke(#76E9FF);
+    for(int i=0; i<240; i+=2) {
+      // print(silh[i]);
+      if(silh[i]!=-1) {
+        line(silh[i],i/2,silh[i+1],i/2);
+        //line(silh[i],i/2,silh[i+1],i/2);
+      }
+    }
+  }
+
+  ///////////////////////////////////////////////////////////
+  /* Dibuix relatiu (width x height): */
+  ///////////////////////////////////////////////////////////
+
+  //Dibuix de la caixa contenidora:
+  void dibuixaCaixaRelatiu() {
+    rectMode(CORNERS);
+    strokeWeight(height/120);
+    stroke(0,255,0);
+    noFill();
+    rect(map(cC[0],0,160,0,width),map(cC[1],0,120,0,height),map(cC[2],0,160,0,width),map(cC[3],0,120,0,height));
+    strokeWeight(1);
+  }
+
+  //Dibuix del centre de gravetat:
+  void dibuixaCentreRelatiu() {
+    noStroke();
+    fill(255,0,0);
+    ellipse(map((cC[0]+(cC[2]-cC[0])/2),0,160,0,width),map((cC[1]+(cC[3]-cC[1])/2),0,120,0,height),map(3,0,160,0,width),map(3,0,120,0,height));
+  }
+
+  //Dibuix de la matriu de les cel·les:
+  void dibuixaCellesRelatiu() {
+    rectMode(CORNERS); //indiquem que el metode de dibuix del rectangle es donant-li els vertex de dalt a l esquerra i a baix a la dreta
+    fill(255);
+    stroke(255);
+    for(int i=0; i<16; i++) {
+      for(int j=0; j<12; j++) {
+        //dibuixem així perquè estem utilitzant rectMode(CORNERS):
+        if(cells[i+j*16]==1) {
+          rect(i*map(10,0,160,0,width),j*map(10,0,120,0,height),(i+1)*map(10,0,160,0,width)-1,(j+1)*map(10,0,120,0,height)+1);
+        }
+      }
+    }
+  }
+
+  //Dibuix de les siluetes:
+  void dibuixaSiluetaRelatiu() {
+    stroke(#76E9FF);
+    strokeWeight(height/120);
+    for(int i=0; i<240; i+=2) {
+      // print(silh[i]);
+      if(silh[i]!=-1) {
+        //line(silh[i],i/2,silh[i+1],i/2);
+        line(silh[i]*width/160,(i/2)*height/120,silh[i+1]*width/160,(i/2)*height/120);
+      }
+    }
+    strokeWeight(1);
+  }
+
+  void dibuixaSiluetaRelatiuAlpha() {
+    stroke(255,236,198,32);
+    strokeWeight(height/120);
+    for(int i=0; i<240; i+=2) {
+      // print(silh[i]);
+      if(silh[i]!=-1) {
+        //line(silh[i],i/2,silh[i+1],i/2);
+        line(silh[i]*width/160,(i/2)*height/120,silh[i+1]*width/160,(i/2)*height/120);
+      }
+    }
+    strokeWeight(1);
+  }
+  
+  //fi de funcions de dibuix
+
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+  /////  FUNCIONS DEL MouTE:
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+
+  /* DADES DIRECTES D'OSC: */
+
+  //Obtenir caixa contenidora:
+  int[] getBox() {
+    return cC;
+  }
+
+  //obtenir array d'activacions:
+  int[] getActives() {
+    return cells;
+  }
+
+  //obtenir el total de cel·les actives:
+  int getTotalActives() {
+    return totalActives;
+  }
+
+  //obtenir array de sil·lueta:
+  int[] getSilhouette() {
+    return silh;
+  }
+
+  ///////////////////////////////////////////////////////////
+  //ALTRES FUNCIONS:
+  ///////////////////////////////////////////////////////////
+
+  ///////////////////////////////////////////////////////////
+  /* CENTRE DE GRAVETAT: */
+  ///////////////////////////////////////////////////////////
+
+  //Obtenir la X del centre de gravetat (de 0 a 160):
+  float getCenterXAbsolute() {
+    return cC[0]+(cC[2]-cC[0])/2;
+  }
+
+  //Obtenir la Y del centre de gravetat (de 0 a 120):
+  float getCenterYAbsolute() {
+    return  cC[1]+(cC[3]-cC[1])/2;
+  }
+
+  //Obtenir la X del centre de gravetat (de 0 a 160):
+  float getCenterXRelative() {
+    float r = map(cC[0]+(cC[2]-cC[0])/2,0,160,0,width);
+    return r;
+  }
+
+  //Obtenir la Y del centre de gravetat (de 0 a height):
+  float getCenterYRelative() {
+    float r = map(cC[1]+(cC[3]-cC[1])/2,0,120,0,height);
+    return r;
+  }
+
+  ///////////////////////////////////////////////////////////
+  /* CAIXA CONTENIDORA*/
+  ///////////////////////////////////////////////////////////
+
+  //Obtenir la X esquerra de la caixa(de 0 a 160):
+  int getLeftXBox() {
+    return cC[0];
+  }
+
+  //Obtenir la X dreta de la caixa(de 0 a 160):
+  int getRightXBox() {
+    return cC[2];
+  }
+
+  //Obtenir la X esquerra de la caixa(de 0 a 160):
+  int getUpperYBox() {
+    return cC[1];
+  }
+
+  //Obtenir la X esquerra de la caixa(de 0 a 120):
+  int getLowerYBox() {
+    return cC[3];
+  }
+
+  ///////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////
+
+  //Obtenir la X esquerra de la caixa(de 0 a width):
+  float getLeftXBoxRelative() {
+    float r = map(cC[0],0,160,0,width);
+    return r;
+  }
+
+  //Obtenir la X dreta de la caixa(de 0 a width):
+  float getRightXBoxRelative() {
+    float r = map(cC[2],0,160,0,width);
+    return r;
+  }
+
+  //Obtenir la X esquerra de la caixa(de 0 a height):
+  float getUpperYBoxRelative() {
+    float r = map(cC[1],0,120,0,height);
+    return r;
+  }
+
+  //Obtenir la X esquerra de la caixa(de 0 a height):
+  float getLowerYBoxRelative() {
+    float r = map(cC[3],0,120,0,height);
+    return r;
+  }
+
+  /////////////////////////////////////////////
+  
+  //Cel·la de matriu d'activacions
+  
+  boolean getMatrixCoord(int _x, int _y){
+    int value = cells[(_y*16)+_x];
+    if(value==1)return true;
+    else return false;
+  }
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+  /////////////////////////////////////////////
+}
+
+
+
