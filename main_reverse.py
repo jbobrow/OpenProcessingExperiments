@@ -27,9 +27,9 @@ from bs4 import BeautifulSoup as soup
 from os.path import expanduser, join
 
 # edit these values
-start_sketch = 1000 #
-end_sketch = 2000 #
-my_location = '~/MIT_local/Playful/EigenProcessing/sketches'
+start_sketch = 150000 #
+end_sketch = 190000 #
+my_location = '/Users/greg/Documents/code/OpenProcessingExperiments/sketches'
 
 def downloadSourceCode(sketchNum):
 	print sketchNum
@@ -52,5 +52,5 @@ def downloadSourceCode(sketchNum):
 		text_file.write(sourceCode.encode('utf-8'))
 		text_file.close()
 
-for sketchNum in xrange(end_sketch, start_sketch, -1):
+for sketchNum in xrange(start_sketch, end_sketch):
 	downloadSourceCode(sketchNum)
