@@ -1,0 +1,118 @@
+
+int x=75;
+int y=30;
+int j=2;
+int k=75;
+int l=20;
+int m=130;
+int n=75;
+int o=75;
+int p=50;
+int q=5;
+int r=20;
+int s=130;
+int t=2;
+int u=2;
+int v=2;
+int w=137;
+int a=255;
+int b=#07D7E8;
+int c=#E8073C;
+int d=#DB14CE;
+int e=#DB14A3;
+int f=#FC0D15;
+int g=#1B8628;
+int h=-25;
+int i=172;
+void setup()
+{size(700,700);}
+void draw()
+{background(#BA36EA);
+fill(c);
+c=c+d;
+ellipse(x,100,80,150);
+x=x+2;
+fill(#BA36EA);
+noStroke();
+rect(y,100,100,100);
+y=y+2;
+noFill();
+stroke(0);
+rect(j,190,150,300);
+j=j+2;
+fill(d);
+d=d+e;
+stroke(0);
+ellipse(k,110,250,40);
+k=k+2;
+
+fill(f);
+f=f+g;
+stroke(0);
+ellipse(n,120,250,40);
+n=n+2;
+ellipse(o,130,100,20);
+o=o+2;
+fill(g);
+g=g+b;
+rect(p,121,50,69);
+p=p+2;
+fill(b);
+b=b+c;
+strokeWeight(5);
+rect(q,250,144,237);
+q=q+2;
+
+fill(c);
+c=c+d;
+rect(t,190,150,300);
+t=t+2;
+fill(d);
+d=d+e;
+rect(u,300,150,50);
+u=u+2;
+line(200,315,200,340);
+line(190,315,210,315);
+line(215,315,215,340);
+line(215,315,225,315);
+line(215,325,220,325);
+line(215,340,225,340);
+fill(#156718,0);
+ellipse(240,327,15,25);
+line(240,333,243,340);
+line(255,315,255,335);
+line(265,315,265,335);
+fill(#156718,0);
+ellipse(260,335,10,10);
+fill(e);
+e=e+f;
+noStroke();
+rect(256,328,8,5);
+stroke(0);
+line(275,315,275,340);
+line(285,315,285,340);
+line(285,340,295,340);
+line(300,340,305,315);
+line(305,315,310,340);
+line(302,330,307,330);
+fill(255);
+ellipse(l,230,80,100);
+l=l+2;
+ellipse(m,230,80,100);
+m=m+2;
+fill(0);
+ellipse(r,255,40,50);
+r=r+2;
+ellipse(s,255,40,50);
+s=s+2;
+strokeWeight(5);
+line(h,190,v,160);
+h=h+2;
+v=v+2;
+line(i,190,w,160);
+i=i+2;
+w=w+2;
+}
+
+
+

@@ -1,0 +1,26 @@
+
+size (1000, 700);
+fill(255, 0, 0);
+background(0);
+stroke(0, 255, 0);
+beginShape();
+vertex(500, 250);
+vertex(600, 150);
+vertex(700, 100);
+vertex(800, 100);
+vertex(900, 200);
+vertex(850, 300);
+vertex(800, 400);
+vertex(700, 500);
+vertex(600, 600);
+vertex(500, 700);
+vertex(400, 600);
+vertex(300, 500);
+vertex(200, 400);
+vertex(150, 300);
+vertex(100, 200);
+vertex(200, 100);
+vertex(300, 100);
+vertex(400, 150);
+vertex(500, 250);
+endShape ();

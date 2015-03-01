@@ -1,0 +1,73 @@
+
+//setting up an array (increasing the nimber of arraies)
+Cell[] myCells= new Cell[90];
+Cell myCell;
+
+void setup() {
+ background(255);
+ size(500,500);
+for(int i=0; i<myCells.length;i++){ 
+myCells[i]= new Cell();
+}
+}
+
+void draw(){
+
+  //array
+  for(int i=0;i<myCells.length;i++){
+    //unit drawn
+  myCells[i].display();
+  //new location
+  myCells[i].update();
+  }
+}
+
+//this is the cell classe. defined in two parts, declairing variables first
+
+class Cell{
+  
+  float xlocation;
+  float ylocation;
+  float dia;
+  boolean isseed;
+  float cellred, cellgreen, cellblue;
+  float lineweight;
+  float a=0;
+  // construct it with a constructor
+  Cell(){
+    xlocation=random(0,500);
+    ylocation=random(0,500);
+    //random diameter
+    dia=(5);
+    isseed=false;
+    //randomly changing colours and lineweights
+    cellred=random(200);
+    cellgreen=random(200);
+    cellblue=random(200);
+    lineweight=random(3);
+    
+  }
+ //sets up a small circle 
+  void display(){
+    stroke(lineweight+a/3);
+    fill(a-cellred, a-cellgreen, a-cellblue);
+    //gradualy fades to white
+    a=a+1;
+    ellipse(xlocation, ylocation, dia,dia);
+  }
+  //location change
+  void update(){
+    //increased range of movement
+    xlocation=xlocation+random(-2,2);
+    ylocation=ylocation+random(-2,2);
+    
+    //creating colonies
+  for (int i = 0; i <10; i++) {
+    xlocation=xlocation+random(-0.5,0.5);
+    ylocation=ylocation+random(-0.5,0.5);
+  }
+  }
+}
+
+
+

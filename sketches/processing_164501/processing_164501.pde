@@ -1,0 +1,27 @@
+
+size(330,300);
+background(0);
+textSize(20);
+fill(255);
+textAlign(CENTER);
+text("WHY DO PEOPLE WATCH MOVIES", 165,20);
+text("ALL THE WORLD'S A STAGE", 165, 280);
+text("ALL THE PEOPLE MERELY PLAYERS", 165, 300);
+fill(255,0,0);
+text("ENTERTAINMENT", 165, 40);
+text("LOVE", 165, 160);
+fill(255,128,0);
+text("ESCAPE", 165, 60);
+text("LAUGHS", 165, 180);
+fill(255,255,0);
+text("ENERGY", 165, 80);
+text("COMFORT", 165, 200);
+fill(0,255,0);
+text("MYSTERY", 165, 100);
+text("COMMUNITY", 165, 220);
+fill(0,0,255);
+text("TRAVEL", 165, 240);
+text("SCREAMS", 165, 120);
+fill(255,0,255);
+text("SONGS", 165, 140);
+text("PEER PRESSURE", 165, 260);

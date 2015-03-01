@@ -1,0 +1,32 @@
+
+//week 3 assignment 4
+
+//setting up the background
+size(1000,400);
+background(100,150,255);
+noStroke();
+fill(0,255,0);
+rect(0,250,width,150);
+
+//the variables that change are "houseD", "posX"
+float houseD = 50; //side dimension (w and h) of the house body
+float posX = width/16; //X position of the house
+float posY = 200; //Y position of the house
+
+//loop
+while (posX < (width-(width/9))) {
+    //dependent positions
+    float posR1X = posX - (houseD/10);
+    float posR1Y = posY;
+    float posR2X = posX + houseD + (houseD/10);
+    float posR2Y = posY;
+    float posR3X = posX + (houseD/2);
+    float posR3Y = posY - (houseD/1.5);
+    
+    //creating a house
+    fill(150,0,0); //roof color
+    triangle(posR1X,posR1Y,posR2X,posR2Y,posR3X,posR3Y);
+    fill(255,220,180); //house color
+    rect(posX,posY,houseD,houseD);
+    posX = posX + (width/9);
+}

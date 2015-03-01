@@ -1,0 +1,46 @@
+
+  // Ein Pinguin
+// Vorlage von Lukas Grapentin
+// 12.12.2014
+
+/*Aufgabenstellung
+Schreibe ein Programm, bei dem der Pinguin auf einen Mausklick reagiert, beispielsweise die Fluegel hebt, einen bunten Bauch bekommt oder die Augen verdreht.*/
+
+void setup(){
+size(500,500);
+}
+void draw(){
+background(150,0,40);
+
+//Koerper
+fill(0,0,0);
+noStroke();
+ellipse(250,250,200,250);
+
+//Bauch, Augen, Schnabel und Fuesse
+ if(mouseClicked==true){
+ 
+    fill(random(255),255,255);
+    ellipse(250,300,150,160);
+    ellipse(240,180,40,60);
+    ellipse(260,180,40,6);
+}
+fill(0,0,0);
+ellipse(240,180,10,20);
+ellipse(260,180,10,20);
+
+fill(250,230,0);
+triangle(240,200,260,200,250,230);
+ellipse(210,375,60,25);
+ellipse(290,375,60,25);
+
+//Hut
+fill(0,201,83);
+rect(150,140,200,10);
+rect(200,80,100,60);
+
+//Fluegel
+fill(0,0,0);
+triangle(340,200,370,270,340,250);
+triangle(160,200,120,270,160,250);
+}

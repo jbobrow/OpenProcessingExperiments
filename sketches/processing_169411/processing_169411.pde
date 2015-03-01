@@ -1,0 +1,41 @@
+
+float speedX = 5;
+float speedY = random(50,100);
+float posX = 300;
+float posY = 300;
+ 
+ 
+void setup() {
+  size(800,800);
+  frameRate(30);
+  background(0);
+}
+ 
+void draw() {
+  noStroke(); 
+   
+  fill(0,3);
+  rect(0,0,width,height);
+  ellipse(posX,posY,75,75);
+  fill(227,48,48);
+}
+   
+  posX = posX + speedX; 
+  if(posX+(75/2) >= 800 || posX-(75/2) <= 0 ){
+    speedX = -speedX;
+  }
+   
+  posY = posY + speedY;
+  if(posY+(75/2) >= 800 || posY-(75/2) <= 0 ){
+    speedY = -speedY;
+
+ posY = posY + speedY;
+  if(posY+(75/2) >= 800 || posY-(75/2) <= 0 ){
+    speedY = -speedX;
+   }
+
+  }
+}
+
+
+

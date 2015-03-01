@@ -1,0 +1,134 @@
+
+int a=272;
+int b=270;
+int c=255;
+int d=230;
+int e=200;
+int f=170;
+int g=140;
+int h=110;
+int i=80;
+int j=80;
+int k=60;
+int l=78;
+int m=58;
+int n=90;
+int o=70;
+int p=90;
+int q=70;
+int r=78;
+int s=#FC5260;
+int t=#FC52D2;
+int u=#1EC4F5;
+int v=#8BE5FF;
+int w=#53F6FA;
+int x=#1FA7FF;
+
+void setup()
+{
+
+  
+  size(350,400);
+ 
+}  
+void draw()
+{ 
+background(#47E3CF);
+  fill(#120FFF);
+  noStroke();
+  rect(0,0,350,20);
+rect(0,0,20,400);
+rect(0,380,350,20);
+rect(330,0,20,400);
+stroke(1);
+ fill(#36B768,230);
+rect(55,20,80,100);
+fill(#FFFFFF,230);
+rect(135,20,80,100); 
+fill(#FF1408,230);
+rect(215,20,80,100);  
+fill(#B7886B);
+ellipse(175,70,45,45);
+fill(s);
+s=s+10;
+triangle(20,380,20,330,50,380);
+fill(t);
+t=t+10;
+triangle(20,330,50,330,50,380);
+fill(#DD52FC);
+triangle(50,380,50,330,80,380);
+fill(#A152FC);
+triangle(50,330,80,330,80,380);
+fill(#6752FC);
+triangle(80,380,80,330,110,380);
+fill(#537EFA);
+triangle(80,330,110,330,110,380);
+fill(#53BBFA);
+triangle(50,380,50,330,80,380);
+fill(w);
+w=w+10;
+triangle(330,380,330,330,300,380);
+fill(x);
+x=X-3;
+triangle(330,330,300,330,300,380);
+fill(#53FA78);
+triangle(300,380,300,330,270,380);
+fill(#BFFA53);
+triangle(300,330,270,330,270,380);
+fill(#F9FA53);
+triangle(270,380,270,330,240,380);
+fill(#FAAF53);
+triangle(270,330,240,330,240,380);
+fill(u);
+u=u+10;
+triangle(110,380,110,330,240,330);
+fill(v);
+v=v+10;
+triangle(110,380,240,330,240,380);
+frameRate(10); 
+   fill(#FF0303);
+  ellipse(a,187,6,6); 
+  a=a+10;
+  ellipse(b,200,12,18); 
+  b=b+10;
+  ellipse(c,215,23,30); 
+  c=c+10;
+ fill(#FFFFFF);
+  ellipse(d,225,30,40); 
+  d=d+10;
+  ellipse(e,230,35,45); 
+  e=e+10;
+  ellipse(f,235,40,50); 
+  f=f+10;
+ fill(#2EAF5A);
+ ellipse(g,240,45,55); 
+ g=g+10;
+ ellipse(h,245,50,60); 
+ h=h+10;
+  ellipse(i,250,55,65); 
+  i=i+10;
+ellipseMode(CENTER);
+noFill();
+arc(j,200,30,60,5,7);
+j=j+10;
+arc(k,200,30,60,5,7);
+k=k+10;
+fill(#E9F78C);
+ellipse(l,170,10,20);
+l=l+10;
+ellipse(m,170,10,20);
+m=m+10;
+ fill(#FFFFFF);
+ellipse(n,235,12,17);
+n=n+10;
+ellipse(o,235,12,17);
+o=o+10;
+fill(#000000);
+ellipse(p,238,6,8);
+p=p+10;
+ellipse(q,238,6,8);
+q=q+10;
+arc(r,260,40,25,6,9.2); 
+r=r+10;
+}
+

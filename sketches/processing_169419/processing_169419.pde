@@ -1,0 +1,92 @@
+
+void setup()
+{
+  size(500,500);
+  background(#545554,100); 
+}
+void draw()
+{
+    size(500,500);
+  background(#545554);
+  strokeWeight(100);
+stroke(#095505);
+line(0,250,250,500);
+stroke(#FFFFFF);
+line(0,0,500,500);
+stroke(#BF2213);
+line(250,0,500,250);
+strokeWeight(0);
+  fill(#FCF108);
+  stroke(#030302);
+  strokeWeight(1.5);
+rect(230,315,15,40);
+rect(280,250,50,10);
+rect(170,250,50,10);
+fill(#987708);
+rect(160,235,10,40);
+rect(320,235,10,40);
+fill(#F714A8);
+ellipse(165,225,28,30);
+ellipse(325,225,28,30);
+stroke(#2214F7);
+strokeWeight(2);
+line(150,220,180,220);
+line(152,230,178,230);
+line(310,220,340,220);
+line(312,230,338,230);
+fill(#FCF108);
+stroke(#030302);
+ellipse(163,256,20,20);
+ellipse(325,256,20,20);
+fill(#030101);
+ellipse(235,360,25,15);
+ fill(#FCF108);
+stroke(#030302);
+strokeWeight(1);
+  ellipse(250,260,80,140);
+  fill(#000000);
+  ellipse(265,320,20,30);
+  stroke(#030302);
+strokeWeight(1.5);
+line(225,205,225,312);
+line(240,193,240,327);  
+line(255,190,255,330);
+line(270,198,270,320);
+line(285,225,285,295);
+line(213,235,285,235);
+line(218,220,283,220);
+line(210,250,288,250);
+line(209,265,290,265);
+line(211,280,288,280);
+line(214,295,285,295);
+line(222,310,278,310);
+line(232,322,268,322);
+fill(#FDFCFF);
+ellipse(230,245,20,30);
+ellipse(250,245,20,30);
+fill(#030303);
+ellipse(225,250,10,10);
+ellipse(245,250,10,10);
+fill(#B77407);
+  stroke(#B77407);
+ellipse(250,200,140,20);
+  ellipse(250,185,50,40);
+}
+void keyPressed()
+{
+  fill(#FA0328);
+ellipse(250,200,140,20);
+  ellipse(250,185,50,40);
+  fill(#FAF203);
+ellipse(165,225,28,30);
+ellipse(325,225,28,30);
+}
+void mousePressed()
+{
+  fill(#000000);
+  strokeWeight(8);
+ellipse(235,360,50,30);
+ellipse(265,320,40,50);
+ellipse(250,200,140,60);
+  ellipse(250,185,50,50);
+}

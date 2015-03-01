@@ -1,0 +1,71 @@
+
+void setup () {
+size(400,400);
+}
+
+void draw () {
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(400, 350, mouseX, mouseY);     
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(318, 58, mouseX, mouseY);     
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(400, 50, mouseX, mouseY);     
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(0, 287, mouseX, mouseY);     
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(140, 300, mouseX, mouseY);    
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(140, 287, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(400, 205, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(189, 317, mouseX, mouseY);      
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(50, 400, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(40, 350, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(300, 20, mouseX, mouseY);      
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(18, 105, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(350, 390, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(90, 90, mouseX, mouseY);       
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(180, 20, mouseX, mouseY);    
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(50, 70, mouseX, mouseY);    
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(400, 400, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));    
+    line(0, 0, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(0, 400, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(400, 0, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(100, 100, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(200, 200, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(100, 200, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(400, 200, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(300, 300, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(100, 150, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(200, 400, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(50, 50, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(100, 350, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(150, 5000, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(130, 270, mouseX, mouseY);
+    stroke(random(0, 255), random(0, 255), random(0, 255));
+    line(450, 290, mouseX, mouseY);
+}

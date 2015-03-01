@@ -1,0 +1,58 @@
+
+PFont font;
+            String [] palavras = {"verás", "que", "um", "filho", "teu", "não", "foge", "a", "luta", "reforma", "política", "vem", "pra", "rua", "anticopa", "copa pra quem?", "meu", "partido", "é", "um",
+                                  "coração", "partido", "tem", "tanta", "coisa", "errada", "que", "não", "cabe", "em", "um", "cartaz", "queremos", "hospitais", "escolas", "padrão", "fifa", "uma",
+                                  "sociedade", "consciente", "é", "o", "maior", "medo", "do", "governo", "país", "em", "manutenção", "não", "aguentamos", "mais", "tanta", "corrupção", "grito", "popular",
+                                  "protesto", "contra", "aumento", "da", "copa", "eu", "abro", "mão", "dinheiro", "saúde", "educação"};
+                                  
+            int[] posicao = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140,
+                            145, 150, 155, 160, 165, 170, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250, 255, 260, 265,
+                            270, 275, 280, 285, 290, 295, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355, 360, 365, 370, 375, 380, 385, 390, 395,
+                            400, 405, 410, 415, 420, 425, 430, 435, 440, 445, 450, 455, 460, 465, 470, 475, 480, 485, 490, 495,
+                            500, 505, 510, 515, 520, 525, 530, 535, 540, 545, 550, 555, 560, 565, 570, 575, 580, 585, 590, 595};
+
+            void setup() {
+              size(500, 600);
+              fill(255);
+              font = createFont("Arial",32, true);
+              background(0);
+              textSize(random(40,60));
+                text(palavras[int(random(0, palavras.length))], width/2, height/2);
+            }
+            void draw() {
+              if(mousePressed){
+                background(0);
+
+                textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                 textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                 textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                 textSize(random(12,20));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                 textSize(random(12,50));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                 textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                 textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                  textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                  textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                  textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))]);
+                  textSize(random(12,40));
+                text(palavras[int(random(0, palavras.length))], posicao[int(random(0, posicao.length))], posicao[int(random(0, posicao.length))] );
+             
+              }
+            }

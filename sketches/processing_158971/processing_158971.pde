@@ -1,0 +1,84 @@
+
+// particles moving around a contour map
+// its based entirely on this sketch http://www.openprocessing.org/sketch/3897
+// which doesn't work in my browser as its java only
+
+class Particle
+{
+  PVector position, velocity;
+
+  Particle()
+  {
+    position = new PVector(random(width),random(height));
+    velocity = new PVector(); 
+  }
+  
+  void update()
+  {
+    velocity.x = 20*(noise(mouseX/10+position.y/100)-0.5);
+    velocity.y = 20*(noise(mouseY/10+position.x/100)-0.5);
+    position.add(velocity);
+    
+    if(position.x<0)position.x+=width;
+    if(position.x>width)position.x-=width;
+    if(position.y<0)position.y+=height;
+    if(position.y>height)position.y-=height;
+  }
+
+  void render()
+  {
+    stroke(255);
+    line(position.x,position.y,position.x-velocity.x,position.y-velocity.y);
+  }
+}
+
+class ParticleSystem
+{
+  Particle[] particles;
+  
+  ParticleSystem()
+  {
+    particles = new Particle[NUM_PARTICLES];
+    for(int i = 0; i < NUM_PARTICLES; i++)
+    {
+      particles[i]= new Particle();
+    }
+  }
+  
+  void update()
+  {
+    for(int i = 0; i < NUM_PARTICLES; i++)
+    {
+      particles[i].update();
+    }
+  }
+  
+  void render()
+  {
+    for(int i = 0; i < NUM_PARTICLES; i++)
+    {
+      particles[i].render();
+    }
+  }
+}
+
+int NUM_PARTICLES = 1000;
+ParticleSystem p;
+void setup()
+{
+  smooth();
+  size(500,500);
+  background(0);
+  p = new ParticleSystem();
+}
+
+void draw()
+{
+  println(frameCount);
+  noStroke();
+  fill(0,5);
+  rect(0,0,width,height);
+  p.update();
+  p.render();
+}
+

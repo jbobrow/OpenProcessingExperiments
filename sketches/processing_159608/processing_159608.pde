@@ -1,0 +1,34 @@
+
+void setup() {
+  background(#8F93F5);
+  strokeWeight(2);
+  size(800,800);
+  fill(#535355);
+  ellipse(400,400,150,300);
+  fill(#FFFFFF);
+  ellipse(400,410,100,200);
+  fill(#535355);
+  ellipse(400,250,150,100);
+  fill(#FA7C3D);
+  triangle(380,280,420,280,400,310);
+  fill(#FFFFFF);
+  ellipse(375,250,30,30);
+  fill(#000000);
+  ellipse(375,250,10,10);
+  fill(#FFFFFF);
+  ellipse(376,249,5,5);
+  fill(#FFFFFF);
+  ellipse(425,250,30,30);
+  fill(#000000);
+  ellipse(425,250,10,10);
+  fill(#FFFFFF);
+  ellipse(426,249,5,5);
+  fill(#535355);
+  ellipse(340,400,50,240);
+  fill(#535355);
+  ellipse(460,400,50,240);
+  fill(#FA7C3D);
+  ellipse(365,545,70,40);
+  fill(#FA7C3D);
+  ellipse(435,545,70,40);
+}

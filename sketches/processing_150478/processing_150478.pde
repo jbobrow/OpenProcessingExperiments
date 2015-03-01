@@ -1,0 +1,46 @@
+
+float r = 0;
+float angle = 0;
+
+void setup ()
+{
+  size (600, 200);
+  smooth();
+
+  background (#57385c);
+}
+
+void draw ()
+{
+
+
+  displayEllipse ();
+  moveAngle ();
+}
+
+void moveAngle ()
+{
+  float angleSteps = PI / 90;
+
+  angle = angle + angleSteps;
+  r = r + angleSteps;
+}
+
+void displayEllipse ()
+{
+  fill (#ffedbc);
+  stroke (#A75265);
+
+  float x = width/2 + cos (angle)*r;
+  float y = height/2 + sin (angle)*r;
+
+  ellipse (x, y, 10, 10);
+}
+
+void mousePressed ()
+{
+  r = 0;
+  angle = 0;
+  background (#57385c);
+}
+

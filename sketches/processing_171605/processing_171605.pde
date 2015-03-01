@@ -1,0 +1,232 @@
+
+boolean hit; //is the rect being hit
+int x; //pos of the rect
+int y;//pos of rect
+int h;// height of rect
+int w; // width of rect
+int time; //duh
+int speed;
+boolean hangtime;//time in air
+PImage bg;
+PImage flame;
+PImage flameup;
+
+int bgx;
+
+int flamex;
+int flamey;
+
+int touchx;
+int touchy;
+int touchw;
+int touchh;
+
+int score;
+void setup() {
+  //size(500,500);
+  //cursor(CROSS);
+
+  arial=createFont("Arial,24");
+  textFont(arial);
+
+  hit=false;
+  hangtime = false;
+
+  touchx=x;
+  touchy=350;
+  touchw=50;
+  touchh=50;
+
+  x=225;
+  y=350;
+  h=50;
+  w=50;
+  size(1000, 500);
+
+  timer=0;  
+  speed=5;
+  bgx=0;
+  bg=loadImage("bg.jpg");
+  bgx2=1000;
+  bg2=loadImage("bg.jpg");
+
+  flame=loadImage("flame.png");
+  flameup=loadImage("flameup.png");
+
+//flamex=x-35;
+//flamey=y+50;
+
+}
+
+
+void draw() {
+  background(0);
+ 
+  score++;
+//println(y);
+textSize(50);
+text("Score Go Here", 100,450);
+println(score);
+
+image(bg,bgx,0);
+// filter(INVERT);
+bgx=bgx-speed;
+image(bg2,bgx2,0);
+bgx2=bgx2-speed;
+ //filter(INVERT);
+  fill(#1F51FF);
+  rect(x, y, h, w);
+timer++;
+  fill(127);
+  rect(0, 400, 1000, 100);
+  fill(random(255),random(255),random(255));
+  textSize(50);
+text(score, 430,460);
+//textSize(random(5,50));
+//fill(random(255),random(255),random(255));
+text("This is your score:",0,460);
+if(bgx2<=0){
+bgx=0;
+bgx2=1000;
+}
+if(keyPressed){
+  /* if (key == 'k' && y<=350 && w<=100 /*&& x<=150*///){
+      //y+=random(0,25);
+     // touchw-=5;
+     /* w+=5;//random(25,100);
+    }  if (key == 'i' && w>=0 /*&& w<=-150*///) {
+     // y-=random(0,25);
+     //touchw+=5;
+      /*w-=5;//random(25,100);
+    }  if (key == 'j') {
+      x-=random(0,25);
+       h=random(25,100);
+    }  if (key == 'l') {
+      x+=random(0,25);
+     h=random(25,100);  
+  }*/
+    
+     /*if (key == 's' && y<=350){
+      y+=2;
+    }*/
+    if ( key == 't' && y>=0/*&& hangtime=false*/) {
+      y-=20;
+     // scale(0.5);
+      image(flameup,x-35,y+50);
+      //image(flameup,x,y+50);
+      //scale(0.5);
+      image(flameup,x+15,y+50);
+     // scale(0.5);  
+  }
+    if (key == 'a' && x>=0 && timer>=300) {
+      x-=10;
+    }
+    //move left
+    if(key=='a' && x>=0 && timer<=300){
+    x-=5;
+    }
+    if(key=='a' && x>=0 && timer>=300 && timer<=600){
+    x-=15;
+    }
+    if(key=='a' && x>=0 && timer>=600 && timer<=900){
+    x-=20;
+    }
+    if(key=='a' && x>=0 && timer>=900 && timer<=1200){
+    x-=25;
+    }
+    //end move left
+    //move right    
+    if (key == 'l' && x<=900 && timer<300) {
+      x+=8;
+    }
+    if(key=='l' && x<=900 && timer>=300 && timer<=600){
+    x+=6;
+    }
+    if(key=='l' && x<=900 && timer>=600 && timer<=900){
+    x+=4;
+    }
+    if(key=='l' && x<=900 && timer>=900 && timer<=1200){
+    x+=2;
+    }
+    /*if(key =='n'){
+      speed++;
+    }*/
+}//last for key press  
+
+//start timer test
+if(timer>=300){
+touchw=40;
+touchh=60;
+//touchy=400;
+speed=15;
+w=40;
+h=60;
+score+=2;
+//image(flame,x-70,y-10);
+}
+if(timer>=600){
+touchw=30;
+touchh=70;
+  w=30;
+h=70;
+speed=25;
+image(flame,x-70,y-15);
+score+=3;
+}
+
+if(timer>=900){
+touchw=20;
+touchh=80;
+  w=20;
+h=80;
+speed=35;
+image(flame,x-70,y-30);
+score+=4;
+}
+
+if(timer >= 1200){
+touchw=50;
+touchh=50;
+//touchy=350;
+  w=50;
+h=50;
+touchy=350;
+timer=0;
+speed=5;
+score++;
+}
+//end timer test
+
+if (timer<=300 && y>350){
+touchy=350;
+}
+if(timer>=300 && timer<=600 && y>=350){
+touchy=360;
+}
+if(timer>=600 && timer<=900 && y>=360){
+touchy=370;
+}
+if(timer>=900 && timer<=1200 && y>=370){
+touchy=380;
+}
+if (y<touchy){
+hangtime=true;
+y=y+10;
+}//*/
+if (y==touchy){
+h=touchh;
+w=touchw;
+//idk what this stuff does
+
+if(y<=-1){
+y=0;
+}
+if(w>150){
+w=150;
+}
+}
+
+}//last one
+
+
+

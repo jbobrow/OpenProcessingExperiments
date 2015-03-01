@@ -1,0 +1,162 @@
+
+int a=80;
+int b=93;
+int c=25;
+int d=90;
+int e=90;
+int f= 90;
+int g=90;
+int h= 40;
+int i= 60;
+int j = 80;
+int k= 100;
+int l= 120;
+int m= 140;
+int n= 25;
+int nn= 155;
+int o= 35;
+int oo= 143;
+int p= 75;
+int pp= 30;
+int q= 95;
+int qq=145;
+int r= 55;
+int s= 115;
+int t= 55;
+int u= 115;
+int v=70;
+int w= 105;
+int x= 65;
+int xx= 90;
+int y= 64;
+int yy= 25;
+int z= 20;
+int aa= 110;
+int aaa= 80;
+int ab= 110;
+int aab=160;
+int ac= 160;
+int ad= 50;
+int ae= 110;
+int colo= #F5EDAB;
+int col=#A29F85;
+int co= #FAF7DC;
+
+
+
+void setup ()
+{
+  size (600,700);
+}
+
+void draw ()
+{
+ background (250);
+ fill (#3D901D);
+  noStroke();
+  rect (0,0,700,25);
+  rect (0,625, 700,25);
+  fill (#CE1117);
+  rect (0,50,700,25);
+  rect (0,675,700,25);
+ 
+ fill ( col);
+ stroke (col);
+ rect (a, 410, 25,120);
+ ellipse (b,530,30,10);
+ stroke (#F5EDAB);
+ strokeWeight (2);
+ fill (co);
+ rect (c,220,130, 200);
+ ellipse (d,220, 130, 40);
+  fill (colo);
+ ellipse (e, 220, 60, 20);
+ fill (co);
+  ellipse (f,420, 130, 40);
+  noStroke();
+ ellipse (g,415, 125, 40);
+  stroke (#F5EDAB);
+  strokeWeight (3);
+ line (h, 234, h,430);
+ line (i, 239, i,435); 
+ line (j, 240,j,439);
+  line (k, 240, k, 437);
+ line (l, 240,l,437);
+ line (m, 235, m, 432);
+ line (n, 250, nn, 250);
+   line (n, 270, nn, 270); 
+  line (n,290, nn,290);
+  line (n, 310, nn, 310);
+  line (n, 330, nn, 330); 
+  line (n,350, nn,350);
+  line (n,370, nn,370);
+  line (n, 390, nn, 390);
+  line (n, 410, nn, 410); 
+ line (o,430, oo,430);
+  fill (#000000);
+  stroke (#000000);
+  triangle (p, 255, p,270, pp,270);
+  triangle (q, 255, q, 270, qq, 270);
+  fill (250);
+  ellipse (r, 300, 45,45);
+  ellipse (s, 300, 45,45);
+  fill (#000000);
+  ellipse (t, 300, 20,20);
+  ellipse (u, 300, 20,20);
+  ellipse (v, 370, 35,35);
+  ellipse (w, 370, 35,35);
+  triangle (x, 375,xx, 375, x, 400);
+  triangle (y, 375, y, 401, yy, 401);
+  ellipse (z, 395, 20,20);
+  triangle (aa, 370, aa, 401, aaa, 370);
+ triangle (ab, 370, ab, 401, aab, 401);
+  ellipse (ac, 395, 20,20);
+  fill (250);
+  ellipse (ad, 300, 10,10);
+  ellipse (ae, 300, 10,10);
+  
+  a=a+1;
+b=b+1;
+c=c+1;
+d=d+1;
+e=e+1;
+f=f+1;
+g=g+1;
+h=h+1;
+i=i+1;
+j=j+1;
+k=k+1;
+l=l+1;
+m=m+1;
+n=n+1;
+nn=nn+1;
+o=o+1;
+oo=oo+1;
+p=p+1;
+pp=pp+1;
+q=q+1;
+qq=qq+1;
+r=r+1;
+s=s+1;
+t=t+1;
+u=u+1;
+v=v+1;
+w=w+1;
+x=x+1;
+xx=xx+1;
+y=y+1;
+yy=yy+1;
+z=z+1;
+aa=aa+1;
+aaa=aaa+1;
+ab=ab+1;
+aab=aab+1;
+ac=ac+1;
+ad=ad+1;
+ae=ae+1;
+col=col+1;
+co=co+1;
+colo=colo-1;
+
+}
+

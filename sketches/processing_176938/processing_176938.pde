@@ -1,0 +1,23 @@
+
+// Wabern
+// 12.12.2014
+
+/*Aufgabenstellung
+Schreibe ein Programm, bei dem mittels einer Variable helligkeit ein schwarzes Quadrat langsam heller wird.
+Aendere das Programm so, dass das Quadrat wieder dunkler wird, sobald die helligkeit maximal ist.*/
+
+int helligkeit = 0;
+
+void setup(){
+size(400,400);
+}
+
+void draw(){
+background(0,155,187);
+fill(helligkeit,helligkeit,helligkeit);
+rect(100,100,200,200);
+helligkeit=helligkeit+1;
+if(helligkeit==255){
+helligkeit=0;
+}
+}

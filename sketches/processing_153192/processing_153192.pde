@@ -1,0 +1,156 @@
+
+/*
+ * Creative Coding
+ * Week 5, 04 - Moving balls 2
+ * by Indae Hwang and Jon McCormack
+ * Copyright (c) 2014 Monash University
+ *
+ * This sketch shows the basics of classes and objects in Processing
+ * It defines a class called "Ball" with one member function: "display()"
+ *
+ */
+MovingBall centre;
+MovingBall[] arounds;
+
+int numOfObjects;
+
+void setup() {
+  size(600, 600);
+  colorMode(HSB, 360, 100, 100);
+
+  numOfObjects = 100;
+
+  centre = new MovingBall(width/2, height/2);
+
+  arounds = new MovingBall[numOfObjects];
+
+  for (int i=0; i < arounds.length; i++ ) {
+    arounds[i] = new MovingBall(random(width), random(height) );
+  }
+
+  background(0);
+}
+
+void draw() {
+//  background(0);
+
+  centre.run();
+
+  for (int i=0; i < arounds.length; i++ ) {
+    arounds[i].run();
+  }
+}
+
+//void keyPressed() {
+//     if ((key >= 49) && (key <= 57)) {
+//        saveFrame("moviBalls-###.png");
+//     }
+//  }
+
+/*
+ * MovingBall class
+ *
+ * Represents a moving ball that moves in a single direction
+ *
+ */
+class MovingBall {
+
+  float x, y;        // position
+  float tx, ty;      // target in x and y
+  float step, inc;
+  float radius;
+
+  int direction;
+  int numDirections = 3;
+// Note: colorMode is HSB, 360, 100, 100
+  color col = color(120, 30, 100);
+
+  // constructor
+  // create a moving ball at the supplied position (x_, y_)
+  MovingBall(float x_, float y_) {
+    x = x_;
+    y = y_;
+
+    reset();
+  }
+  
+  // run
+  // calls move() followed by display()
+  // 
+  void run() {
+    this.setNumDirAndCol();
+    this.move();    // this refers to the current object
+    this.display();
+  }
+
+  // move
+  // move the ball in the desired direction
+  //
+  void move() {
+
+    step -= inc;
+
+    if (step < 0) {
+      x = tx;
+      y = ty;
+      reset();
+    }
+
+    x = lerp(tx, x, step); 
+    y = lerp(ty, y, step);
+
+    checkBounds();
+  }
+
+  // checkBounds
+  // checks that the ball is within the display window.
+  // If it reaches the edge, move in the opposite direction
+  void checkBounds() {
+    if (x <= 0 || x >= width || y <= 0 || y >= height) {
+      x = width/2;
+      y = height/2;
+      reset();
+    }
+  }
+
+
+  void reset() {
+    step = 1;
+    inc = random(0.01);
+    radius = random(10, 50);
+    float angleUnit = TWO_PI/numDirections; 
+    direction = (int) random(numDirections);
+
+    tx = x + radius*cos(direction * angleUnit);
+    ty = y + radius*sin(direction * angleUnit);
+  }
+
+  // display method
+  //
+  //
+  void display() {
+    noStroke();
+    rectMode(CENTER);
+    fill(0,0,0, 30);
+    rect(tx, ty, 8, 8); // was 10
+    fill(col, 60);
+    ellipse(x, y, 3, 3); // was 2
+  }
+  
+  // change numDirections and color
+  //
+  void setNumDirAndCol() {
+   if (keyPressed) {
+     // if key is from 1 to 9
+     if ((key >= 49) && (key <= 57)) {
+       numDirections = key - 48;
+       col = color((key-48)*40, 30, 100);
+//       println("numDirections: "+numDirections);
+     }
+   }
+  } 
+
+} // end of class
+
+
+

@@ -1,0 +1,4789 @@
+
+//llibreria so
+import ddf.minim.spi.*;
+import ddf.minim.signals.*;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.ugens.*;
+import ddf.minim.effects.*;
+Minim minim;
+AudioPlayer secondsound;
+
+float midapilota = 50;
+float midamaxim = 60;
+float midaminima= 45;
+float interval = 0.15;
+boolean grow = true;
+float sizeball = 5;
+float midatext = 30;
+
+void setup(){
+  size(600,400);
+  minim = new Minim(this);
+  secondsound = minim.loadFile("secondsound.wav");
+}
+
+void draw(){
+  //colors separació
+  fill(255,187,113);
+  rect(0,0,width/3,height);
+  fill(255,82,82);
+  rect(width/3,0,width/3,height);
+  fill(144,211,96);
+  rect(height,0,width/3,height);
+  
+  //línies separació
+  stroke(0);
+  strokeWeight(4);
+  line(width/3,0,width/3,height);
+  line(height,0,height,height);
+  
+    
+  dibuixapoma();
+  dibuixataronja();
+  dibuixapera();
+  mirillahora();
+  mirillaminuts();
+  mirillasegons();
+   ballsminutes();
+  pilotessegons(); 
+ ballshour();
+
+
+ 
+ if(mousePressed == true) {
+   sizeball = random(3,8);
+   secondsound.cue(0);
+   secondsound.play(); 
+   fill(255,0,0,random(30,180));
+   rect(0,0,600,400);
+ }   
+  
+}
+  
+
+
+
+
+
+
+/////////FUNCIONS///////////////
+
+////////////////////POMA  
+void dibuixapoma(){
+  //poma
+  strokeWeight(1);
+  smooth();
+fill(232,40,40);
+stroke(183,48,48);
+beginShape();
+curveVertex(20,210);
+curveVertex(20,210);
+curveVertex(65,270);
+curveVertex(125,270);
+curveVertex(170,210);
+curveVertex(170,210);
+endShape();
+fill(232,40,40);
+beginShape();
+curveVertex(20,210);
+curveVertex(20,210);
+curveVertex(50,135);
+curveVertex(140,135);
+curveVertex(170,210);
+curveVertex(170,210);
+endShape();
+noFill();
+stroke(75,50,3);
+strokeWeight(2.5);
+curve(95,140,95,140,105,120,145,130);
+}
+
+//////////////////TARONJA
+void dibuixataronja(){
+  //taronja
+stroke(211,113,15);
+fill(234,131,33);
+ellipse(500,200,150,150);
+fill(2,85,41);
+stroke(2,52,25);
+strokeWeight(1);
+ellipse(500,140,10,5);
+}
+
+
+///////////////////PERA
+void dibuixapera(){
+  noStroke();
+  fill(77,167,14);
+  beginShape();
+curveVertex(282,165);
+curveVertex(282,165);
+curveVertex(290,130);
+curveVertex(320,130);
+curveVertex(328,165);
+curveVertex(328,165);
+endShape();
+noStroke();
+rect(260,165,90,20);
+fill(255,82,82);
+ellipse(265,150,40,100);
+ellipse(345,150,40,100);
+fill(77,167,14);
+  beginShape();
+curveVertex(280,185);
+curveVertex(280,185);
+curveVertex(275,215);
+curveVertex(335,215);
+curveVertex(330,185);
+curveVertex(320,185);
+endShape();
+ellipse(305,230,74,100);
+ellipse(305,225,100,120);
+noFill();
+stroke(75,50,3);
+strokeWeight(2.5);
+curve(305,135,305,135,315,120,355,130);
+}
+
+
+////////////////MIRILLES
+void mirillahora(){
+  fill(0);
+  text(hour(),75,336);
+  textSize(midatext);
+  
+  if(grow==true){
+    midapilota = midapilota + interval;
+  } 
+  else { 
+    midapilota = midapilota - interval;
+  }
+  
+  if(midapilota > midamaxim){
+    grow = false;
+  }
+  if(midapilota < midaminima){
+    grow = true;
+  }
+  noFill();
+  stroke(0,0,0,100);
+  strokeWeight(2);
+  ellipse(95,325,midapilota,midapilota);
+  fill(0,0,0,50);
+  line(95,290,95,360);
+  line(60,325,130,325);
+}
+  
+  void mirillaminuts(){
+  fill(0);
+  text(minute(),283,336);
+  textSize(30);
+   if(grow==true){
+    midapilota = midapilota + interval;
+  } 
+  else { 
+    midapilota = midapilota - interval;
+  }
+  
+  if(midapilota > midamaxim){
+    grow = false;
+  }
+  if(midapilota < midaminima){
+    grow = true;
+  }
+  noFill();
+  stroke(0,0,0,100);
+  strokeWeight(2);
+  ellipse(302,325,midapilota,midapilota);
+  fill(0,0,0,50);
+  line(302,290,302,360);
+  line(265,325,338,325);
+  }
+  
+  
+   void mirillasegons(){
+   fill(0);
+  text(second(),482,336);
+  textSize(30);
+  if(grow==true){
+    midapilota = midapilota + interval;
+  } 
+  else { 
+    midapilota = midapilota - interval;
+  }
+  
+  if(midapilota > midamaxim){
+    grow = false;
+  }
+  if(midapilota < midaminima){
+    grow = true;
+  }
+  noFill();
+  stroke(0,0,0,100);
+  strokeWeight(2);
+  ellipse(500,325,midapilota,midapilota);
+  fill(0,0,0,50);
+  line(500,290,500,360);
+  line(465,325,535,325);
+  }
+  
+
+///////////////PILOTES HORES
+void ballshour(){
+  if(hour() == 1){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+  }
+  
+  if(hour() == 2){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+  }
+  
+   if(hour() == 3){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);  
+  }
+  
+   if(hour() == 4){
+    noStroke();
+   fill(255,187,113);
+     ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+  }
+  
+   if(hour() == 5){
+    noStroke();
+    fill(255,187,113);
+     ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+  }
+  
+  if(hour() == 6){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+  }
+  
+  if(hour() == 7){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball); 
+  }
+  
+  if(hour() == 8){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball); 
+  }
+  
+  
+  if(hour() == 9){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball); 
+  }
+  
+   if(hour() == 10){
+    noStroke();
+    fill(255,187,113);
+      ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+}
+
+if(hour() == 11){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+}
+
+if(hour() == 12){
+    noStroke();
+     fill(255,187,113);
+   ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+}
+
+
+if(hour() == 13){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+}
+
+if(hour() == 14){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+}
+
+if(hour() == 15){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+}
+
+if(hour() == 16){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+}
+
+if(hour() == 17){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+}
+
+if(hour() == 18){
+    noStroke();
+    fill(255,187,113);
+     ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+    ellipse(140,210,sizeball,sizeball);
+}
+
+if(hour() == 19){
+    noStroke();
+   fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+    ellipse(140,210,sizeball,sizeball);
+    ellipse(70,150,sizeball,sizeball);
+}
+
+if(hour() == 20){
+    noStroke();
+      fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+    ellipse(140,210,sizeball,sizeball);
+    ellipse(70,150,sizeball,sizeball);
+    ellipse(70,250,sizeball,sizeball);
+}
+
+if(hour() == 21){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+    ellipse(140,210,sizeball,sizeball);
+    ellipse(70,150,sizeball,sizeball);
+    ellipse(70,250,sizeball,sizeball);
+    ellipse(80,200,sizeball,sizeball);
+}
+
+if(hour() == 22){
+    noStroke();
+    fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+    ellipse(140,210,sizeball,sizeball);
+    ellipse(70,150,sizeball,sizeball);
+    ellipse(70,250,sizeball,sizeball);
+    ellipse(80,200,sizeball,sizeball);
+    ellipse(110,170,sizeball,sizeball);
+}
+
+if(hour() == 23){
+    noStroke();
+      fill(255,187,113);
+    ellipse(40,190,sizeball,sizeball);
+    ellipse(150,200,sizeball,sizeball);
+    ellipse(140,150,sizeball,sizeball);
+    ellipse(140,190,sizeball,sizeball);
+    ellipse(90,190,sizeball,sizeball);
+    ellipse(60,230,sizeball,sizeball);
+    ellipse(100,180,sizeball,sizeball);
+    ellipse(30,210,sizeball,sizeball);
+    ellipse(100,240,sizeball,sizeball);
+    ellipse(90,230,sizeball,sizeball);
+    ellipse(70,170,sizeball,sizeball);
+    ellipse(120,170,sizeball,sizeball);
+    ellipse(100,150,sizeball,sizeball);
+    ellipse(120,260,sizeball,sizeball);
+    ellipse(110,220,sizeball,sizeball);
+    ellipse(40,230,sizeball,sizeball);
+    ellipse(40,170,sizeball,sizeball);
+    ellipse(140,210,sizeball,sizeball);
+    ellipse(70,150,sizeball,sizeball);
+    ellipse(70,250,sizeball,sizeball);
+    ellipse(80,200,sizeball,sizeball);
+    ellipse(110,170,sizeball,sizeball);
+    ellipse(60,190,sizeball,sizeball);
+}
+
+}
+
+
+  
+/////////////PILOTES MINUTS
+void ballsminutes(){
+  if(minute() == 0){
+    noStroke();
+    fill(255,82,82);
+    ellipse(250,0,sizeball,sizeball);
+  } 
+  
+  if(minute() == 1){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+  }
+
+  if(minute() == 2){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+  }
+
+  if(minute() == 3){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+  }
+
+  if(minute() == 4){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+  }
+
+  if(minute() == 5){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+  }
+
+  if(minute() == 6){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+   ellipse(330,220,sizeball,sizeball);
+  }
+
+  if(minute() == 7){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+  }
+
+  if(minute() == 8){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+  }
+
+  if(minute() == 9){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+  }
+
+  if(minute() == 10){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+  }
+
+if(minute() == 11){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+  }
+
+if(minute() == 12){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+  }
+
+if(minute() == 13){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+  }
+
+if(minute() == 14){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+  }
+
+if(minute() == 15){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+  }
+  
+  if(minute() == 16){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+  }
+
+
+if(minute() == 17){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+  }
+
+if(minute() == 18){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+  }
+
+if(minute() == 19){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+  }
+
+if(minute() == 20){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+  }
+
+if(minute() == 21){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+  }
+
+if(minute() == 22){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+  }
+
+if(minute() == 23){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+  }
+
+if(minute() == 24){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+  }
+
+if(minute() == 25){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+  }
+
+if(minute() == 26){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+  }
+
+if(minute() == 27){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+  }
+
+if(minute() == 28){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+  }
+
+if(minute() == 29){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+  }
+
+if(minute() == 30){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+  }
+
+
+if(minute() == 31){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+  }
+
+if(minute() == 32){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+  }
+
+if(minute() == 33){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+  }
+
+if(minute() == 34){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+  }
+
+if(minute() == 35){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+  }
+  
+  if(minute() == 36){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+  }
+
+if(minute() == 37){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+  }
+
+if(minute() == 38){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+  }
+
+
+if(minute() == 39){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+  }
+
+if(minute() == 40){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+  }
+
+if(minute() == 41){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+  }
+
+if(minute() == 42){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+  }
+
+if(minute() == 43){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+  }
+
+if(minute() == 44){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+  }
+
+if(minute() == 45){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+  }
+
+if(minute() == 46){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+  }
+
+if(minute() == 47){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+  }
+
+if(minute() == 48){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+  }
+
+
+if(minute() == 49){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+  }
+
+if(minute() == 50){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+  }
+
+if(minute() == 51){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+  }
+
+if(minute() == 52){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+  }
+
+if(minute() == 53){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+  }
+
+if(minute() == 54){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+    ellipse(335,260,sizeball,sizeball);
+  }
+
+if(minute() == 55){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+    ellipse(335,260,sizeball,sizeball);
+    ellipse(327,268,sizeball,sizeball);
+  }
+
+if(minute() == 56){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+    ellipse(335,260,sizeball,sizeball);
+    ellipse(327,268,sizeball,sizeball);
+ellipse(330,235,sizeball,sizeball);
+  }
+
+if(minute() == 57){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+    ellipse(335,260,sizeball,sizeball);
+    ellipse(327,268,sizeball,sizeball);
+    ellipse(330,235,sizeball,sizeball);
+    ellipse(335,240,sizeball,sizeball);
+  }
+
+if(minute() == 58){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+    ellipse(335,260,sizeball,sizeball);
+    ellipse(327,268,sizeball,sizeball);
+    ellipse(330,235,sizeball,sizeball);
+    ellipse(335,240,sizeball,sizeball);
+    ellipse(350,240,sizeball,sizeball);
+  }
+
+if(minute() == 59){
+    noStroke();
+    fill(255,82,82);
+    ellipse(260,230,sizeball,sizeball);
+    ellipse(350,230,sizeball,sizeball);
+    ellipse(300,230,sizeball,sizeball);
+    ellipse(270,220,sizeball,sizeball);
+    ellipse(290,210,sizeball,sizeball);
+    ellipse(330,220,sizeball,sizeball);
+    ellipse(310,180,sizeball,sizeball);
+    ellipse(320,190,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(290,180,sizeball,sizeball);
+    ellipse(310,260,sizeball,sizeball);
+    ellipse(300,280,sizeball,sizeball);
+    ellipse(290,270,sizeball,sizeball);
+    ellipse(280,250,sizeball,sizeball);
+    ellipse(330,250,sizeball,sizeball);
+    ellipse(310,200,sizeball,sizeball);
+    ellipse(310,140,sizeball,sizeball);
+    ellipse(305,145,sizeball,sizeball);
+    ellipse(300,140,sizeball,sizeball);
+    ellipse(290,150,sizeball,sizeball);
+    ellipse(320,150,sizeball,sizeball);
+    ellipse(300,160,sizeball,sizeball);
+    ellipse(320,160,sizeball,sizeball);
+    ellipse(295,170,sizeball,sizeball);
+    ellipse(310,170,sizeball,sizeball);
+    ellipse(320,175,sizeball,sizeball);
+    ellipse(340,190,sizeball,sizeball);
+    ellipse(330,200,sizeball,sizeball);
+    ellipse(345,210,sizeball,sizeball); 
+    ellipse(300,210,sizeball,sizeball);
+    ellipse(300,220,sizeball,sizeball);
+    ellipse(320,220,sizeball,sizeball);
+    ellipse(315,245,sizeball,sizeball);
+    ellipse(315,230,sizeball,sizeball);
+    ellipse(260,210,sizeball,sizeball);
+    ellipse(260,245,sizeball,sizeball);
+    ellipse(270,235,sizeball,sizeball);
+    ellipse(270,250,sizeball,sizeball);
+    ellipse(280,260,sizeball,sizeball);
+    ellipse(300,260,sizeball,sizeball);
+    ellipse(290,240,sizeball,sizeball);
+    ellipse(300,250,sizeball,sizeball);
+    ellipse(280,220,sizeball,sizeball);
+    ellipse(270,190,sizeball,sizeball);
+    ellipse(285,190,sizeball,sizeball);
+    ellipse(275,195,sizeball,sizeball);
+    ellipse(285,205,sizeball,sizeball);
+    ellipse(270,205,sizeball,sizeball);
+    ellipse(310,280,sizeball,sizeball);
+    ellipse(305,270,sizeball,sizeball);
+    ellipse(315,270,sizeball,sizeball);
+    ellipse(320,275,sizeball,sizeball);
+    ellipse(320,260,sizeball,sizeball);
+    ellipse(335,260,sizeball,sizeball);
+    ellipse(327,268,sizeball,sizeball);
+    ellipse(330,235,sizeball,sizeball);
+    ellipse(335,240,sizeball,sizeball);
+    ellipse(350,240,sizeball,sizeball);
+    ellipse(345,250,sizeball,sizeball);
+  }
+}
+
+
+
+
+///////////PILOTES SEGONS
+void pilotessegons(){
+  if(second() == 1){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+  }
+  
+  if(second() == 2){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);  
+  }
+  
+   if(second() == 3){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);  
+  }
+  
+   if(second() == 4){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+  }
+  
+   if(second() == 5){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+  }
+  
+  if(second() == 6){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+     ellipse(470,230,sizeball,sizeball);
+  }
+  
+  if(second() == 7){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);  
+  }
+  
+  if(second() == 8){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);  
+  }
+  
+  
+  if(second() == 9){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball); 
+  }
+  
+   if(second() == 10){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+}
+
+if(second() == 11){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+}
+
+if(second() == 12){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+}
+
+
+if(second() == 13){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+}
+
+if(second() == 14){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+}
+
+if(second() == 15){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+}
+
+if(second() == 16){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+}
+
+if(second() == 17){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+}
+
+if(second() == 18){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+}
+
+if(second() == 19){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+}
+
+if(second() == 20){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+}
+
+if(second() == 21){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+}
+
+if(second() == 22){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+}
+
+if(second() == 23){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+}
+
+if(second() == 24){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+}
+
+if(second() == 25){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+}
+
+if(second() == 26){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+}
+
+if(second() == 27){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+}
+
+if(second() == 28){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+}
+
+if(second() == 29){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+}
+
+if(second() == 30){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+}
+
+if(second() == 31){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+}
+
+if(second() == 32){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+}
+
+if(second() == 33){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+}
+
+if(second() == 34){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+}
+
+if(second() == 35){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+}
+
+if(second() == 36){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+}
+
+if(second() == 37){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+}
+
+if(second() == 38){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+}
+
+if(second() == 39){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+}
+
+if(second() == 40){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+}
+
+if(second() == 41){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+}
+
+if(second() == 42){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+}
+
+if(second() == 43){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+}
+
+if(second() == 44){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+}
+
+if(second() == 45){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+}
+
+if(second() == 46){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+}
+
+if(second() == 47){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+}
+
+if(second() == 48){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+}
+
+if(second() == 49){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+}
+
+if(second() == 50){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+}
+
+if(second() == 51){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+}
+
+if(second() == 52){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+}
+
+if(second() == 53){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+}
+
+if(second() == 54){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+    ellipse(525,185,sizeball,sizeball);
+}
+
+if(second() == 55){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+    ellipse(525,185,sizeball,sizeball);
+    ellipse(440,205,sizeball,sizeball);
+}
+
+if(second() == 56){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+    ellipse(525,185,sizeball,sizeball);
+    ellipse(440,205,sizeball,sizeball);
+    ellipse(485,245,sizeball,sizeball);
+}
+
+if(second() == 57){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+    ellipse(525,185,sizeball,sizeball);
+    ellipse(440,205,sizeball,sizeball);
+    ellipse(485,245,sizeball,sizeball);
+    ellipse(500,175,sizeball,sizeball);
+}
+
+if(second() == 58){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+    ellipse(525,185,sizeball,sizeball);
+    ellipse(440,205,sizeball,sizeball);
+    ellipse(485,245,sizeball,sizeball);
+    ellipse(500,175,sizeball,sizeball);
+    ellipse(515,230,sizeball,sizeball);
+}
+
+if(second() == 59){
+    noStroke();
+    fill(144,211,96);
+    ellipse(510,170,sizeball,sizeball);
+    ellipse(560,200,sizeball,sizeball);
+    ellipse(520,150,sizeball,sizeball);
+    ellipse(540,190,sizeball,sizeball);
+    ellipse(450,190,sizeball,sizeball);
+    ellipse(470,230,sizeball,sizeball);
+    ellipse(490,180,sizeball,sizeball);
+    ellipse(440,210,sizeball,sizeball);
+    ellipse(500,240,sizeball,sizeball);
+    ellipse(490,230,sizeball,sizeball);
+    ellipse(560,220,sizeball,sizeball);
+    ellipse(460,170,sizeball,sizeball);
+    ellipse(500,150,sizeball,sizeball);
+    ellipse(450,240,sizeball,sizeball);
+    ellipse(510,220,sizeball,sizeball);
+    ellipse(465,150,sizeball,sizeball);
+    ellipse(560,170,sizeball,sizeball);
+    ellipse(495,210,sizeball,sizeball);
+    ellipse(450,220,sizeball,sizeball);
+    ellipse(475,150,sizeball,sizeball);
+    ellipse(500,260,sizeball,sizeball);
+    ellipse(440,160,sizeball,sizeball);
+    ellipse(550,230,sizeball,sizeball);
+    ellipse(460,230,sizeball,sizeball);
+    ellipse(430,170,sizeball,sizeball);
+    ellipse(490,200,sizeball,sizeball);
+    ellipse(505,160,sizeball,sizeball);
+    ellipse(475,180,sizeball,sizeball);
+    ellipse(525,155,sizeball,sizeball);
+    ellipse(470,180,sizeball,sizeball);
+    ellipse(560,210,sizeball,sizeball);
+    ellipse(530,180,sizeball,sizeball);
+    ellipse(530,200,sizeball,sizeball);
+    ellipse(530,250,sizeball,sizeball);
+    ellipse(550,200,sizeball,sizeball);
+    ellipse(550,180,sizeball,sizeball);
+    ellipse(510,260,sizeball,sizeball);
+    ellipse(520,240,sizeball,sizeball);
+    ellipse(470,220,sizeball,sizeball);
+    ellipse(470,240,sizeball,sizeball);
+    ellipse(485,230,sizeball,sizeball);
+    ellipse(490,250,sizeball,sizeball);
+    ellipse(470,255,sizeball,sizeball);
+    ellipse(480,190,sizeball,sizeball);
+    ellipse(480,200,sizeball,sizeball);
+    ellipse(535,255,sizeball,sizeball);
+    ellipse(445,189,sizeball,sizeball);
+    ellipse(565,180,sizeball,sizeball);
+    ellipse(535,165,sizeball,sizeball);
+    ellipse(535,240,sizeball,sizeball);
+    ellipse(535,220,sizeball,sizeball);
+    ellipse(535,260,sizeball,sizeball);
+    ellipse(530,150,sizeball,sizeball);
+    ellipse(525,185,sizeball,sizeball);
+    ellipse(440,205,sizeball,sizeball);
+    ellipse(485,245,sizeball,sizeball);
+    ellipse(500,175,sizeball,sizeball);
+    ellipse(515,230,sizeball,sizeball);
+    ellipse(530,195,sizeball,sizeball);
+}
+
+
+
+
+
+}
+
+
+
+

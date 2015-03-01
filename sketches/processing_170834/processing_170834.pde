@@ -1,0 +1,545 @@
+
+//CONTRA MÉS RAPID CLIQUIS, MÉS ES MOU EL CABELL
+boolean abanico = false;
+int tiempo = 0;
+int click = 0;
+int colorete = 0;
+
+void setup(){
+  size (600,700);
+  frameRate(6);
+   
+}
+void draw(){
+  println(mouseX + ","+ mouseY);
+  background(200, 191, 231);
+  stroke (0);
+  //forma;
+  strokeWeight (3);
+  fill (238, 207, 161);
+  ellipse(300, 350, 450, 600);
+  
+  //hojos;
+  stroke (3);
+  fill (255); 
+  ellipse (215.5, 204, 85, 70);
+  ellipse (382.5, 204, 85, 70);
+  fill (139, 69, 19);
+  ellipse (215.5, 204, 55, 70);
+  ellipse (382.5, 204, 55, 70);
+  fill (0);
+  ellipse (215.5, 204, 25, 40);
+  ellipse (382.5, 204, 25, 40);
+
+  //boca; 
+  strokeWeight (3);
+  stroke (3);
+  fill (255, 0, 0);
+  ellipse (300, 450, 170, 175);
+  noStroke ();
+  fill (238, 207, 161);
+  rect (208, 345, 180, 95);
+  stroke (3);
+  strokeWeight (3);
+  line (215, 439, 384, 439);
+
+  //pelo
+  
+  fill (colorete);
+  if (click >= 1 && tiempo % 2 != 0){
+  beginShape();
+  vertex(119, 150);
+  vertex(148, 147);
+  vertex(168, 131);
+  vertex(185, 140);
+  vertex(200, 125);
+  vertex(207, 132);
+  vertex(221, 122);
+  vertex(232, 136);
+  vertex(250, 120);
+  vertex(280, 131);
+  vertex(301, 117);
+  vertex(316, 134);
+  vertex(339, 115);
+  vertex(358, 129);
+  vertex(382, 109);
+  vertex(423, 137);
+  vertex(440, 129);
+  vertex(456, 142);
+  vertex(470, 142);
+  //arriba
+  vertex(471+4+click*6, 118);
+  vertex(460+4+click*6, 121);
+  vertex(453+4+click*6, 100);
+  vertex(446+4+click*6, 103);
+  vertex(436+4+click*6, 76);
+  vertex(423+4+click*6, 83);
+  vertex(401+4+click*6, 55);
+  vertex(394+4+click*6, 64);
+  vertex(363+4+click*6, 34);
+  vertex(340+4+click*6, 44);
+  vertex(300+4+click*6, 6);
+  vertex(270+4+click*6, 39);
+  vertex(254+4+click*6, 23);
+  vertex(217+4+click*6, 55);
+  vertex(206+4+click*6, 45);
+  vertex(180+4+click*6, 82);
+  vertex(168+4+click*6, 73);
+  vertex(150+4+click*6, 115);
+  vertex(121+4+click*6, 108);
+  
+  endShape(CLOSE);
+  }
+  else if(click >= 1 && tiempo % 2 == 0){
+  beginShape();
+  vertex(119, 150);
+  vertex(148, 147);
+  vertex(168, 131);
+  vertex(185, 140);
+  vertex(200, 125);
+  vertex(207, 132);
+  vertex(221, 122);
+  vertex(232, 136);
+  vertex(250, 120);
+  vertex(280, 131);
+  vertex(301, 117);
+  vertex(316, 134);
+  vertex(339, 115);
+  vertex(358, 129);
+  vertex(382, 109);
+  vertex(423, 137);
+  vertex(440, 129);
+  vertex(456, 142);
+  vertex(470, 142);
+  //arriba
+  vertex(471-4-click*6, 118);
+  vertex(460-4-click*6, 121);
+  vertex(453-4-click*6, 100);
+  vertex(446-4-click*6, 103);
+  vertex(436-4-click*6, 76);
+  vertex(423-4-click*6, 83);
+  vertex(401-4-click*6, 55);
+  vertex(394-4-click*6, 64);
+  vertex(363-4-click*6, 34);
+  vertex(340-4-click*6, 44);
+  vertex(300-4-click*6, 6);
+  vertex(270-4-click*6, 39);
+  vertex(254-4-click*6, 23);
+  vertex(217-4-click*6, 55);
+  vertex(206-4-click*6, 45);
+  vertex(180-4-click*6, 82);
+  vertex(168-4-click*6, 73);
+  vertex(150-4-click*6, 115);
+  vertex(121-4-click*6, 108);
+  
+  endShape(CLOSE);
+  }
+  else if(click == 0) {
+      beginShape();
+  vertex(119, 150);
+  vertex(148, 147);
+  vertex(168, 131);
+  vertex(185, 140);
+  vertex(200, 125);
+  vertex(207, 132);
+  vertex(221, 122);
+  vertex(232, 136);
+  vertex(250, 120);
+  vertex(280, 131);
+  vertex(301, 117);
+  vertex(316, 134);
+  vertex(339, 115);
+  vertex(358, 129);
+  vertex(382, 109);
+  vertex(423, 137);
+  vertex(440, 129);
+  vertex(456, 142);
+  vertex(470, 142);
+  //arriba
+  vertex(471, 118);
+  vertex(460, 121);
+  vertex(453, 100);
+  vertex(446, 103);
+  vertex(436, 76);
+  vertex(423, 83);
+  vertex(401, 55);
+  vertex(394, 64);
+  vertex(363, 34);
+  vertex(340, 44);
+  vertex(300, 6);
+  vertex(270, 39);
+  vertex(254, 23);
+  vertex(217, 55);
+  vertex(206, 45);
+  vertex(180, 82);
+  vertex(168, 73);
+  vertex(150, 115);
+  vertex(121, 108);
+  
+  endShape(CLOSE);
+  }
+  //nariz;
+  strokeWeight (3);
+  stroke (0);
+  line (302, 287, 267, 348);
+  line (267, 348, 285, 372);
+  line (285, 372, 317, 372);
+
+  //orejas;
+  //izquierda;
+  strokeWeight (2);
+  fill (238, 207, 161);
+  beginShape();
+  vertex(88, 246);
+  vertex(51, 218);
+  vertex(27, 237);
+  vertex(29, 317);
+  vertex(74, 351);
+  endShape(CLOSE);
+  //derecha;
+  beginShape();
+  vertex(511, 246);
+  vertex(548, 218);
+  vertex(572, 237);
+  vertex(570, 317);
+  vertex(525, 351);
+  endShape(CLOSE);
+  
+  //dentro de orejas
+  //izquierda
+  strokeWeight (3);
+  line (46, 302, 46, 248);
+  line (46, 248, 53, 238);
+  line (53, 238, 72, 256);
+  //derecha;
+  line (555, 302, 555, 248);
+  line (555, 248, 548, 238);
+  line (548, 238, 529, 256);
+  
+  //cejas;
+  strokeWeight (5);
+  //izquierda;
+  fill (0);
+  triangle(176, 150, 176, 169, 256, 183);
+  //derecha;
+  triangle(424, 150, 424, 169, 344, 183);
+  
+  //perilla;
+  strokeWeight (3);
+  fill (colorete);
+  triangle (260, 552, 326, 552, 293, 600);
+  
+  //barba;
+  strokeWeight (3);
+  smooth();
+  point(191, 417);
+  point(91, 411);
+  point(123, 412);
+  point(152, 429);
+  point(183, 429);
+  point(214, 399);
+  point(244, 396);
+  point(242, 415);
+  point(279, 400);
+  point(279, 417);
+  point(159, 404);
+  point(265, 412);
+  point(291, 397);
+  point(303, 410);
+  point(313, 421);
+  point(319, 406);
+  point(337, 400);
+  point(347, 414);
+  point(359, 400);
+  point(360, 429);
+  point(383, 424);
+  point(371, 399);
+  point(344, 397);
+  point(218, 419);
+  point(107, 432);
+  point(178, 405);
+  point(140, 416);
+  point(121, 436);
+  point(369, 414);
+  point(393, 405);
+  point(417, 433);
+  point(433, 422);
+  point(435, 410);
+  point(456, 422);
+  point(469, 439);
+  point(477, 399);
+  point(466, 395);
+  point(403, 420);
+  point(413, 405);
+  point(451, 409);
+  point(477, 414);
+  point(486, 433);
+  point(505, 412);
+  point(503, 427);
+  point(491, 457);
+  point(455, 452);
+  point(442, 463);
+  point(442, 486);
+  point(435, 479);  
+  point(401, 448);
+  point(424, 455);
+  point(442, 440);
+  point(469, 458);
+  point(475, 474);
+  point(492, 485);
+  point(472, 480);
+  point(455, 500);
+  point(472, 501);
+  point(471, 531);
+  point(459, 527);
+  point(412, 518);
+  point(396, 507);
+  point(408, 467);
+  point(455, 475);
+  point(399, 470);
+  point(412, 483);
+  point(416, 497);
+  point(437, 527);
+  point(437, 526);
+  point(426, 527);
+  point(414, 533);
+  point(169, 418);
+  point(199, 432);
+  point(198, 445);
+  point(198, 468);
+  point(171, 469);
+  point(102, 449);
+  point(258, 430);
+  point(334, 424);
+  point(436, 505);
+  point(389, 491);
+  point(375, 511);
+  point(428, 543);
+  point(384, 524);
+  point(395, 537);
+  point(375, 543);
+  point(356, 531);
+  point(351, 537);
+  point(449, 539);
+  point(447, 555);
+  point(430, 565);
+  point(434, 579);
+  point(417, 576);
+  point(408, 563);
+  point(413, 548);
+  point(396, 556);
+  point(368, 530);
+  point(361, 552);
+  point(358, 571);
+  point(182, 457);
+  point(172, 437);
+  point(157, 449);
+  point(136, 436);
+  point(356, 591);
+  point(364, 604);
+  point(354, 615);
+  point(349, 629);
+  point(366, 622);
+  point(384, 616);
+  point(388, 598);
+  point(383, 587);
+  point(381, 571);
+  point(400, 575);
+  point(409, 588);
+  point(417, 592);
+  point(138, 456);
+  point(118, 464);
+  point(109, 480);
+  point(292, 618);
+  point(289, 633);
+  point(306, 638);
+  point(323, 637);
+  point(335, 624);
+  point(340, 608);
+  point(347, 604);
+  point(340, 593);
+  point(326, 598);
+  point(311, 613);
+  point(312, 597);
+  point(324, 582);
+  point(337, 576);
+  point(331, 571);
+  point(340, 560);
+  point(345, 547);
+  point(297, 429);
+  point(205, 491);
+  point(212, 506);
+  point(224, 518);
+  point(235, 531);
+  point(221, 535);
+  point(211, 541);
+  point(224, 546);
+  point(377, 560);
+  point(401, 604);
+  point(371, 585);
+  point(319, 626);
+  point(133, 477);
+  point(146, 470);
+  point(334, 542);
+  point(253, 538);
+  point(240, 550);
+  point(251, 569);
+  point(301, 625);
+  point(273, 605);
+  point(161, 473);
+  point(186, 479);
+  point(186, 494);
+  point(199, 501);
+  point(194, 519);
+  point(211, 524);
+  point(185, 535);
+  point(173, 537);
+  point(178, 519);
+  point(152, 543);
+  point(136, 540);
+  point(132, 525);
+  point(152, 512);
+  point(170, 502);
+  point(189, 508);
+  point(169, 487);
+  point(150, 485);
+  point(140, 499);
+  point(123, 493);
+  point(103, 465);
+  point(139, 505);
+  point(153, 500);
+  point(157, 530);
+  point(124, 510);
+  point(197, 532);
+  point(230, 564);
+  point(214, 563);
+  point(191, 563);
+  point(175, 557);
+  point(175, 573);
+  point(195, 577);
+  point(263, 587);
+  point(276, 624);
+  point(267, 633);
+  point(255, 636);
+  point(232, 619);
+  point(233, 603);
+  point(241, 589);
+  point(253, 599);
+  point(261, 615);
+  point(247, 616);
+  point(215, 610);
+  point(201, 604);
+  point(199, 592);
+  point(212, 581);
+  point(228, 578);
+  point(186, 589);
+  point(160, 559);
+  point(196, 550);
+  point(220, 593);
+  point(452, 518);
+  point(107, 415);
+  
+  //patillas;
+  //izquierda;
+  strokeWeight (2);
+  fill (colorete);
+  beginShape();
+  vertex(148, 146);
+  vertex(119, 212);
+  vertex(106, 278);
+  vertex(96, 354);
+  vertex(77, 381);
+  vertex(75, 350);
+  vertex(88, 244);
+  vertex(105, 193);
+  vertex(119, 148);
+  endShape(CLOSE);
+  // derecha;
+  beginShape();
+  vertex(452, 140);
+  vertex(471, 191);
+  vertex(496, 278);
+  vertex(499, 354);
+  vertex(524, 381);
+  vertex(525, 350);
+  vertex(511, 244);
+  vertex(490, 193);
+  vertex(471, 140);
+  endShape(CLOSE);
+
+  //dientes;
+  //arriba;
+  fill (255);
+  beginShape();
+  vertex(214, 457);
+  vertex(386, 457);
+  vertex(386, 439);
+  vertex(214, 439);
+  endShape(CLOSE);
+  //abajo;
+    beginShape();
+  vertex(248, 518);
+  vertex(352, 518);
+  vertex(342, 525);
+  vertex(324, 533);
+  vertex(308, 536);
+  vertex(289, 536);
+  vertex(270, 531);
+  vertex(257, 524);
+  vertex(250, 520);
+  endShape(CLOSE);
+  //definidos arriba;
+  strokeWeight (3);
+  line (243, 457, 243, 439);
+  line (272, 457, 272, 439);
+  line (301, 457, 301, 439);
+  line (330, 457, 330, 439);
+  line (359, 457, 359, 439);
+  //abajo;
+  line (274, 518, 274, 532);
+  line (300, 518, 300, 536);
+  line (326, 518, 326, 532);
+
+//tapadera
+noStroke ();
+fill (colorete);
+rect (120, 143, 26, 7);
+rect (453, 137, 16, 5);
+
+
+
+//abanico
+if (abanico == false) {
+ stroke (0);
+ strokeWeight (3);
+ fill (180,0,0);
+ arc(mouseX, mouseY, 300, 300, PI, 2*PI);
+ fill (255,255,0);
+ arc(mouseX, mouseY, 60, 60, PI, 2*PI);
+}
+else {
+stroke (0);
+strokeWeight (3);
+fill (180,0,0);
+arc(mouseX, mouseY, 300, 100, PI, 2*PI);
+fill (255,255,0);
+arc(mouseX, mouseY, 60, 20, PI, 2*PI);
+}
+tiempo = tiempo+1;
+click = 0;
+}
+void mouseMoved() {
+  colorete = colorete + 5;
+  if (colorete > 255) {
+    colorete = 0;
+  }
+}
+void mousePressed (){
+ abanico = true;
+}
+void mouseReleased (){
+ abanico = false; 
+ click = click+1;
+}
+
+

@@ -1,0 +1,106 @@
+
+void setup()
+{
+  size(500,500);
+  background(#28A005);
+  fill(255);
+  rect(0,167,500,166);
+  fill(#F50202);
+  rect(0,333,500,167);
+}
+void draw()
+{  
+}
+void
+mouseReleased()
+{
+  /*bANDERAS FONDO */
+  background(#28A005);
+  fill(255);
+  rect(0,167,500,166);
+  fill(#F50202);
+  rect(0,333,500,167);
+/*OSO*/
+  fill(#AA5B11);
+  ellipse(250,350,180,180);
+  ellipse(300,220,60,60);
+  ellipse(200,220,60,60);
+  noStroke();
+  fill(#DB9B5F);
+  ellipse(250,380,120,120);
+  ellipse(300,220,30,30);
+  ellipse(200,220,30,30);
+  fill(#AA5B11);
+  ellipse(250,260,120,120);
+  ellipse(320,420,80,80);
+  ellipse(180,420,80,80);
+  ellipse(340,340,60,60);
+  ellipse(160,340,60,60);
+  fill(#743B06);
+  ellipse(230,235,30,30);
+  ellipse(270,235,30,30);
+  ellipse(250,260,20,20);
+  rect(230,285,40,5);
+}
+void
+mousePressed()
+{ 
+  /*bANDERAS FONDO */
+  background(#28A005);
+  fill(255);
+  rect(0,167,500,166);
+  fill(#F50202);
+  rect(0,333,500,167);
+/*OSO*/
+  fill(#AA5B11);
+  ellipse(125,175,90,90);
+  ellipse(150,110,30,30);
+  ellipse(100,110,30,30);
+  noStroke();
+  fill(#DB9B5F);
+  ellipse(125,190,60,60);
+  ellipse(150,110,15,15);
+  ellipse(100,110,15,15);
+  fill(#AA5B11);
+  ellipse(125,130,60,60);
+  ellipse(160,210,40,40);
+  ellipse(90,210,40,40);
+  ellipse(170,170,30,30);
+  ellipse(80,170,30,30);
+  fill(#743B06);
+  ellipse(115,117.5,15,15);
+  ellipse(135,117.5,15,15);
+  ellipse(125,130,10,10);
+  rect(115,142.5,20,2.5);
+}
+void
+keyPressed()
+{ 
+  /*bANDERAS FONDO */
+  background(#28A005);
+  fill(255);
+  rect(0,167,500,166);
+  fill(#F50202);
+  rect(0,333,500,167);
+/*OSO*/
+  fill(#AA5B11);
+  ellipse(250,350,180,180);
+  ellipse(300,220,60,60);
+  ellipse(200,220,60,60);
+  noStroke();
+  fill(#010A07);
+  ellipse(250,380,120,120);
+  ellipse(300,220,30,30);
+  ellipse(200,220,30,30);
+  fill(#AA5B11);
+  ellipse(250,260,120,120);
+  ellipse(320,420,80,80);
+  ellipse(180,420,80,80);
+  ellipse(340,340,60,60);
+  ellipse(160,340,60,60);
+  fill(#743B06);
+  ellipse(230,235,30,30);
+  ellipse(270,235,30,30);
+  ellipse(250,260,20,20);
+  rect(230,285,40,5);
+}

@@ -1,0 +1,20 @@
+
+// Haus ohne Nikolaus
+// 02.12.2014
+
+size(300,300);
+background(0,154,188);
+line(100,200,200,200);
+line(100,100,100,200);
+line(200,100,200,200);
+line(100,100,150,50);
+line(150,50,200,100);
+line(100,200,200,100);
+line(200,100,100,100);
+line(200,200,100,100;
+/*Aufgabenstellung
+FÃ�ï¿½Ã¯Â¿Â½Ã�ï¿½Ã�Â¼hre einen Tweak durch und ergÃ�ï¿½Ã¯Â¿Â½Ã�ï¿½Ã�Â¤nze dieses Haus 
+zu einem 'Haus vom Nikolaus'
+Zusatz: Wenn du statt Linien mit Dreiecken
+arbeitest, kannst du die FlÃ�ï¿½Ã¯Â¿Â½Ã�ï¿½Ã�Â¤chen mit dem Befehl
+fill(r,g,b) einfÃ�ï¿½Ã¯Â¿Â½Ã�ï¿½Ã�Â¤rben.*/

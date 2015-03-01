@@ -1,0 +1,25 @@
+
+size(300,300);
+background(0);
+noStroke ();
+fill (255,20,147);
+rect (100,100,120,120);
+strokeWeight (1);
+stroke (255,20,147);
+fill (0);
+rect (100,100,100,100);
+int x; x=100;
+int y; y= 1;
+stroke(255,20,147);
+strokeWeight(1);
+strokeCap (SQUARE);
+line(x,x,x*2,x);
+line(x,(x+2)*y,x*2,(x+2)*y);
+line(x,(x+6)*y,x*2,(x+6)*y);
+line(x,(x+11)*y,x*2,(x+11)*y);
+line(x,(x+18)*y,x*2,(x+18)*y);
+line(x,(x+28)*y,x*2,(x+28)*y);
+line(x,(x+42)*y,x*2,(x+42)*y);
+line(x,(x+55)*y,x*2,(x+55)*y);
+line(x,(x+68)*y,x*2,(x+68)*y);
+line(x,(x+85)*y,x*2,(x+85)*y);

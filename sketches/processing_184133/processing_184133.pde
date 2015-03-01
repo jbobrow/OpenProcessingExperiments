@@ -1,0 +1,41 @@
+
+size(300, 150);
+background(204, 204, 255);
+fill(210);
+quad(30, 110, 270, 110, 250, 140, 50, 140);
+fill(255, 204, 153);
+arc(150, 110, 245, 35, PI, TWO_PI, CHORD);
+noFill();
+strokeWeight(2);
+beginShape();
+vertex(40, 80);
+quadraticVertex(20, 70, 40, 60);
+quadraticVertex(60, 50, 40, 40);
+endShape();
+beginShape();
+vertex(260, 80);
+quadraticVertex(240, 70, 260, 60);
+quadraticVertex(280, 50, 260, 40);
+endShape();
+beginShape();
+vertex(90, 70);
+quadraticVertex(70, 60, 90, 50);
+quadraticVertex(110, 40, 90, 30);
+endShape();
+beginShape();
+vertex(130, 70);
+quadraticVertex(110, 60, 130, 50);
+quadraticVertex(150, 40, 130, 30);
+endShape();
+beginShape();
+vertex(170, 70);
+quadraticVertex(150, 60, 170, 50);
+quadraticVertex(190, 40, 170, 30);
+endShape();
+beginShape();
+vertex(210, 70);
+quadraticVertex(190, 60, 210, 50);
+quadraticVertex(230, 40, 210, 30);
+endShape();
+
+
